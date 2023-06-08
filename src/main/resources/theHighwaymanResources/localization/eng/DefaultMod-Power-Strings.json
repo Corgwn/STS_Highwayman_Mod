@@ -1,0 +1,26 @@
+{
+"theHighwayman:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+},
+"theHighwayman:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"theHighwayman:Bleed": {
+        "NAME": "Bleed",
+        "DESCRIPTIONS": ["At the start of your turn, if you have gained no additional bleed since last turn, lose #b health"]
+},
+"theHighwayman:Ammo": {
+        "NAME": "Ammo",
+        "DESCRIPTIONS": ["The number of times you can use cards that say Fire."]
+},
+"theHighwayman:Riposte": {
+        "NAME": "Riposte",
+        "DESCRIPTIONS": ["When attacked, deal 10 damage to the attacking enemy. Scales like an attack card."]
+},
+"theHighwayman:Vigorous": {
+        "NAME": "Vigorous",
+        "DESCRIPTIONS": ["You can stack charges of Ammo"]
+}
+}

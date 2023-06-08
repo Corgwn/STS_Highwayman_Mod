@@ -1,0 +1,69 @@
+{
+  "theHighwayman:DefaultCommonAttack": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "theHighwayman:DefaultCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL thehighwayman:Multiword_Keyword."
+  },
+  "theHighwayman:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! thehighwayman:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thehighwayman:Keywords."
+  },
+  "theHighwayman:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theHighwayman:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "theHighwayman:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X thehighwayman:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 thehighwayman:Keywords."
+  },
+  "theHighwayman:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theHighwayman:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! Vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to all enemies, 3 times."
+  },
+  "theHighwayman:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "theHighwayman:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !theHighwayman:ENERGY_DAMAGE! damage total.)"
+  },
+  "theHighwayman:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! Vulnerable and !theHighwayman:SecondMagic! poison to an enemy."
+  },
+  "theHighwayman:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "theHighwayman:OpenVein": {
+    "NAME": "Open Vein",
+    "DESCRIPTION": "Apply !M! Bleed. NL Apply 1 Vulnerable."
+  },
+  "theHighwayman:PistolShot": {
+    "NAME": "Pistol Shot",
+    "DESCRIPTION": "Fire. NL Deal !D! damage."
+  },
+  "theHighwayman:Reload": {
+    "NAME": "Reload",
+    "DESCRIPTION": "Gain 1 Ammo."
+  },
+  "theHighwayman:Feint": {
+    "NAME": "Feint",
+    "DESCRIPTION": "Gain !B! block. NL Gain 1 Riposte."
+  }
+}
