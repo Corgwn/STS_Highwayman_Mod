@@ -30,5 +30,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "theHighwayman:PaperCartridge": {
+    "NAME": "Paper Cartridge",
+    "FLAVOR": "Tastes like gunpowder...",
+    "DESCRIPTIONS": [
+      "At the beginning of combat, gain 1 Ammo."
+    ]
   }
 }

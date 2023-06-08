@@ -36,8 +36,8 @@ public class PistolShot extends CustomCard {
     public static final String ID = makeID(PistolShot.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = makeCardPath("pistolShotsmall.png");
-    // Setting the image as as easy as can possibly be now. You just need to provide the image name
+    public static final String IMG = makeCardPath("PistolShot_250.png");
+    // Setting the image is as easy as can possibly be now. You just need to provide the image name
     // and make sure it's in the correct folder. That's all.
     // There's makeCardPath, makeRelicPath, power, orb, event, etc..
     // The list of all of them can be found in the main DefaultMod.java file in the

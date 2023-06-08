@@ -24,10 +24,7 @@ import theHighwayman.cards.*;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.events.IdentityCrisisEvent;
 import theHighwayman.potions.PlaceholderPotion;
-import theHighwayman.relics.BottledPlaceholderRelic;
-import theHighwayman.relics.DefaultClickableRelic;
-import theHighwayman.relics.PlaceholderRelic;
-import theHighwayman.relics.PlaceholderRelic2;
+import theHighwayman.relics.*;
 import theHighwayman.util.IDCheckDontTouchPls;
 import theHighwayman.util.TextureLoader;
 import theHighwayman.variables.DefaultCustomVariable;
@@ -395,6 +392,7 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new PlaceholderRelic(), theHighwayman.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), theHighwayman.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), theHighwayman.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new PaperCartridge(), theHighwayman.Enums.COLOR_GRAY);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
