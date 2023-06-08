@@ -57,7 +57,7 @@ public class Reload extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            cost = UPGRADE_COST;
+            this.upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

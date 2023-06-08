@@ -52,7 +52,7 @@
   },
   "theHighwayman:OpenVein": {
     "NAME": "Open Vein",
-    "DESCRIPTION": "Apply !M! Bleed. NL Apply 1 Vulnerable."
+    "DESCRIPTION": "Apply !M! Bleed. NL Deal !D! damage."
   },
   "theHighwayman:PistolShot": {
     "NAME": "Pistol Shot",

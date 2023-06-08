@@ -2,6 +2,8 @@ package theHighwayman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -33,13 +35,13 @@ public class OpenVein extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int BLEED = 4;
     private static final int UPGRADE_PLUS_BLEED = 2;
-    private static final int VULNERABLE = 1;
+    private static final int DAMAGE = 3;
 
 
     // /STAT DECLARATION/
@@ -48,7 +50,7 @@ public class OpenVein extends AbstractDynamicCard {
     public OpenVein() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = BLEED;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = VULNERABLE;
+        damage = baseDamage = DAMAGE;
 
         this.tags.add(CardTags.EMPTY); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
@@ -57,7 +59,7 @@ public class OpenVein extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyBleedAction(m, p, magicNumber, AbstractGameAction.AttackEffect.POISON));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.defaultSecondMagicNumber, false), defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     //Upgraded stats.
