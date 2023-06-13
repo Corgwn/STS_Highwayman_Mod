@@ -10,10 +10,9 @@ import static theHighwayman.DefaultMod.makeID;
 public class SpendAmmoAction extends AbstractGameAction {
     private static final float DURATION = 0.33F;
 
-    public SpendAmmoAction(AbstractCreature target, AbstractCreature source, int amount, AttackEffect effect) {
+    public SpendAmmoAction(AbstractCreature target, AbstractCreature source, int amount) {
         this.setValues(target, source, amount);
         this.actionType = ActionType.SPECIAL;
-        this.attackEffect = effect;
         this.duration = 0.33F;
     }
 

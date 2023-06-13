@@ -3,10 +3,12 @@ package theHighwayman.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import theHighwayman.actions.GainAmmoAction;
 import theHighwayman.util.TextureLoader;
 
 import static theHighwayman.DefaultMod.makeID;
@@ -29,15 +31,11 @@ public class Vigorous extends AbstractPower implements CloneablePowerInterface {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public Vigorous(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public Vigorous(final AbstractCreature owner, final AbstractCreature source) {
         this.name = NAME;
         this.ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
-        if (this.amount >= 9999) {
-            this.amount = 9999;
-        }
         this.source = source;
 
         this.description = DESCRIPTIONS[0];
@@ -59,8 +57,11 @@ public class Vigorous extends AbstractPower implements CloneablePowerInterface {
         CardCrawlGame.sound.play("POWER_POISON", 0.05F);
     }
 
+    public void atStartOfTurn() {
+        this.addToBot(new ApplyPowerAction(owner, owner, new Ammo(owner, owner, 1)));
+    }
     @Override
     public AbstractPower makeCopy() {
-        return new Vigorous(owner, source, amount);
+        return new Vigorous(owner, source);
     }
 }

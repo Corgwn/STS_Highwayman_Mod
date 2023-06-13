@@ -12,10 +12,9 @@ import static theHighwayman.DefaultMod.makeID;
 public class GainAmmoAction extends AbstractGameAction {
     private static final float DURATION = 0.33F;
 
-    public GainAmmoAction(AbstractCreature target, AbstractCreature source, int amount, AttackEffect effect) {
+    public GainAmmoAction(AbstractCreature target, AbstractCreature source, int amount) {
         this.setValues(target, source, amount);
         this.actionType = ActionType.SPECIAL;
-        this.attackEffect = effect;
         this.duration = 0.33F;
     }
 
@@ -33,7 +32,7 @@ public class GainAmmoAction extends AbstractGameAction {
                 else {
                     target.getPower(pid).amount += amount;
                 }
-                if (target.getPower(pid).amount > 1 && !target.hasPower("Vigorous")) {
+                if (target.getPower(pid).amount > 1 && !target.hasPower(makeID("Vigorous"))) {
                     target.getPower(pid).amount = 1;
                 }
             }

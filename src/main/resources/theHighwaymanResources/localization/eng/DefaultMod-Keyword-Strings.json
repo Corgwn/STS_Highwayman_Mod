@@ -16,5 +16,34 @@
       "multikeyword"
     ],
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "NAMES": [
+      "Ammo",
+      "ammo"
+    ],
+    "DESCRIPTION": "The number of times you can Fire a weapon."
+  },
+  {
+    "NAMES": [
+      "Fire",
+      "fire",
+      "fires"
+    ],
+    "DESCRIPTION": "Uses 1 Ammo to play this card."
+  },
+  {
+    "NAMES": [
+      "Riposte",
+      "riposte"
+    ],
+    "DESCRIPTION": "When attacked, deal 10 damage to the attacker (scales like an attack). Clears at start of turn."
+  },
+  {
+    "NAMES": [
+      "Bleed",
+      "bleed"
+    ],
+    "DESCRIPTION": "At the beginning of its turn, the target loses X HP if no bleed was applied since its last turn. NL Otherwise, increases by 25%"
   }
 ]

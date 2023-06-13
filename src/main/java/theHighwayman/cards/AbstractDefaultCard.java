@@ -1,5 +1,6 @@
 package theHighwayman.cards;
 import basemod.abstracts.CustomCard;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 
 public abstract class AbstractDefaultCard extends CustomCard {
 
@@ -50,5 +51,14 @@ public abstract class AbstractDefaultCard extends CustomCard {
         defaultBaseSecondMagicNumber += amount; // Upgrade the number by the amount you provide in your card.
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber; // Set the number to be equal to the base value.
         upgradedDefaultSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
+    }
+    public static class CustomTags
+    {
+        @SpireEnum
+        public static CardTags SHOT;
+        @SpireEnum
+        public static CardTags MY_OTHER_TAG;
+        @SpireEnum
+        public static CardTags LOOK_AT_ME;
     }
 }

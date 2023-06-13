@@ -157,18 +157,6 @@ public class theHighwayman extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        //retVal.add(DefaultCommonAttack.ID);
-        //retVal.add(DefaultUncommonAttack.ID);
-        //retVal.add(DefaultRareAttack.ID);
-        //retVal.add(DefaultCommonSkill.ID);
-        //retVal.add(DefaultUncommonSkill.ID);
-        //retVal.add(DefaultRareSkill.ID);
-        //retVal.add(DefaultCommonPower.ID);
-        //retVal.add(DefaultUncommonPower.ID);
-        //retVal.add(DefaultRarePower.ID);
-        //retVal.add(DefaultAttackWithVariable.ID);
-        //retVal.add(DefaultSecondMagicNumberSkill.ID);
-        //retVal.add(OrbSkill.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
@@ -179,6 +167,7 @@ public class theHighwayman extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(PistolShot.ID);
         retVal.add(Reload.ID);
+
         return retVal;
     }
 
@@ -186,8 +175,6 @@ public class theHighwayman extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        System.out.println(PaperCartridge.ID);
-        System.out.println(new PaperCartridge());
         retVal.add(PaperCartridge.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
@@ -215,7 +202,7 @@ public class theHighwayman extends CustomPlayer {
     // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 4;
     }
 
     // Should return the card color enum to be associated with your character.
@@ -246,7 +233,7 @@ public class theHighwayman extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new Reload();
     }
 
     // The class name as it appears next to your player name in-game

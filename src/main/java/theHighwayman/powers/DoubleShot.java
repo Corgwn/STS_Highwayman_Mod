@@ -3,16 +3,21 @@ package theHighwayman.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theHighwayman.actions.RiposteLoseHpAction;
+import theHighwayman.cards.AbstractDefaultCard;
+import theHighwayman.cards.DoubleBarrel;
 import theHighwayman.util.TextureLoader;
 
 import static theHighwayman.DefaultMod.makeID;
@@ -20,28 +25,30 @@ import static theHighwayman.DefaultMod.makePowerPath;
 
 //At the start of your turn, if you have gained no additional bleed since last turn, lose #b health
 
-public class Riposte extends AbstractPower implements CloneablePowerInterface {
+public class DoubleShot extends AbstractPower implements CloneablePowerInterface {
 
     public AbstractCreature source;
 
-    public static final String POWER_ID = makeID("Riposte");
+    public static final String POWER_ID = makeID("DoubleShot");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    //TODO: add non-default images for riposte
+    //TODO: add non-default images for ammo
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("riposte84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("riposte32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public Riposte(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public DoubleShot(final AbstractCreature owner, final AbstractCreature source) {
         this.name = NAME;
         this.ID = POWER_ID;
+
         this.owner = owner;
-        this.amount = amount;
         this.source = source;
+
         this.description = DESCRIPTIONS[0];
+
         type = PowerType.BUFF;
         isTurnBased = false;
 
@@ -58,37 +65,41 @@ public class Riposte extends AbstractPower implements CloneablePowerInterface {
     public void playApplyPowerSfx() {
         CardCrawlGame.sound.play("POWER_POISON", 0.05F);
     }
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (!card.purgeOnUse && card.tags.contains(AbstractDefaultCard.CustomTags.SHOT) && this.amount > 0) {
             this.flash();
-            int actualDamage = 10;
-            if (this.owner.hasPower("Strength")) {
-                actualDamage += this.owner.getPower("Strength").amount;
+            AbstractMonster m = null;
+            if (action.target != null) {
+                m = (AbstractMonster)action.target;
             }
-            if (info.owner.hasPower("Vulnerable")) {
-                if (AbstractDungeon.player.hasRelic("Paper Frog")) {
-                    actualDamage = (int) Math.floor(actualDamage * 1.75);
-                }
-                else {
-                    actualDamage = (int) Math.floor(actualDamage * 1.5);
-                }
+
+            AbstractCard tmp = card.makeSameInstanceOf();
+            AbstractDungeon.player.limbo.addToBottom(tmp);
+            tmp.current_x = card.current_x;
+            tmp.current_y = card.current_y;
+            tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+            tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+            if (m != null) {
+                tmp.calculateCardDamage(m);
             }
-            this.addToTop(new RiposteLoseHpAction(info.owner, this.owner, actualDamage));
+
+            tmp.purgeOnUse = true;
+            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
+            --this.amount;
+            if (this.amount == 0) {
+                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("DoubleShot")));
+            }
         }
 
-        return damageAmount;
-    }
-    public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("Riposte")));
-    }
-    @Override
-    public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
-        System.out.println(this.amount);
     }
 
+    public void atStartOfTurn() {
+        this.addToBot(new ApplyPowerAction(owner, owner, new Ammo(owner, owner, 1)));
+    }
     @Override
     public AbstractPower makeCopy() {
-        return new Riposte(owner, source, amount);
+        return new DoubleShot(owner, source);
     }
 }

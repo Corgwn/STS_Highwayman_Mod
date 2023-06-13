@@ -1,11 +1,11 @@
 {
-  "theHighwayman:DefaultCommonAttack": {
+  "theHighwayman:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+    "DESCRIPTION": "Deal !D! damage."
   },
-  "theHighwayman:DefaultCommonSkill": {
+  "theHighwayman:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block. NL thehighwayman:Multiword_Keyword."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "theHighwayman:DefaultCommonPower": {
     "NAME": "Hold Place",
@@ -52,18 +52,43 @@
   },
   "theHighwayman:OpenVein": {
     "NAME": "Open Vein",
-    "DESCRIPTION": "Apply !M! Bleed. NL Deal !D! damage."
+    "DESCRIPTION": "Apply !M! thehighwayman:Bleed. NL Deal !D! damage."
   },
   "theHighwayman:PistolShot": {
     "NAME": "Pistol Shot",
-    "DESCRIPTION": "Fire. NL Deal !D! damage."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage."
   },
   "theHighwayman:Reload": {
     "NAME": "Reload",
-    "DESCRIPTION": "Gain 1 Ammo."
+    "DESCRIPTION": "Gain 1 thehighwayman:Ammo."
   },
   "theHighwayman:Feint": {
     "NAME": "Feint",
-    "DESCRIPTION": "Gain !B! block. NL Gain 1 Riposte."
+    "DESCRIPTION": "Gain !B! block. NL Gain 1 thehighwayman:Riposte."
+  },
+  "theHighwayman:VigorousCard": {
+    "NAME": "Vigorous",
+    "DESCRIPTION": "At the start of every turn, gain 1 thehighwayman:ammo. NL You can now stack charges of thehighwayman:ammo."
+  },
+  "theHighwayman:TrackingShot": {
+    "NAME": "Tracking Shot",
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage. NL Apply !M! Vulnerable. NL Exhaust."
+  },
+  "theHighwayman:Grapeshot": {
+    "NAME": "Grapeshot",
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage to ALL enemies."
+  },
+  "theHighwayman:DoubleBarrel": {
+    "NAME": "Double Barrel",
+    "DESCRIPTION": "Gain 1 thehighwayman:ammo. NL The next card played that thehighwayman:fires is played twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 thehighwayman:ammo. NL The next card played that thehighwayman:fires is played twice."
+  },
+  "theHighwayman:DuelistsAdvance": {
+    "NAME": "Duelist's Advance",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thehighwayman:Riposte."
+  },
+  "theHighwayman:CycleOfViolence": {
+    "NAME": "Duelist's Advance",
+    "DESCRIPTION": "Whenever you take unblocked attack damage, gain 1 thehighwayman:Riposte."
   }
 }
