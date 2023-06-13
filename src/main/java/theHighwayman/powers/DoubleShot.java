@@ -40,12 +40,13 @@ public class DoubleShot extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public DoubleShot(final AbstractCreature owner, final AbstractCreature source) {
+    public DoubleShot(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
+        this.amount = amount;
 
         this.description = DESCRIPTIONS[0];
 
@@ -92,14 +93,14 @@ public class DoubleShot extends AbstractPower implements CloneablePowerInterface
                 this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("DoubleShot")));
             }
         }
-
     }
 
     public void atStartOfTurn() {
-        this.addToBot(new ApplyPowerAction(owner, owner, new Ammo(owner, owner, 1)));
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("Riposte")));
     }
+
     @Override
     public AbstractPower makeCopy() {
-        return new DoubleShot(owner, source);
+        return new DoubleShot(owner, source, amount);
     }
 }

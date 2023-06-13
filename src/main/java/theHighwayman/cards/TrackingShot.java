@@ -41,7 +41,7 @@ public class TrackingShot extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 2;
-    private static final int VULNERABLE = 3;
+    private static final int VULNERABLE = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
 
     // /STAT DECLARATION/
@@ -49,8 +49,8 @@ public class TrackingShot extends AbstractDynamicCard {
 
     public TrackingShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        baseMagicNumber = VULNERABLE;
+        baseDamage = damage = DAMAGE;
+        baseMagicNumber = magicNumber = VULNERABLE;
         this.exhaust = true;
 
         this.tags.add(CustomTags.SHOT);
@@ -61,6 +61,8 @@ public class TrackingShot extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new SpendAmmoAction(p, p, 1));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
     }
 

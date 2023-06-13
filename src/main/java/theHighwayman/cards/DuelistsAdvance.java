@@ -60,9 +60,9 @@ public class DuelistsAdvance extends CustomCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 3;
+    private static final int UPGRADE_PLUS_DAMAGE = 4;
     private static final int RIPOSTE = 1;
-    private static final int UPGRADE_PLUS_RIPOSTE = 1;
 
     // Hey want a second damage/magic/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable
@@ -104,7 +104,7 @@ public class DuelistsAdvance extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_RIPOSTE);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

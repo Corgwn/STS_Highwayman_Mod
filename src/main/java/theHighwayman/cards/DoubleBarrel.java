@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import org.lwjgl.Sys;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Ammo;
@@ -24,8 +25,9 @@ public class DoubleBarrel extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
+
     public static final String ID = DefaultMod.makeID(DoubleBarrel.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("DoubleBarrel_250.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -54,7 +56,7 @@ public class DoubleBarrel extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
-        addToBot(new ApplyPowerAction(p, p, new DoubleShot(p, p)));
+        addToBot(new ApplyPowerAction(p, p, new DoubleShot(p, p, 1)));
     }
     //Upgraded stats.
     @Override

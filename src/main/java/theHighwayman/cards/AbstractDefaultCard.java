@@ -52,6 +52,7 @@ public abstract class AbstractDefaultCard extends CustomCard {
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber; // Set the number to be equal to the base value.
         upgradedDefaultSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
     }
+
     public static class CustomTags
     {
         @SpireEnum

@@ -25,10 +25,10 @@
   },
   "theHighwayman:Cycle": {
           "NAME": "Cycle of Violence",
-          "DESCRIPTIONS": ["When you take unblocked attack damage, gain X thehighwayman:Riposte."]
+          "DESCRIPTIONS": ["When you take unblocked attack damage, gain X riposte."]
   },
   "theHighwayman:DoubleShot": {
     "NAME": "Double Barrel",
-    "DESCRIPTIONS": ["The next card you plays that thehighwayman:Fires is played twice."]
+    "DESCRIPTIONS": ["The next card you plays that fires is played twice."]
   }
 }

@@ -61,7 +61,7 @@ public class Riposte extends AbstractPower implements CloneablePowerInterface {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
             this.flash();
-            int actualDamage = 10;
+            int actualDamage = 7;
             if (this.owner.hasPower("Strength")) {
                 actualDamage += this.owner.getPower("Strength").amount;
             }

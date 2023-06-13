@@ -7,10 +7,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
+import theHighwayman.powers.Bleed;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
-public class DefaultUncommonSkill extends AbstractDynamicCard {
+public class Hemorrhage extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -18,39 +19,36 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
      * A Better Defend Gain 1 Plated Armor. Affected by Dexterity.
      */
 
-    // TEXT DECLARATION 
+    // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(DefaultUncommonSkill.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(Hemorrhage.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
 
-    // STAT DECLARATION 	
+    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int UPGRADE_REDUCED_COST = 0;
-
-    private static final int BLOCK = 1;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int COST = 2;
+    private static final int BLEED = 14;
+    private static final int UPGRADE_PLUS_BLEED = 4;
 
     // /STAT DECLARATION/
 
 
-    public DefaultUncommonSkill() {
+    public Hemorrhage() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = BLEED;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new PlatedArmorPower(p, block), block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new Bleed(m, p, magicNumber)));
     }
 
     // Upgraded stats.
@@ -58,8 +56,7 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBaseCost(UPGRADE_REDUCED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_BLEED);
             initializeDescription();
         }
     }

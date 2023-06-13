@@ -88,7 +88,11 @@
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! thehighwayman:Riposte."
   },
   "theHighwayman:CycleOfViolence": {
-    "NAME": "Duelist's Advance",
+    "NAME": "Cycle of Violence",
     "DESCRIPTION": "Whenever you take unblocked attack damage, gain 1 thehighwayman:Riposte."
+  },
+  "theHighwayman:Hemorrhage": {
+    "NAME": "Hemorrhage",
+    "DESCRIPTION": "Apply !M! thehighwayman:bleed."
   }
 }

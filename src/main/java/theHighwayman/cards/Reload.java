@@ -22,7 +22,7 @@ public class Reload extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Reload.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Reload_250.png");
 
     // /TEXT DECLARATION/
 
