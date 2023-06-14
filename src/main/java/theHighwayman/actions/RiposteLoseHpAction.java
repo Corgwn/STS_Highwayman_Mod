@@ -3,6 +3,7 @@ package theHighwayman.actions;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -33,8 +34,7 @@ public class RiposteLoseHpAction extends AbstractGameAction {
                     this.target.tint.changeColor(Color.WHITE.cpy());
                     this.addToTop(new DamageAction(target, new DamageInfo(source, amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true));
                 }
-
-                source.getPower(makeID("Riposte")).reducePower(1);
+                AbstractDungeon.actionManager.addToTop(new ReducePowerAction(source, source, makeID("Riposte"), 1));
                 if (source.getPower(makeID("Riposte")).amount == 0) {
                     source.powers.remove(source.getPower(makeID("Riposte")));
                 }

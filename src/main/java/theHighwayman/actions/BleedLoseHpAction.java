@@ -15,7 +15,8 @@ public class BleedLoseHpAction extends AbstractGameAction {
     private static final float DURATION = 0.33F;
 
     public BleedLoseHpAction(AbstractCreature target, AbstractCreature source, int amount, AbstractGameAction.AttackEffect effect) {
-        this.setValues(target, source, amount);
+        this.setValues(target, source);
+        this.amount = amount;
         this.actionType = ActionType.DAMAGE;
         this.attackEffect = effect;
         this.duration = 0.33F;

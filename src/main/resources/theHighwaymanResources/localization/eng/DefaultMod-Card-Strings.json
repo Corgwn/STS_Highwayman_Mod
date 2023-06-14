@@ -52,7 +52,7 @@
   },
   "theHighwayman:OpenVein": {
     "NAME": "Open Vein",
-    "DESCRIPTION": "Apply !M! thehighwayman:Bleed. NL Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! thehighwayman:Bleed."
   },
   "theHighwayman:PistolShot": {
     "NAME": "Pistol Shot",
@@ -72,7 +72,7 @@
   },
   "theHighwayman:TrackingShot": {
     "NAME": "Tracking Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage. NL Apply !M! Vulnerable. NL Exhaust."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage. NL Apply !M! Vulnerable 3 times. NL Exhaust."
   },
   "theHighwayman:Grapeshot": {
     "NAME": "Grapeshot",
@@ -94,5 +94,21 @@
   "theHighwayman:Hemorrhage": {
     "NAME": "Hemorrhage",
     "DESCRIPTION": "Apply !M! thehighwayman:bleed."
+  },
+  "theHighwayman:WhiskyShot": {
+    "NAME": "Whisky Shot",
+    "DESCRIPTION": "Gain !M! Strength. NL Gain !theHighwayman:SecondMagic! Vulnerable."
+  },
+  "theHighwayman:PrecisionStrike": {
+    "NAME": "Precision Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! thehighwayman:Bleed."
+  },
+  "theHighwayman:BloodEyes": {
+    "NAME": "Blood in the Eyes",
+    "DESCRIPTION": "Apply !M! thehighwayman:Bleed. NL Apply !theHighwayman:SecondMagic! Weak."
+  },
+  "theHighwayman:BleedOut": {
+    "NAME": "Bleed Out",
+    "DESCRIPTION": "Activate thehighwayman:bleed damage, then reapply the thehighwayman:bleed"
   }
 }

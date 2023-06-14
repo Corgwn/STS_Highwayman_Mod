@@ -1,15 +1,14 @@
 package theHighwayman.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theHighwayman.actions.SpendAmmoAction;
 import theHighwayman.characters.theHighwayman;
 
 import static theHighwayman.DefaultMod.makeCardPath;
@@ -94,19 +93,8 @@ public class PistolShot extends AbstractDefaultCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom( // The action managed queues all the actions a card should do.
-                // addToTop - first
-                // addToBottom - last
-                // 99.99% of the time you just want to addToBottom all of them.
-                // Please do that unless you need to add to top for some specific reason.
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                        // a list of existing actions can be found at com.megacrit.cardcrawl.actions but
-                        // Chances are you'd instead look at "hey my card is similar to this basegame card"
-                        // Let's find out what action *it* uses.
-                        // I.e. i want energy gain or card draw, lemme check out Adrenaline
-                        // P.s. if you want to damage ALL enemies OUTSIDE of a card, check out the custom orb.
-                        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)); // The animation the damage action uses to hit.
-        AbstractDungeon.actionManager.addToBottom(new SpendAmmoAction(p, p, 1));
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

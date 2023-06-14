@@ -27,7 +27,7 @@ public class BleedGrowthAction extends AbstractGameAction {
             if (this.isDone) {
                 System.out.println(makeID("Bleed"));
                 System.out.println(target.getPower(makeID("Bleed")));
-                target.getPower(makeID("Bleed")).amount = (int) Math.floor(target.getPower(makeID("Bleed")).amount * 1.25);
+                target.getPower(makeID("Bleed")).amount = (int) Math.ceil(target.getPower(makeID("Bleed")).amount * 1.25);
                 this.addToTop(new WaitAction(0.1F));
             }
         }

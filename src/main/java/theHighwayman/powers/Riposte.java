@@ -78,9 +78,7 @@ public class Riposte extends AbstractPower implements CloneablePowerInterface {
 
         return damageAmount;
     }
-    public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("Riposte")));
-    }
+
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);

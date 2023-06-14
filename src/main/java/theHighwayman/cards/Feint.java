@@ -5,8 +5,6 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theHighwayman.DefaultMod;
-import theHighwayman.actions.GainRiposteAction;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Riposte;
 
@@ -58,13 +56,13 @@ public class Feint extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Riposte(p, p, magicNumber), magicNumber));
-        if (p.hasPower(makeID("Riposte"))) {
-            p.getPower(makeID("Riposte")).amount += 1;
-        }
-        else {
-            p.addPower(new Riposte(p, p, 1));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Riposte(p, p, magicNumber)));
+        //if (p.hasPower(makeID("Riposte"))) {
+        //    p.getPower(makeID("Riposte")).amount += 1;
+        //}
+        //else {
+        //    p.addPower(new Riposte(p, p, 1));
+        //}
     }
 
     //Upgraded stats.
