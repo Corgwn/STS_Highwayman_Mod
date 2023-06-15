@@ -64,11 +64,11 @@
   },
   "theHighwayman:Feint": {
     "NAME": "Feint",
-    "DESCRIPTION": "Gain !B! block. NL Gain 1 thehighwayman:Riposte."
+    "DESCRIPTION": "Gain !M! thehighwayman:Dodge. NL Gain 1 thehighwayman:Riposte."
   },
   "theHighwayman:VigorousCard": {
     "NAME": "Vigorous",
-    "DESCRIPTION": "At the start of every turn, gain 1 thehighwayman:ammo. NL You can now stack charges of thehighwayman:ammo."
+    "DESCRIPTION": "At the start of every turn, gain 1 thehighwayman:Ammo. NL thehighwayman:Ammo charges stack."
   },
   "theHighwayman:TrackingShot": {
     "NAME": "Tracking Shot",
@@ -80,8 +80,8 @@
   },
   "theHighwayman:DoubleBarrel": {
     "NAME": "Double Barrel",
-    "DESCRIPTION": "Gain 1 thehighwayman:ammo. NL The next card played that thehighwayman:fires is played twice. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 thehighwayman:ammo. NL The next card played that thehighwayman:fires is played twice."
+    "DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL The next card played that thehighwayman:Fires is played twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL The next card played that thehighwayman:Fires is played twice."
   },
   "theHighwayman:DuelistsAdvance": {
     "NAME": "Duelist's Advance",
@@ -93,7 +93,7 @@
   },
   "theHighwayman:Hemorrhage": {
     "NAME": "Hemorrhage",
-    "DESCRIPTION": "Apply !M! thehighwayman:bleed."
+    "DESCRIPTION": "Apply !M! thehighwayman:Bleed."
   },
   "theHighwayman:WhiskyShot": {
     "NAME": "Whisky Shot",
@@ -109,6 +109,22 @@
   },
   "theHighwayman:BleedOut": {
     "NAME": "Bleed Out",
-    "DESCRIPTION": "Activate thehighwayman:bleed damage, then reapply the thehighwayman:bleed"
+    "DESCRIPTION": "Activate thehighwayman:Bleed damage, then reapply the thehighwayman:Bleed"
+  },
+  "theHighwayman:DuelistsRetreat": {
+    "NAME": "Duelist's Retreat",
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand on the top of your deck."
+  },
+  "theHighwayman:Parry": {
+    "NAME": "Parry",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Riposte."
+  },
+  "theHighwayman:SideStep": {
+    "NAME": "Side Step",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Dodge."
+  },
+  "theHighwayman:WickedSlice": {
+    "NAME": "WickedSlice",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
   }
 }

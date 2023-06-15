@@ -45,5 +45,12 @@
       "bleed"
     ],
     "DESCRIPTION": "At the beginning of its turn, the target loses X HP if no bleed was applied since its last turn. NL Otherwise, increases by 25%"
+  },
+  {
+    "NAMES": [
+      "Dodge",
+      "dodge"
+    ],
+    "DESCRIPTION": "If an unblocked attack deals X damage or less, prevent it and reduce this by 1"
   }
 ]

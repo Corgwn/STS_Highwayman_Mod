@@ -5,14 +5,13 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Dodge;
-import theHighwayman.powers.Riposte;
 
 import static theHighwayman.DefaultMod.makeCardPath;
-import static theHighwayman.DefaultMod.makeID;
 
-public class Feint extends AbstractDynamicCard {
+public class SideStep extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -23,7 +22,7 @@ public class Feint extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = makeID(Feint.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(SideStep.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -31,39 +30,31 @@ public class Feint extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DODGE = 4;
+    private static final int BLOCK = 4;
+    private static final int DODGE = 2;
     private static final int UPGRADE_PLUS_DODGE = 3;
-    private static final int RIPOSTE = 1;
 
 
     // /STAT DECLARATION/
 
 
-    public Feint() {
+    public SideStep() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = DODGE;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = RIPOSTE;
-
-        this.tags.add(CardTags.EMPTY); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
+        baseBlock = block = BLOCK;
+        baseMagicNumber = magicNumber = DODGE;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Dodge(p, p, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Riposte(p, p, defaultSecondMagicNumber)));
-        //if (p.hasPower(makeID("Riposte"))) {
-        //    p.getPower(makeID("Riposte")).amount += 1;
-        //}
-        //else {
-        //    p.addPower(new Riposte(p, p, 1));
-        //}
     }
 
     //Upgraded stats.

@@ -34,16 +34,15 @@ public class RiposteLoseHpAction extends AbstractGameAction {
                     this.target.tint.changeColor(Color.WHITE.cpy());
                     this.addToTop(new DamageAction(target, new DamageInfo(source, amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true));
                 }
+
                 AbstractDungeon.actionManager.addToTop(new ReducePowerAction(source, source, makeID("Riposte"), 1));
-                if (source.getPower(makeID("Riposte")).amount == 0) {
-                    source.powers.remove(source.getPower(makeID("Riposte")));
-                }
+                //if (source.getPower(makeID("Riposte")).amount == 0) {
+                //    source.powers.remove(source.getPower(makeID("Riposte")));
+                //}
 
                 if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                     AbstractDungeon.actionManager.clearPostCombatActions();
                 }
-
-                this.addToTop(new WaitAction(0.1F));
             }
         }
     }
