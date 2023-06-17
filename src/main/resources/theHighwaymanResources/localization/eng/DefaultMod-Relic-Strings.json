@@ -35,7 +35,7 @@
     "NAME": "Paper Cartridge",
     "FLAVOR": "Tastes like gunpowder...",
     "DESCRIPTIONS": [
-      "At the beginning of combat, gain 1 Ammo."
+      "At the beginning of combat, add 1 Cartridge to your hand."
     ]
   }
 }

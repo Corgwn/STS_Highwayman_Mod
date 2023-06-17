@@ -1,7 +1,7 @@
 {
   "theHighwayman:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! Damage."
   },
   "theHighwayman:Defend": {
     "NAME": "Defend",
@@ -14,7 +14,7 @@
   },
   "theHighwayman:DefaultUncommonAttack": {
     "NAME": "Big slap",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! Damage."
   },
   "theHighwayman:DefaultUncommonSkill": {
     "NAME": "A Better Defend",
@@ -40,7 +40,7 @@
   },
   "theHighwayman:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
-    "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !theHighwayman:ENERGY_DAMAGE! damage total.)"
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theHighwayman:ENERGY_DAMAGE! Damage total.)"
   },
   "theHighwayman:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool 2 Number Card",
@@ -52,11 +52,11 @@
   },
   "theHighwayman:OpenVein": {
     "NAME": "Open Vein",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! thehighwayman:Bleed."
+    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! thehighwayman:Bleed."
   },
   "theHighwayman:PistolShot": {
     "NAME": "Pistol Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage."
   },
   "theHighwayman:Reload": {
     "NAME": "Reload",
@@ -72,11 +72,11 @@
   },
   "theHighwayman:TrackingShot": {
     "NAME": "Tracking Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage. NL Apply !M! Vulnerable 3 times. NL Exhaust."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage. NL Apply !M! Vulnerable 3 times. NL Exhaust."
   },
   "theHighwayman:Grapeshot": {
     "NAME": "Grapeshot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage to ALL enemies."
   },
   "theHighwayman:DoubleBarrel": {
     "NAME": "Double Barrel",
@@ -85,7 +85,7 @@
   },
   "theHighwayman:DuelistsAdvance": {
     "NAME": "Duelist's Advance",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thehighwayman:Riposte."
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thehighwayman:Riposte."
   },
   "theHighwayman:CycleOfViolence": {
     "NAME": "Cycle of Violence",
@@ -101,7 +101,7 @@
   },
   "theHighwayman:PrecisionStrike": {
     "NAME": "Precision Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! thehighwayman:Bleed."
+    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! thehighwayman:Bleed."
   },
   "theHighwayman:BloodEyes": {
     "NAME": "Blood in the Eyes",
@@ -109,7 +109,7 @@
   },
   "theHighwayman:BleedOut": {
     "NAME": "Bleed Out",
-    "DESCRIPTION": "Activate thehighwayman:Bleed damage, then reapply the thehighwayman:Bleed"
+    "DESCRIPTION": "Activate thehighwayman:Bleed Damage, then reapply the thehighwayman:Bleed."
   },
   "theHighwayman:DuelistsRetreat": {
     "NAME": "Duelist's Retreat",
@@ -117,14 +117,34 @@
   },
   "theHighwayman:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Riposte."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Riposte.",
   },
   "theHighwayman:SideStep": {
     "NAME": "Side Step",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Dodge."
   },
   "theHighwayman:WickedSlice": {
-    "NAME": "WickedSlice",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+    "NAME": "Wicked Slice",
+    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! Vulnerable."
+  },
+  "theHighwayman:PointBlank": {
+    "NAME": "Point Blank Shot",
+    "DESCRIPTION": "thehighwayman:Fire. NL Apply !M! Vulnerable. NL Deal !D! Damage."
+  },
+  "theHighwayman:Cartridge": {
+    "NAME": "Cartridge",
+    "DESCRIPTION": "Gain !M! thehighwayman:Ammo."
+  },
+  "theHighwayman:GatherWits": {
+    "NAME": "Gather Wits",
+    "DESCRIPTION": "Draw !M! cards."
+  },
+  "theHighwayman:MissedShot": {
+    "NAME": "Missed Your Shot",
+    "DESCRIPTION": "thehighwayman:Fire. NL Gain !B! Block."
+  },
+  "theHighwayman:Breather": {
+    "NAME": "Take a Breather",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Ammo."
   }
 }

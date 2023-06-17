@@ -4,6 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theHighwayman.DefaultMod;
+import theHighwayman.cards.Cartridge;
 import theHighwayman.powers.Ammo;
 import theHighwayman.util.TextureLoader;
 
@@ -32,7 +33,7 @@ public class PaperCartridge extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        AbstractDungeon.player.addPower(new Ammo(AbstractDungeon.player, AbstractDungeon.player, 1));
+        AbstractDungeon.player.hand.addToHand(new theHighwayman.cards.Cartridge());
     }
 
     // Description
