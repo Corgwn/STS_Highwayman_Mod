@@ -46,6 +46,7 @@ public class Cartridge extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = AMMO_GAIN;
         retain = true;
+        exhaust = true;
     }
 
     // Actions the card should do.

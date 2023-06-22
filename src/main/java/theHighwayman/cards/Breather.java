@@ -31,14 +31,14 @@ public class Breather extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int BLOCK = 6;
-    private static final int UPGRADED_PLUS_BLOCK = 3;
+    private static final int BLOCK = 9;
+    private static final int UPGRADED_PLUS_BLOCK = 4;
     private static final int AMMO_GAIN = 1;
 
     // /STAT DECLARATION/

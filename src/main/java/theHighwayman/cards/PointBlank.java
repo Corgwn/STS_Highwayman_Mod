@@ -30,7 +30,7 @@ public class PointBlank extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(PointBlank.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Point_Blank_Shot_250.png");
 
     // /TEXT DECLARATION/
 
@@ -64,7 +64,8 @@ public class PointBlank extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        int actualDamage = (int) Math.floor(damage * 1.5);
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, actualDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);

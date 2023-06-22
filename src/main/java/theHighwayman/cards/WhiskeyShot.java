@@ -8,11 +8,10 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Vigorous;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
-public class WhiskyShot extends AbstractDynamicCard {
+public class WhiskeyShot extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -22,8 +21,8 @@ public class WhiskyShot extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(WhiskyShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String ID = DefaultMod.makeID(WhiskeyShot.class.getSimpleName());
+    public static final String IMG = makeCardPath("WhiskeyShot_250.png");
 
     // /TEXT DECLARATION/
 
@@ -45,7 +44,7 @@ public class WhiskyShot extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public WhiskyShot() {
+    public WhiskeyShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = STRENGTH;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = VULNERABLE;

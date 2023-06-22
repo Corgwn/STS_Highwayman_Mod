@@ -96,7 +96,7 @@ public class DoubleShot extends AbstractPower implements CloneablePowerInterface
     }
 
     public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("Riposte")));
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("DoubleShot")));
     }
 
     @Override

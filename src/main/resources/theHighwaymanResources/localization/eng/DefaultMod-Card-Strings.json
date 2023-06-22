@@ -95,7 +95,7 @@
     "NAME": "Hemorrhage",
     "DESCRIPTION": "Apply !M! thehighwayman:Bleed."
   },
-  "theHighwayman:WhiskyShot": {
+  "theHighwayman:WhiskeyShot": {
     "NAME": "Whisky Shot",
     "DESCRIPTION": "Gain !M! Strength. NL Gain !theHighwayman:SecondMagic! Vulnerable."
   },
@@ -117,7 +117,7 @@
   },
   "theHighwayman:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Riposte.",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Riposte."
   },
   "theHighwayman:SideStep": {
     "NAME": "Side Step",
