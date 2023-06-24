@@ -93,7 +93,7 @@
   },
   "theHighwayman:Hemorrhage": {
     "NAME": "Hemorrhage",
-    "DESCRIPTION": "Apply !M! thehighwayman:Bleed."
+    "DESCRIPTION": "Apply !M! thehighwayman:Bleed. NL Activate bleed scaling."
   },
   "theHighwayman:WhiskeyShot": {
     "NAME": "Whisky Shot",
@@ -133,11 +133,11 @@
   },
   "theHighwayman:Cartridge": {
     "NAME": "Cartridge",
-    "DESCRIPTION": "Gain !M! thehighwayman:Ammo."
+    "DESCRIPTION": "Retain. NL Gain !M! thehighwayman:Ammo. NL Exhaust."
   },
-  "theHighwayman:GatherWits": {
-    "NAME": "Gather Wits",
-    "DESCRIPTION": "Draw !M! cards."
+  "theHighwayman:TakeAim": {
+    "NAME": "Take Aim",
+    "DESCRIPTION": "Draw !M! cards. NL Gain 1 thehighwayman:Ammo."
   },
   "theHighwayman:MissedShot": {
     "NAME": "Missed Your Shot",
@@ -146,5 +146,33 @@
   "theHighwayman:Breather": {
     "NAME": "Take a Breather",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Ammo."
+  },
+  "theHighwayman:QuickWork": {
+    "NAME": "Quick Work",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
+  },
+  "theHighwayman:SliceUp": {
+    "NAME": "Slice Up",
+    "DESCRIPTION": "Deal !D! damage. NL Put the card from the bottom of your deck into your hand."
+  },
+  "theHighwayman:UpClose": {
+    "NAME": "Up Close",
+    "DESCRIPTION": "Deal !D! damage. NL If you have no thehighwayman:Ammo, gain [E] [E]."
+  },
+  "theHighwayman:AndPersonal": {
+    "NAME": "And Personal",
+    "DESCRIPTION": "Deal !D! damage. NL If you have no thehighwayman:Ammo, draw 2 cards."
+  },
+  "theHighwayman:Ricochet": {
+    "NAME": "Ricocheting Shot",
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage to a random enemy !M! times."
+  },
+  "theHighwayman:ReinforcedOvercoat": {
+    "NAME": "Reinforced Overcoat",
+    "DESCRIPTION": "Gain !M! Plated Armor."
+  },
+  "theHighwayman:UncannyReflexes": {
+    "NAME": "Uncanny Reflexes",
+    "DESCRIPTION": "Whenever you gain thehighwayman:Riposte, gain !M! Block."
   }
 }

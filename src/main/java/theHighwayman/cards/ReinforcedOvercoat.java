@@ -12,7 +12,7 @@ import theHighwayman.powers.Bleed;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
-public class Hemorrhage extends AbstractDynamicCard {
+public class ReinforcedOvercoat extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -22,35 +22,34 @@ public class Hemorrhage extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(Hemorrhage.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String ID = DefaultMod.makeID(ReinforcedOvercoat.class.getSimpleName());
+    public static final String IMG = makeCardPath("Power.png");
 
     // /TEXT DECLARATION/
 
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
-    private static final int BLEED = 18;
-    private static final int UPGRADE_PLUS_BLEED = 4;
+    private static final int ARMOR = 5;
+    private static final int UPGRADE_PLUS_ARMOR = 3;
 
     // /STAT DECLARATION/
 
 
-    public Hemorrhage() {
+    public ReinforcedOvercoat() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = BLEED;
+        magicNumber = baseMagicNumber = ARMOR;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new Bleed(m, p, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new BleedGrowthAction(m, p));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber)));
     }
 
     // Upgraded stats.
@@ -58,7 +57,7 @@ public class Hemorrhage extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_BLEED);
+            upgradeMagicNumber(UPGRADE_PLUS_ARMOR);
             initializeDescription();
         }
     }

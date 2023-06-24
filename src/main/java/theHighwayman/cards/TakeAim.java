@@ -7,11 +7,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Bleed;
+import theHighwayman.powers.Ammo;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
-public class GatherWits extends AbstractDynamicCard {
+public class TakeAim extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -21,7 +21,7 @@ public class GatherWits extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(GatherWits.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(TakeAim.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -34,13 +34,13 @@ public class GatherWits extends AbstractDynamicCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DRAW = 3;
+    private static final int DRAW = 2;
     private static final int UPGRADE_PLUS_DRAW = 1;
 
     // /STAT DECLARATION/
 
 
-    public GatherWits() {
+    public TakeAim() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DRAW;
     }
@@ -49,6 +49,7 @@ public class GatherWits extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
     }
 
     // Upgraded stats.
