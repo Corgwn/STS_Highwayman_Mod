@@ -28,7 +28,7 @@ public class BleedOut extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID(BleedOut.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("BleedOut_250.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -58,7 +58,13 @@ public class BleedOut extends AbstractDynamicCard {
         if (m.hasPower(makeID("Bleed"))) {
             int bleedAmount = m.getPower(makeID("Bleed")).amount;
             addToBot(new BleedLoseHpAction(m, p, bleedAmount, AbstractGameAction.AttackEffect.FIRE));
-            addToBot(new ApplyPowerAction(m, p, new Bleed(m, p, bleedAmount)));
+            if (p.hasPower(makeID("TriTip"))) {
+                addToBot(new ApplyPowerAction(m, p, new Bleed(m, p, bleedAmount / 2)));
+            }
+            else {
+                addToBot(new ApplyPowerAction(m, p, new Bleed(m, p, bleedAmount)));
+            }
+
         }
     }
     //Upgraded stats.

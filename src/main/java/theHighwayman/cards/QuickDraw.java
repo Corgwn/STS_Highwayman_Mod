@@ -1,17 +1,17 @@
 package theHighwayman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
+import theHighwayman.actions.QuickDrawAction;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Ammo;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
-public class Cartridge extends AbstractDynamicCard {
+public class QuickDraw extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -22,7 +22,7 @@ public class Cartridge extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(Cartridge.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(QuickDraw.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -33,26 +33,23 @@ public class Cartridge extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
-    private static final int AMMO_GAIN = 1;
-
+    private static final int COST = 1;
 
     // /STAT DECLARATION/
 
 
-    public Cartridge() {
+    public QuickDraw() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = AMMO_GAIN;
-        selfRetain = true;
         exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
+        AbstractDungeon.actionManager.addToBottom(new QuickDrawAction(1));
     }
 
     //Upgraded stats.
@@ -60,6 +57,7 @@ public class Cartridge extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            isInnate = true;
             initializeDescription();
         }
     }

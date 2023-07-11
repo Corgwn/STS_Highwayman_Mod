@@ -2,6 +2,7 @@ package theHighwayman.actions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -39,7 +40,14 @@ public class BleedLoseHpAction extends AbstractGameAction {
                     this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS));
                 }
 
-                this.target.powers.remove(this.target.getPower(makeID("Bleed")));
+                if (AbstractDungeon.player.hasPower(makeID("TriTip"))) {
+                    int reduceAmount = this.target.getPower(makeID("Bleed")).amount / 2;
+                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
+                }
+                else {
+                    int reduceAmount = this.target.getPower(makeID("Bleed")).amount;
+                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
+                }
 
                 if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                     AbstractDungeon.actionManager.clearPostCombatActions();

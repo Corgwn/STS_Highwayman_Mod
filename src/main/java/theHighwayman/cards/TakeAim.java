@@ -22,7 +22,7 @@ public class TakeAim extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(TakeAim.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("TakeAim_250.png");
 
     // /TEXT DECLARATION/
 

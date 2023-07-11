@@ -15,11 +15,11 @@ import static theHighwayman.DefaultMod.makePowerPath;
 
 //At the start of your turn, if you have gained no additional bleed since last turn, lose #b health
 
-public class Vigorous extends AbstractPower implements CloneablePowerInterface {
+public class TriTip extends AbstractPower implements CloneablePowerInterface {
 
     public AbstractCreature source;
 
-    public static final String POWER_ID = makeID("Vigorous");
+    public static final String POWER_ID = makeID("TriTip");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -30,7 +30,7 @@ public class Vigorous extends AbstractPower implements CloneablePowerInterface {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public Vigorous(final AbstractCreature owner, final AbstractCreature source) {
+    public TriTip(final AbstractCreature owner, final AbstractCreature source) {
         this.name = NAME;
         this.ID = POWER_ID;
 
@@ -56,11 +56,8 @@ public class Vigorous extends AbstractPower implements CloneablePowerInterface {
         CardCrawlGame.sound.play("POWER_POISON", 0.05F);
     }
 
-    //public void atStartOfTurn() {
-    //    this.addToBot(new ApplyPowerAction(owner, owner, new Ammo(owner, owner, 1)));
-    //}
     @Override
     public AbstractPower makeCopy() {
-        return new Vigorous(owner, source);
+        return new TriTip(owner, source);
     }
 }

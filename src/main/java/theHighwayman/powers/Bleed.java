@@ -47,7 +47,7 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
         this.dealDamage = false;
         this.source = source;
 
-        this.description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0] + Math.ceil(((double) this.amount) / 4) + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
 
         type = PowerType.DEBUFF;
         isTurnBased = false;
@@ -64,6 +64,10 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
 
     public void playApplyPowerSfx() {
         CardCrawlGame.sound.play("POWER_POISON", 0.05F);
+    }
+
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0] + (int) Math.ceil(((double) this.amount) / 4) + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
     }
 
     @Override

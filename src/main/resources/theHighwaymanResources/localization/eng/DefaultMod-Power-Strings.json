@@ -1,23 +1,15 @@
 {
-  "theHighwayman:CommonPower": {
-          "NAME": "Placeholder Power",
-          "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-  },
-  "theHighwayman:RarePower": {
-          "NAME": "Placeholder Power",
-          "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-  },
   "theHighwayman:Bleed": {
           "NAME": "Bleed",
-          "DESCRIPTIONS": ["At the start of your turn, if you have gained no additional bleed since last turn, lose #b health"]
+          "DESCRIPTIONS": ["At the start of its turn, if Bleed has been gained since the end of last turn, gains ", " Bleed. If not, loses ", " HP and Bleed."]
   },
   "theHighwayman:Ammo": {
           "NAME": "Ammo",
-          "DESCRIPTIONS": ["The number of times you can use cards that say Fire."]
+          "DESCRIPTIONS": ["The number of times you can Fire."]
   },
   "theHighwayman:Riposte": {
           "NAME": "Riposte",
-          "DESCRIPTIONS": ["When attacked, deal 10 damage to the attacking enemy. Scales like an attack card. Clears at end of turn."]
+          "DESCRIPTIONS": ["When attacked, deal 7 damage to the attacking enemy. Scales like an attack."]
   },
   "theHighwayman:Vigorous": {
           "NAME": "Vigorous",
@@ -25,14 +17,34 @@
   },
   "theHighwayman:Cycle": {
           "NAME": "Cycle of Violence",
-          "DESCRIPTIONS": ["When you take unblocked attack damage, gain X riposte."]
+          "DESCRIPTIONS": ["When you take unblocked attack damage, gain #b riposte."]
   },
   "theHighwayman:DoubleShot": {
     "NAME": "Double Barrel",
-    "DESCRIPTIONS": ["The next card you plays that fires is played twice."]
+    "DESCRIPTIONS": ["The next #b", " card", " cards", " you play this turn that Fires is played twice."]
   },
   "theHighwayman:Dodge": {
     "NAME": "Dodge",
-    "DESCRIPTIONS": ["If an unblocked attack deals X damage or less, prevent it and reduce this by 1"]
+    "DESCRIPTIONS": ["If an unblocked attack deals #b damage or less, prevent it and reduce this by 1"]
+  },
+  "theHighwayman:Reflexes": {
+    "NAME": "Reflexes",
+    "DESCRIPTIONS": ["Whenever you gain Riposte, gain #b Block."]
+  },
+  "theHighwayman:Tipsy": {
+    "NAME": "Tipsy",
+    "DESCRIPTIONS": ["You cannot gain Ammo."]
+  },
+  "theHighwayman:ExcellentForm": {
+    "NAME": "Excellent Form",
+    "DESCRIPTIONS": ["At the start of your turn, put #b", " card", " cards", " into your hand"]
+  },
+  "theHighwayman:TriTip": {
+    "NAME": "Tri Tip Dagger",
+    "DESCRIPTIONS": ["Bleed instead loses half of it's stacks when activating damage."]
+  },
+  "theHighwayman:UnparalleledFinesse": {
+    "NAME": "Unparalleled Finesse",
+    "DESCRIPTIONS": ["At the start of your turn, put #b", " card", " cards", " and put #b", " card", " cards", " onto the bottom of your deck."]
   }
 }

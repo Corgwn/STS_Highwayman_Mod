@@ -24,7 +24,7 @@ public class BloodEyes extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(BloodEyes.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("BloodintheEyes_250.png");
 
     // /TEXT DECLARATION/
 

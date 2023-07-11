@@ -97,11 +97,11 @@
   },
   "theHighwayman:WhiskeyShot": {
     "NAME": "Whisky Shot",
-    "DESCRIPTION": "Gain !M! Strength. NL Gain !theHighwayman:SecondMagic! Vulnerable."
+    "DESCRIPTION": "Tastes like thehighwayman:Fire. NL Gain !M! Strength. NL You cannot gain thehighwayman:Ammo"
   },
   "theHighwayman:PrecisionStrike": {
     "NAME": "Precision Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! thehighwayman:Bleed."
+    "DESCRIPTION": "Deal !D! Damage. NL Apply thehighwayman:Bleed equal to unblocked damage dealt."
   },
   "theHighwayman:BloodEyes": {
     "NAME": "Blood in the Eyes",
@@ -174,5 +174,36 @@
   "theHighwayman:UncannyReflexes": {
     "NAME": "Uncanny Reflexes",
     "DESCRIPTION": "Whenever you gain thehighwayman:Riposte, gain !M! Block."
+  },
+  "theHighwayman:ExcellentFormCard": {
+    "NAME": "Excellent Form",
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, put 1 card from your deck into your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, put 1 card from your deck into your hand."
+  },
+  "theHighwayman:TriTipDagger": {
+    "NAME": "Tri Tip Dagger",
+    "DESCRIPTION": "Bleed instead loses half of it's stacks when activating damage."
+  },
+  "theHighwayman:Finesse": {
+    "NAME": "Unparalleled Finesse",
+    "DESCRIPTION": "At the start of your turn draw 1 card and put 1 card to the bottom of your deck."
+  },
+  "theHighwayman:ShotInTheNeck": {
+    "NAME": "Shot In The Neck",
+    "DESCRIPTION": "thehighwayman:Fire. NL Apply !M! thehighwayman:Bleed."
+  },
+  "theHighwayman:RevolverShot": {
+    "NAME": "Revolver Shot",
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal 12 damage X times.",
+    "UPGRADE_DESCRIPTION": "thehighwayman:Fire. NL Deal 12 damage X+1 times."
+  },
+  "theHighwayman:QuickDraw": {
+    "NAME": "Quick Draw",
+    "DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL Add 1 card that thehighwayman:Fires from your deck to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain 1 thehighwayman:Ammo. NL Add 1 card that thehighwayman:Fires from your deck to your hand. NL Exhaust."
+  },
+  "theHighwayman:CardUpSleeve": {
+    "NAME": "Card Up Your Sleeve",
+    "DESCRIPTION": "Put the card from the bottom of your deck into your hand. It costs 0 this turn."
   }
 }

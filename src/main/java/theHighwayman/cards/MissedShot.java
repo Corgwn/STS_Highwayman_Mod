@@ -12,7 +12,7 @@ import theHighwayman.characters.theHighwayman;
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;
 
-public class MissedShot extends AbstractDynamicCard {
+public class MissedShot extends AbstractShotCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -49,16 +49,10 @@ public class MissedShot extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
-    }
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (canUse && p.hasPower(makeID("Ammo"))) {
-            return p.getPower(makeID("Ammo")).amount > 0;
+        if (!purgeOnUse) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
         }
-        return false;
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
     }
 
     // Upgraded stats.

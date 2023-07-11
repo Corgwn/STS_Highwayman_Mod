@@ -17,9 +17,9 @@ public class ChooseForBottomAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
 
-    public ChooseForBottomAction(AbstractCreature target, AbstractCreature source) {
+    public ChooseForBottomAction(AbstractCreature target, AbstractCreature source,  int amount) {
         this.p = AbstractDungeon.player;
-        this.setValues(target, source);
+        this.setValues(target, source, amount);
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.CARD_MANIPULATION;
     }
@@ -28,14 +28,16 @@ public class ChooseForBottomAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;
-            } else if (this.p.hand.size() == 1) {
-                AbstractCard c = this.p.hand.getTopCard();
-
-                this.p.hand.moveToBottomOfDeck(c);
-                AbstractDungeon.player.hand.refreshHandLayout();
+            } else if (this.p.hand.size() <= amount) {
+                int num = this.p.hand.size();
+                for (int i = 0; i < num; i++) {
+                    AbstractCard c = this.p.hand.getTopCard();
+                    this.p.hand.moveToBottomOfDeck(c);
+                    AbstractDungeon.player.hand.refreshHandLayout();
+                }
                 this.isDone = true;
             } else {
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false);
+                AbstractDungeon.handCardSelectScreen.open(TEXT[0], amount, false);
                 this.tickDuration();
             }
         } else {
@@ -44,7 +46,6 @@ public class ChooseForBottomAction extends AbstractGameAction {
                 for(Iterator<AbstractCard> var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator(); var1.hasNext(); this.p.hand.moveToBottomOfDeck(c)) {
                     c = (AbstractCard)var1.next();
                 }
-
                 AbstractDungeon.player.hand.refreshHandLayout();
                 AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             }

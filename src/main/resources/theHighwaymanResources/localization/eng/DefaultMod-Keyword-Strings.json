@@ -22,7 +22,7 @@
       "Ammo",
       "ammo"
     ],
-    "DESCRIPTION": "The number of times you can Fire a weapon."
+    "DESCRIPTION": "The number of times you can Fire."
   },
   {
     "NAMES": [
@@ -37,7 +37,7 @@
       "Riposte",
       "riposte"
     ],
-    "DESCRIPTION": "When attacked, deal 10 damage to the attacker (scales like an attack). Clears at start of turn."
+    "DESCRIPTION": "When attacked, deal 7 damage to the attacker (scales like an attack). Clears at start of turn."
   },
   {
     "NAMES": [

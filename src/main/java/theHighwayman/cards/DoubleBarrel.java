@@ -58,6 +58,7 @@ public class DoubleBarrel extends AbstractDynamicCard {
         addToBot(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
         addToBot(new ApplyPowerAction(p, p, new DoubleShot(p, p, 1)));
     }
+
     //Upgraded stats.
     @Override
     public void upgrade() {

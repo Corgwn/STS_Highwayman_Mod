@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
+import theHighwayman.powers.Ammo;
 import theHighwayman.powers.Vigorous;
 
 import static theHighwayman.DefaultMod.makeCardPath;
@@ -49,8 +50,8 @@ public class VigorousCard extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new Vigorous(p, p), -1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Vigorous(p, p), -1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, 2)));
     }
 
     //Upgraded stats.

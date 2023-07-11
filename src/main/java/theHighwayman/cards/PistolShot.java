@@ -23,8 +23,7 @@ import static theHighwayman.DefaultMod.makeID;
 // Abstract Dynamic Card builds up on Abstract Default Card even more and makes it so that you don't need to add
 // the NAME and the DESCRIPTION into your card - it'll get it automatically. Of course, this functionality could have easily
 // Been added to the default card rather than creating a new Dynamic one, but was done so to deliberately to showcase custom cards/inheritance a bit more.
-public class PistolShot extends AbstractDefaultCard {
-
+public class PistolShot extends AbstractShotCard {
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
      *
@@ -79,7 +78,7 @@ public class PistolShot extends AbstractDefaultCard {
     // in your main class, in the receiveEditCards() method
 
     public PistolShot() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         // Aside from baseDamage/MagicNumber/Block there's also a few more.
         // Just type this.base and let intelliJ auto complete for you, or, go read up AbstractCard
@@ -93,16 +92,10 @@ public class PistolShot extends AbstractDefaultCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-    }
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (canUse && p.hasPower(makeID("Ammo"))) {
-            return p.getPower(makeID("Ammo")).amount > 0;
+        if (!purgeOnUse) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
         }
-        return false;
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     // Upgraded stats.

@@ -14,7 +14,7 @@ import theHighwayman.characters.theHighwayman;
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;
 
-public class Grapeshot extends AbstractDynamicCard {
+public class Grapeshot extends AbstractShotCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -42,7 +42,6 @@ public class Grapeshot extends AbstractDynamicCard {
 
     private static final int DAMAGE = 21;
     private static final int UPGRADE_PLUS_DMG = 7;
-
     // /STAT DECLARATION/
 
 
@@ -57,16 +56,11 @@ public class Grapeshot extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        if (!purgeOnUse) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        }
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, baseDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-    }
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (canUse && p.hasPower(makeID("Ammo"))) {
-            return p.getPower(makeID("Ammo")).amount > 0;
-        }
-        return false;
     }
 
     //Upgraded stats.

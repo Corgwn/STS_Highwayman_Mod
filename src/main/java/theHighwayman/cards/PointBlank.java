@@ -18,7 +18,7 @@ import theHighwayman.characters.theHighwayman;
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;
 
-public class PointBlank extends AbstractDynamicCard {
+public class PointBlank extends AbstractShotCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -30,7 +30,7 @@ public class PointBlank extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(PointBlank.class.getSimpleName());
-    public static final String IMG = makeCardPath("Point_Blank_Shot_250.png");
+    public static final String IMG = makeCardPath("PointBlankShot_250.png");
 
     // /TEXT DECLARATION/
 
@@ -62,17 +62,12 @@ public class PointBlank extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        if (!purgeOnUse) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
         int actualDamage = (int) Math.floor(damage * 1.5);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, actualDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-    }
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (canUse && p.hasPower(makeID("Ammo"))) {
-            return p.getPower(makeID("Ammo")).amount > 0;
-        }
-        return false;
     }
 
     //Upgraded stats.

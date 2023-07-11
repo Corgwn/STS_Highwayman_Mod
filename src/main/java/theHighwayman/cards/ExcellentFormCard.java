@@ -1,20 +1,19 @@
 package theHighwayman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Tipsy;
+import theHighwayman.powers.ExcellentForm;
+import theHighwayman.powers.Vigorous;
 
 import static theHighwayman.DefaultMod.makeCardPath;
-import static theHighwayman.DefaultMod.makeID;
 
-public class WhiskeyShot extends AbstractShotCard {
+public class ExcellentFormCard extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -24,8 +23,10 @@ public class WhiskeyShot extends AbstractShotCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(WhiskeyShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("WhiskeyShot_250.png");
+    public static final String ID = DefaultMod.makeID(ExcellentFormCard.class.getSimpleName());
+    public static final String IMG = makeCardPath("Power.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -37,37 +38,31 @@ public class WhiskeyShot extends AbstractShotCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int STRENGTH = 4;
-    private static final int UPGRADE_PLUS_STRENGTH = 2;
-
+    private static final int COST = 3;
 
 
     // /STAT DECLARATION/
 
 
-    public WhiskeyShot() {
+    public ExcellentFormCard() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = STRENGTH;
+        isEthereal = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!purgeOnUse) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
-        }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Tipsy(p, -1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ExcellentForm(p, p, 1), 1));
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_STRENGTH);
-            initializeDescription();
+            this.upgradeName();
+            this.isEthereal = false;
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }
