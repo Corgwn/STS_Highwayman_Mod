@@ -113,7 +113,7 @@
   },
   "theHighwayman:DuelistsRetreat": {
     "NAME": "Duelist's Retreat",
-    "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand on the top of your deck."
+    "DESCRIPTION": "Gain !B! Block. NL At the end of your turn, retain up to 1 card."
   },
   "theHighwayman:Parry": {
     "NAME": "Parry",
@@ -205,5 +205,18 @@
   "theHighwayman:CardUpSleeve": {
     "NAME": "Card Up Your Sleeve",
     "DESCRIPTION": "Put the card from the bottom of your deck into your hand. It costs 0 this turn."
+  },
+  "theHighwayman:Butcher": {
+    "NAME": "Butcher",
+    "DESCRIPTION": "Apply !M! thehighwayman:Bleed."
+  },
+  "theHighwayman:Prejudice": {
+    "NAME": "Prejudice",
+    "DESCRIPTION": "Gain 1 thehighwayman:Riposte for each enemy in this combat. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain 1 thehighwayman:Riposte for each enemy in this combat."
+  },
+  "theHighwayman:Robbery": {
+    "NAME": "Highway Robbery",
+    "DESCRIPTION": "Enemy looses !M! Strength. NL Gain !M! Strength. NL Exhaust"
   }
 }

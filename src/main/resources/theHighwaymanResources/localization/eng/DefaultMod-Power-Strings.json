@@ -46,5 +46,9 @@
   "theHighwayman:UnparalleledFinesse": {
     "NAME": "Unparalleled Finesse",
     "DESCRIPTIONS": ["At the start of your turn, put #b", " card", " cards", " and put #b", " card", " cards", " onto the bottom of your deck."]
+  },
+  "theHighwayman:Retreat": {
+    "NAME": "Retreat",
+    "DESCRIPTIONS": ["At the end of your turn, retain up to ", " card", " cards"]
   }
 }

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
 import theHighwayman.actions.ChooseForBottomAction;
 import theHighwayman.characters.theHighwayman;
+import theHighwayman.powers.Retreat;
 import theHighwayman.powers.Riposte;
 
 import java.util.Iterator;
@@ -100,7 +101,7 @@ public class DuelistsRetreat extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
-        AbstractDungeon.actionManager.addToBottom(new PutOnDeckAction(p, p, 1, false));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Retreat(p, 1)));
     }
 
     // Upgraded stats.
