@@ -60,20 +60,27 @@ public class Riposte extends AbstractPower implements CloneablePowerInterface {
     }
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
-            this.flash();
-            int actualDamage = 7;
-            if (this.owner.hasPower("Strength")) {
-                actualDamage += this.owner.getPower("Strength").amount;
-            }
-            if (info.owner.hasPower("Vulnerable")) {
-                if (AbstractDungeon.player.hasRelic("Paper Frog")) {
-                    actualDamage = (int) Math.floor(actualDamage * 1.75);
+            for (int i = 0; i < info.base; i += 15) {
+
+                this.flash();
+                int actualDamage = 7;
+                if (this.owner.hasPower("Strength")) {
+                    actualDamage += this.owner.getPower("Strength").amount;
                 }
-                else {
-                    actualDamage = (int) Math.floor(actualDamage * 1.5);
+                if (this.owner.hasPower("Weak")) {
+                    actualDamage = (int) Math.floor(actualDamage * 0.75);
                 }
+                if (info.owner.hasPower("Vulnerable")) {
+                    if (AbstractDungeon.player.hasRelic("Paper Frog")) {
+                        actualDamage = (int) Math.floor(actualDamage * 1.75);
+                    }
+                    else {
+                        actualDamage = (int) Math.floor(actualDamage * 1.5);
+                    }
+                }
+                this.addToTop(new RiposteLoseHpAction(info.owner, this.owner, actualDamage));
             }
-            this.addToTop(new RiposteLoseHpAction(info.owner, this.owner, actualDamage));
+
         }
 
         return damageAmount;

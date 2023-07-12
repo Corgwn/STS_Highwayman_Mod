@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.combat.EmpowerEffect;
 import com.megacrit.cardcrawl.vfx.combat.ReaperEffect;
 import theHighwayman.DefaultMod;
 import theHighwayman.actions.BleedLoseHpAction;
@@ -63,7 +64,7 @@ public class Robbery extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new VFXAction(new ReaperEffect()));
+        this.addToBot(new VFXAction(new EmpowerEffect(p.hb_x, p.hb_y)));
         this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
     }

@@ -19,7 +19,7 @@ public class RiposteLoseHpAction extends AbstractGameAction {
     public RiposteLoseHpAction(AbstractCreature target, AbstractCreature source, int amount) {
         this.setValues(target, source, amount);
         this.actionType = ActionType.DAMAGE;
-        this.duration = 0.33F;
+        this.duration = 0.2F;
     }
 
     public void update() {
@@ -29,16 +29,12 @@ public class RiposteLoseHpAction extends AbstractGameAction {
         else {
             this.tickDuration();
             if (this.isDone) {
-                if (this.target.currentHealth > 0) {
+                if (this.target.currentHealth > 0 && this.source.hasPower(makeID("Riposte"))) {
                     this.target.tint.color = Color.CHARTREUSE.cpy();
                     this.target.tint.changeColor(Color.WHITE.cpy());
                     this.addToTop(new DamageAction(target, new DamageInfo(source, amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true));
+                    AbstractDungeon.actionManager.addToTop(new ReducePowerAction(source, source, makeID("Riposte"), 1));
                 }
-
-                AbstractDungeon.actionManager.addToTop(new ReducePowerAction(source, source, makeID("Riposte"), 1));
-                //if (source.getPower(makeID("Riposte")).amount == 0) {
-                //    source.powers.remove(source.getPower(makeID("Riposte")));
-                //}
 
                 if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                     AbstractDungeon.actionManager.clearPostCombatActions();

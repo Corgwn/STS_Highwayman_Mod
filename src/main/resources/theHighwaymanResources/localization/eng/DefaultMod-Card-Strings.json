@@ -194,8 +194,8 @@
   },
   "theHighwayman:RevolverShot": {
     "NAME": "Revolver Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal 12 damage X times.",
-    "UPGRADE_DESCRIPTION": "thehighwayman:Fire. NL Deal 12 damage X+1 times."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage X times.",
+    "UPGRADE_DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage X+1 times."
   },
   "theHighwayman:QuickDraw": {
     "NAME": "Quick Draw",
@@ -217,6 +217,6 @@
   },
   "theHighwayman:Robbery": {
     "NAME": "Highway Robbery",
-    "DESCRIPTION": "Enemy looses !M! Strength. NL Gain !M! Strength. NL Exhaust"
+    "DESCRIPTION": "Enemy loses !M! Strength. NL Gain !M! Strength. NL Exhaust"
   }
 }

@@ -40,14 +40,14 @@ public class RevolverShot extends AbstractShotCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = -1;
-    private static final int DAMAGE = 12;
+    private static final int DAMAGE = 10;
 
     // /STAT DECLARATION/
 
 
     public RevolverShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = DAMAGE;
+        baseDamage = DAMAGE;
     }
 
     // Actions the card should do.

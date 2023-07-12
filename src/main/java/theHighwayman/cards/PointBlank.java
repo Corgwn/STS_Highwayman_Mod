@@ -44,8 +44,8 @@ public class PointBlank extends AbstractShotCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 24;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 28;
+    private static final int UPGRADE_PLUS_DMG = 7;
     private static final int VULNERABLE = 1;
     // /STAT DECLARATION/
 
@@ -54,8 +54,6 @@ public class PointBlank extends AbstractShotCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = VULNERABLE;
-
-        this.tags.add(CustomTags.SHOT);
     }
 
 
@@ -65,9 +63,8 @@ public class PointBlank extends AbstractShotCard {
         if (!purgeOnUse) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
         }
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
-        int actualDamage = (int) Math.floor(damage * 1.5);
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, actualDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 
     //Upgraded stats.
@@ -76,6 +73,7 @@ public class PointBlank extends AbstractShotCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            initializeDescription();
         }
     }
 }
