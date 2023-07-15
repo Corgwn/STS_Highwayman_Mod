@@ -65,7 +65,10 @@ public class Prejudice extends AbstractDynamicCard {
             }
         }
 
-        this.addToBot(new ApplyPowerAction(p, p, new Riposte(p, p, count)));
+        for (int i = 0; i < count; i++) {
+            this.addToBot(new ApplyPowerAction(p, p, new Riposte(p, p, 1)));
+        }
+
     }
 
     //Upgraded stats.

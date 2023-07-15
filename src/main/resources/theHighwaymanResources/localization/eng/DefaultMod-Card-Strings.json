@@ -218,5 +218,22 @@
   "theHighwayman:Robbery": {
     "NAME": "Highway Robbery",
     "DESCRIPTION": "Enemy loses !M! Strength. NL Gain !M! Strength. NL Exhaust"
+  },
+  "theHighwayman:KillShot": {
+    "NAME": "Kill Shot",
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage. NL If Fatal, place this card on the bottom of your deck."
+  },
+  "theHighwayman:CutDown": {
+    "NAME": "Cut Down",
+    "DESCRIPTION": "Deal !D! damage. NL Put a card from your hand to the bottom of your deck."
+  },
+  "theHighwayman:Friends": {
+    "NAME": "Help From Friends",
+    "DESCRIPTION": "Gain [E]. NL Put !theHighwayman:SecondMagic! cards from the bottom of your deck into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E]. NL Put !theHighwayman:SecondMagic! cards from the bottom of your deck into your hand. NL Exhaust."
+  },
+  "theHighwayman:PistolWhip": {
+    "NAME": "Pistol Whip",
+    "DESCRIPTION": "Deal !D! damage. NL If you have thehighwayman:Fired this turn, gain [E] and draw a card."
   }
 }

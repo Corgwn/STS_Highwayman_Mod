@@ -28,7 +28,8 @@
     "NAMES": [
       "Fire",
       "fire",
-      "fires"
+      "fires",
+      "Fired"
     ],
     "DESCRIPTION": "Uses 1 Ammo to play this card."
   },
@@ -37,14 +38,14 @@
       "Riposte",
       "riposte"
     ],
-    "DESCRIPTION": "When attacked, deal 7 damage to the attacker (scales like an attack). Clears at start of turn."
+    "DESCRIPTION": "When attacked, deal 7 damage to the attacker (modified like an attack)"
   },
   {
     "NAMES": [
       "Bleed",
       "bleed"
     ],
-    "DESCRIPTION": "At the beginning of its turn, the target loses X HP if no bleed was applied since its last turn. NL Otherwise, increases by 25%"
+    "DESCRIPTION": "At the beginning of its turn, target loses HP if no bleed was applied since its last turn. Otherwise, increases by 25%"
   },
   {
     "NAMES": [

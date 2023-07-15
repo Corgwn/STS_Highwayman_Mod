@@ -34,11 +34,8 @@ public class BleedLoseHpAction extends AbstractGameAction {
 
             this.tickDuration();
             if (this.isDone) {
-                if (this.target.currentHealth > 0) {
-                    this.target.tint.color = Color.CHARTREUSE.cpy();
-                    this.target.tint.changeColor(Color.WHITE.cpy());
-                    this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS));
-                }
+                int damage = this.amount;
+                this.target.getPower(makeID("Bleed")).flash();
 
                 if (AbstractDungeon.player.hasPower(makeID("TriTip"))) {
                     int reduceAmount = this.target.getPower(makeID("Bleed")).amount / 2;
@@ -47,6 +44,12 @@ public class BleedLoseHpAction extends AbstractGameAction {
                 else {
                     int reduceAmount = this.target.getPower(makeID("Bleed")).amount;
                     AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
+                }
+
+                if (this.target.currentHealth > 0) {
+                    this.target.tint.color = Color.CHARTREUSE.cpy();
+                    this.target.tint.changeColor(Color.WHITE.cpy());
+                    this.target.damage(new DamageInfo(this.source, damage, DamageInfo.DamageType.HP_LOSS));
                 }
 
                 if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {

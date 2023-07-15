@@ -69,7 +69,7 @@ public class Reflexes extends AbstractPower implements CloneablePowerInterface, 
     @Override
     public boolean onReceivePower(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1) {
         if (abstractPower.ID.equals(makeID("Riposte"))) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.amount));
+            AbstractDungeon.actionManager.addToTop(new GainBlockAction(this.owner, this.amount));
         }
         return true;
     }
