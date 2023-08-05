@@ -125,7 +125,7 @@
   },
   "theHighwayman:WickedSlice": {
     "NAME": "Wicked Slice",
-    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! Damage. NL If Fatal, gain [E]."
   },
   "theHighwayman:PointBlank": {
     "NAME": "Point Blank Shot",
