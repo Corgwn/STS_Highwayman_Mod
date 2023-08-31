@@ -2,7 +2,6 @@ package theHighwayman.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
+import theHighwayman.actions.AdvanceFromDeckAction;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Riposte;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
@@ -60,8 +59,8 @@ public class DuelistsAdvance extends CustomCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 3;
-    private static final int UPGRADE_PLUS_DAMAGE = 4;
+    private static final int DAMAGE = 9;
+    private static final int UPGRADE_PLUS_DAMAGE = 3;
     private static final int RIPOSTE = 1;
 
     // Hey want a second damage/magic/block/unique number??? Great!
@@ -96,7 +95,7 @@ public class DuelistsAdvance extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Riposte(p, p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new AdvanceFromDeckAction(1, false));
     }
 
     // Upgraded stats.

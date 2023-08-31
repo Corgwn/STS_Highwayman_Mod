@@ -1,6 +1,5 @@
 package theHighwayman.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,26 +7,24 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Ammo;
 
 import static theHighwayman.DefaultMod.makeCardPath;
+import static theHighwayman.DefaultMod.makeID;
 
-public class Breather extends AbstractDynamicCard {
+public class SmokeShot extends AbstractShotCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
      *
-     * Defend Gain 5 (8) block.
+     * A Better Defend Gain 1 Plated Armor. Affected by Dexterity.
      */
-
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(Breather.class.getSimpleName());
-    public static final String IMG = makeCardPath("TakeAMoment_250.png");
+    public static final String ID = DefaultMod.makeID(SmokeShot.class.getSimpleName());
+    public static final String IMG = makeCardPath("SmokeShot_250.png");
 
     // /TEXT DECLARATION/
-
 
     // STAT DECLARATION
 
@@ -37,32 +34,32 @@ public class Breather extends AbstractDynamicCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int BLOCK = 7;
-    private static final int UPGRADED_PLUS_BLOCK = 3;
-    private static final int AMMO_GAIN = 1;
+    private static final int BLOCK = 15;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
     // /STAT DECLARATION/
 
 
-    public Breather() {
+    public SmokeShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
-        magicNumber = baseMagicNumber = AMMO_GAIN;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!purgeOnUse) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        }
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, AMMO_GAIN)));
     }
 
-    //Upgraded stats.
+    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADED_PLUS_BLOCK);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

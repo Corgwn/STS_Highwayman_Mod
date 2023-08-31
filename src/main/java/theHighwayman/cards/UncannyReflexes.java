@@ -1,5 +1,6 @@
 package theHighwayman.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,6 +12,7 @@ import theHighwayman.powers.Reflexes;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class UncannyReflexes extends AbstractDynamicCard {
 
     /*

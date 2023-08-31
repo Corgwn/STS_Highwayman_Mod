@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
+import theHighwayman.actions.AdvanceFromDeckAction;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Ammo;
 
@@ -47,14 +48,7 @@ public class CardUpSleeve extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.drawPile.size() > 0) {
-            AbstractCard card = p.drawPile.getBottomCard();
-            card.setCostForTurn(0);
-            p.drawPile.removeCard(card);
-            AbstractDungeon.player.hand.addToTop(card);
-            AbstractDungeon.player.hand.refreshHandLayout();
-            AbstractDungeon.player.hand.applyPowers();
-        }
+        AbstractDungeon.actionManager.addToBottom(new AdvanceFromDeckAction(1, true));
     }
 
     // Upgraded stats.

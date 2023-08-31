@@ -8,12 +8,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
+import theHighwayman.actions.AdvanceFromDeckAction;
 import theHighwayman.characters.theHighwayman;
 
-import java.util.Iterator;
-
 import static theHighwayman.DefaultMod.makeCardPath;
-import static theHighwayman.DefaultMod.makeID;
 
 public class PistolWhip extends AbstractDynamicCard {
 
@@ -61,7 +59,7 @@ public class PistolWhip extends AbstractDynamicCard {
         }
         if (shotPlayed) {
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
+            AbstractDungeon.actionManager.addToBottom(new AdvanceFromDeckAction(1, false));
         }
     }
 

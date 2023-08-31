@@ -1,36 +1,36 @@
 package theHighwayman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
+
+import java.util.Iterator;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;
 
-public class PointBlank extends AbstractShotCard {
+public class PoundOfFlesh extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
      *
-     * TOUCH Deal 30(35) damage.
+     * Big Slap Deal 10(15)) damage.
      */
-
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(PointBlank.class.getSimpleName());
-    public static final String IMG = makeCardPath("PointBlankShot_250.png");
+    public static final String ID = DefaultMod.makeID(PoundOfFlesh.class.getSimpleName());
+    public static final String IMG = makeCardPath("PoundofFlesh_250.png");
 
     // /TEXT DECLARATION/
 
@@ -43,25 +43,40 @@ public class PointBlank extends AbstractShotCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
+    private static final int DAMAGE = 12;
+    private static final int APPLY_STAT = 2;
+    private static final int UPGRADED_PLUS_APPLY_STAT = 1;
 
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 2;
     // /STAT DECLARATION/
 
 
-    public PointBlank() {
+    public PoundOfFlesh() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = DAMAGE;
+        baseDamage = damage = DAMAGE;
+        baseMagicNumber = magicNumber = APPLY_STAT;
     }
-
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!purgeOnUse) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        if (m != null && m.getIntentBaseDmg() >= 0) {
+            this.addToTop(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
+        } else {
+            this.addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+    }
+
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!m.isDeadOrEscaped() && m.getIntentBaseDmg() >= 0) {
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+                break;
+            }
+        }
+
     }
 
     //Upgraded stats.
@@ -69,7 +84,7 @@ public class PointBlank extends AbstractShotCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADED_PLUS_APPLY_STAT);
             initializeDescription();
         }
     }

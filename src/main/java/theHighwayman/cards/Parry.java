@@ -1,16 +1,18 @@
 package theHighwayman.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Riposte;
+import theHighwayman.powers.RipostePower;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;
 
+@AutoAdd.Ignore
 public class Parry extends AbstractDynamicCard {
 
     /*
@@ -54,7 +56,7 @@ public class Parry extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Riposte(p, p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RipostePower(p, p, magicNumber)));
     }
 
     //Upgraded stats.

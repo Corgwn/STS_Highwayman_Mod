@@ -1,17 +1,16 @@
 package theHighwayman.cards;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
-import theHighwayman.actions.ChooseForBottomAction;
+import theHighwayman.actions.RetreatFromDiscardAction;
+import theHighwayman.actions.RetreatFromHandAction;
 import theHighwayman.characters.theHighwayman;
 
 import static theHighwayman.DefaultMod.makeCardPath;
-import static theHighwayman.DefaultMod.makeID;
 
 public class CutDown extends AbstractDynamicCard {
 
@@ -54,7 +53,7 @@ public class CutDown extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage)));
-        AbstractDungeon.actionManager.addToBottom(new ChooseForBottomAction(p, p, 1));
+        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, 1));
     }
 
     //Upgraded stats.

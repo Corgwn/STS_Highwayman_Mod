@@ -37,7 +37,7 @@ public class PistolShot extends AbstractShotCard {
     public static final String IMG = makeCardPath("PistolShot_250.png");
     // Setting the image is as easy as can possibly be now. You just need to provide the image name
     // and make sure it's in the correct folder. That's all.
-    // There's makeCardPath, makeRelicPath, power, orb, event, etc..
+    // There's makeCardPath, makeRelicPath, power, orb, event, etc...
     // The list of all of them can be found in the main DefaultMod.java file in the
     // ==INPUT TEXTURE LOCATION== section under ==MAKE IMAGE PATHS==
 
@@ -56,8 +56,8 @@ public class PistolShot extends AbstractShotCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 15;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int DAMAGE = 13;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     // Hey want a second damage/magic/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable

@@ -11,13 +11,15 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.Iterator;
 
-public class ChooseForBottomAction extends AbstractGameAction {
+import static theHighwayman.DefaultMod.makeID;
+
+public class RetreatFromHandAction extends AbstractGameAction {
     private static final float DURATION = 0.33F;
     private final AbstractPlayer p;
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
 
-    public ChooseForBottomAction(AbstractCreature target, AbstractCreature source,  int amount) {
+    public RetreatFromHandAction(AbstractCreature target, AbstractCreature source, int amount) {
         this.p = AbstractDungeon.player;
         this.setValues(target, source, amount);
         this.duration = Settings.ACTION_DUR_FAST;
@@ -31,6 +33,9 @@ public class ChooseForBottomAction extends AbstractGameAction {
             } else if (this.p.hand.size() <= amount) {
                 int num = this.p.hand.size();
                 for (int i = 0; i < num; i++) {
+                    if (this.p.hasPower(makeID("Repositioning"))) {
+                        this.p.getPower(makeID("Repositioning")).onSpecificTrigger();
+                    }
                     AbstractCard c = this.p.hand.getTopCard();
                     this.p.hand.moveToBottomOfDeck(c);
                     AbstractDungeon.player.hand.refreshHandLayout();
@@ -44,6 +49,9 @@ public class ChooseForBottomAction extends AbstractGameAction {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 AbstractCard c;
                 for(Iterator<AbstractCard> var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator(); var1.hasNext(); this.p.hand.moveToBottomOfDeck(c)) {
+                    if (this.p.hasPower(makeID("Repositioning"))) {
+                        this.p.getPower(makeID("Repositioning")).onSpecificTrigger();
+                    }
                     c = (AbstractCard)var1.next();
                 }
                 AbstractDungeon.player.hand.refreshHandLayout();

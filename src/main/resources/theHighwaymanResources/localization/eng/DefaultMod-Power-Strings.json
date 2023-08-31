@@ -7,9 +7,9 @@
           "NAME": "Ammo",
           "DESCRIPTIONS": ["The number of times you can Fire."]
   },
-  "theHighwayman:Riposte": {
+  "theHighwayman:RipostePower": {
           "NAME": "Riposte",
-          "DESCRIPTIONS": ["When attacked, deal 7 damage to the attacking enemy. Scales like an attack."]
+          "DESCRIPTIONS": ["The next ", " time", " times", " you take attack damage, deal half to you and half to the enemy."]
   },
   "theHighwayman:Vigorous": {
           "NAME": "Vigorous",
@@ -47,8 +47,8 @@
     "NAME": "Unparalleled Finesse",
     "DESCRIPTIONS": ["At the start of your turn, put #b", " card", " cards", " and put #b", " card", " cards", " onto the bottom of your deck."]
   },
-  "theHighwayman:Retreat": {
-    "NAME": "Retreat",
-    "DESCRIPTIONS": ["At the end of your turn, retain up to ", " card", " cards"]
+  "theHighwayman:Repositioning": {
+    "NAME": "Reposition",
+    "DESCRIPTIONS": ["Whenever you Retreat, gain ", " block."]
   }
 }

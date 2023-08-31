@@ -27,7 +27,7 @@ public class RevolverShot extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(RevolverShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("RevolverShot_250.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 

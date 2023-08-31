@@ -1,17 +1,18 @@
 package theHighwayman.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Dodge;
-import theHighwayman.powers.Riposte;
+import theHighwayman.powers.RipostePower;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;
 
+@AutoAdd.Ignore
 public class Feint extends AbstractDynamicCard {
 
     /*
@@ -57,7 +58,7 @@ public class Feint extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Dodge(p, p, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Riposte(p, p, defaultSecondMagicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RipostePower(p, p, defaultSecondMagicNumber)));
         //if (p.hasPower(makeID("Riposte"))) {
         //    p.getPower(makeID("Riposte")).amount += 1;
         //}

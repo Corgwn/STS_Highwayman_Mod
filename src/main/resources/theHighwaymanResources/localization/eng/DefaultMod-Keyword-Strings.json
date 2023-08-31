@@ -53,5 +53,21 @@
       "dodge"
     ],
     "DESCRIPTION": "If an unblocked attack deals X damage or less, prevent it and reduce this by 1"
+  },
+  {
+    "NAMES": [
+      "Advance",
+      "advance",
+      "Advanced"
+    ],
+    "DESCRIPTION": "Put the card from the bottom of your deck into your hand"
+  },
+  {
+    "NAMES": [
+      "Retreat",
+      "retreat",
+      "Retreated"
+    ],
+    "DESCRIPTION": "Put a card from your discard onto the bottom of your draw pile"
   }
 ]

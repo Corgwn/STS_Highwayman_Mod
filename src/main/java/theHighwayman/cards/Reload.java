@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
+import theHighwayman.actions.RetreatFromDiscardAction;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Ammo;
 
@@ -50,6 +51,7 @@ public class Reload extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
+        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, 1));
     }
 
     //Upgraded stats.

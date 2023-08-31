@@ -1,5 +1,6 @@
 package theHighwayman.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,6 +13,7 @@ import theHighwayman.powers.Cycle;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class CycleOfViolence extends AbstractDynamicCard {
 
     /*

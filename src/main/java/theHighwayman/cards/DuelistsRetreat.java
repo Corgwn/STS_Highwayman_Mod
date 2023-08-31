@@ -1,23 +1,17 @@
 package theHighwayman.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
-import theHighwayman.actions.ChooseForBottomAction;
+import theHighwayman.actions.RetreatFromDiscardAction;
+import theHighwayman.actions.RetreatFromHandAction;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Retreat;
-import theHighwayman.powers.Riposte;
-
-import java.util.Iterator;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
@@ -101,7 +95,7 @@ public class DuelistsRetreat extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Retreat(p, 1)));
+        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, 1));
     }
 
     // Upgraded stats.

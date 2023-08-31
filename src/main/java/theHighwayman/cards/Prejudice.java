@@ -1,22 +1,19 @@
 package theHighwayman.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Frost;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Riposte;
-
-import java.util.Iterator;
+import theHighwayman.powers.RipostePower;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;
 
+@AutoAdd.Ignore
 public class Prejudice extends AbstractDynamicCard {
 
     /*
@@ -66,7 +63,7 @@ public class Prejudice extends AbstractDynamicCard {
         }
 
         for (int i = 0; i < count; i++) {
-            this.addToBot(new ApplyPowerAction(p, p, new Riposte(p, p, 1)));
+            this.addToBot(new ApplyPowerAction(p, p, new RipostePower(p, p, 1)));
         }
 
     }

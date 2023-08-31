@@ -1,5 +1,6 @@
 package theHighwayman.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +12,7 @@ import theHighwayman.powers.Dodge;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class SideStep extends AbstractDynamicCard {
 
     /*

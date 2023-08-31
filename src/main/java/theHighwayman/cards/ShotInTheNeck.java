@@ -36,7 +36,7 @@ public class ShotInTheNeck extends AbstractShotCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int BLEED = 20;
+    private static final int BLEED = 13;
     private static final int UPGRADE_PLUS_BLEED = 4;
 
     // /STAT DECLARATION/

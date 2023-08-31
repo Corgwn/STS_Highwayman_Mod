@@ -1,20 +1,18 @@
 package theHighwayman.cards;
 
-import basemod.AutoAdd;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
-import theHighwayman.actions.AdvanceFromDeckAction;
+import theHighwayman.actions.RetreatFromDiscardAction;
+import theHighwayman.actions.RetreatFromHandAction;
 import theHighwayman.characters.theHighwayman;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
-@AutoAdd.Ignore
-public class SliceUp extends AbstractDynamicCard {
+public class StackDeck extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -25,37 +23,36 @@ public class SliceUp extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(SliceUp.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String ID = DefaultMod.makeID(StackDeck.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
 
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
+    private static final int RETREAT_AMOUNT = 3;
 
 
     // /STAT DECLARATION/
 
 
-    public SliceUp() {
+    public StackDeck() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = RETREAT_AMOUNT;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToBottom(new AdvanceFromDeckAction(1, false));
+        System.out.println("stack deck used");
+        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, magicNumber));
     }
 
     //Upgraded stats.
@@ -63,7 +60,6 @@ public class SliceUp extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

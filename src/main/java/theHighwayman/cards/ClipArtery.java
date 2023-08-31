@@ -1,6 +1,5 @@
 package theHighwayman.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,14 +7,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
-import theHighwayman.actions.BleedLoseHpAction;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Bleed;
 
 import static theHighwayman.DefaultMod.makeCardPath;
-import static theHighwayman.DefaultMod.makeID;
 
-public class Butcher extends AbstractDynamicCard {
+public class ClipArtery extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -26,8 +23,8 @@ public class Butcher extends AbstractDynamicCard {
     // TEXT DECLARATION
 
 
-    public static final String ID = DefaultMod.makeID(Butcher.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String ID = DefaultMod.makeID(ClipArtery.class.getSimpleName());
+    public static final String IMG = makeCardPath("ClipArtery_250.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -50,7 +47,7 @@ public class Butcher extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public Butcher() {
+    public ClipArtery() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = BLEED;
     }

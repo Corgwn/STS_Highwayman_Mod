@@ -41,7 +41,8 @@ public class TrackingShot extends AbstractShotCard {
     private static final int COST = 1;
     private static final int DAMAGE = 2;
     private static final int VULNERABLE = 1;
-    private static final int UPGRADE_PLUS_VULNERABLE = 1;
+    private static final int REPEAT = 4;
+    private static final int UPGRADE_PLUS_REPEAT = 2;
 
     // /STAT DECLARATION/
 
@@ -50,6 +51,7 @@ public class TrackingShot extends AbstractShotCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
         baseMagicNumber = magicNumber = VULNERABLE;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = REPEAT;
         this.exhaust = true;
 
         this.tags.add(CustomTags.SHOT);
@@ -62,9 +64,9 @@ public class TrackingShot extends AbstractShotCard {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
+        for (int i = 0; i < defaultSecondMagicNumber; i++) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
+        }
     }
 
 
@@ -73,7 +75,7 @@ public class TrackingShot extends AbstractShotCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_VULNERABLE);
+            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_REPEAT);
             initializeDescription();
         }
     }

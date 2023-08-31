@@ -4,12 +4,10 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theHighwayman.util.TextureLoader;
 
@@ -65,7 +63,7 @@ public class Cycle extends AbstractPower implements CloneablePowerInterface {
             this.flash();
 
             AbstractCreature p = this.owner;
-            this.addToTop(new ApplyPowerAction(p, p, new Riposte(p, p, this.amount)));
+            this.addToTop(new ApplyPowerAction(p, p, new RipostePower(p, p, this.amount)));
         }
 
         return damageAmount;

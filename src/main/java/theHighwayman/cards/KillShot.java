@@ -21,7 +21,6 @@ import theHighwayman.characters.theHighwayman;
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;
 
-@AutoAdd.Ignore
 public class KillShot extends AbstractShotCard {
 
     /*
@@ -57,6 +56,7 @@ public class KillShot extends AbstractShotCard {
     public KillShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        exhaust = true;
     }
 
 
@@ -66,14 +66,7 @@ public class KillShot extends AbstractShotCard {
         if (!purgeOnUse) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
         }
-        AbstractDungeon.actionManager.addToTop(new VFXAction(new BloodShotEffect(p.hb_x, p.hb_y, m.hb_x, m.hb_y, 1)));
-        m.damage(new DamageInfo(p, damage, damageTypeForTurn));
-        if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower("Minion")) {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardAtBottomOfDeckAction(1));
-        }
-        if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-            AbstractDungeon.actionManager.clearPostCombatActions();
-        }
+        AbstractDungeon.actionManager.addToBottom(new KillShotAction(m, new DamageInfo(p, damage, damageTypeForTurn), this));
     }
 
     //Upgraded stats.

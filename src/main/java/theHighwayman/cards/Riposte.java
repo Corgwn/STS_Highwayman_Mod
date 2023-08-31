@@ -1,66 +1,63 @@
 package theHighwayman.cards;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
+import theHighwayman.powers.RipostePower;
 
 import static theHighwayman.DefaultMod.makeCardPath;
-import static theHighwayman.DefaultMod.makeID;
 
-public class MissedShot extends AbstractShotCard {
+public class Riposte extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
      *
-     * A Better Defend Gain 1 Plated Armor. Affected by Dexterity.
+     * Defend Gain 5 (8) block.
      */
+
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(MissedShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("MissedYourShot_250.png");
+    public static final String ID = DefaultMod.makeID(Riposte.class.getSimpleName());
+    public static final String IMG = makeCardPath("Power.png");
 
     // /TEXT DECLARATION/
+
 
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int BLOCK = 18;
-    private static final int UPGRADE_PLUS_BLOCK = 5;
+    private static final int COST = 2;
+    private static final int RIPOSTE_GAIN = 2;
+    private static final int UPGRADED_PLUS_RIPOSTE = 1;
 
     // /STAT DECLARATION/
 
 
-    public MissedShot() {
+    public Riposte() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = RIPOSTE_GAIN;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!purgeOnUse) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
-        }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RipostePower(p, p, magicNumber)));
     }
 
-    // Upgraded stats.
+    //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeBlock(UPGRADED_PLUS_RIPOSTE);
             initializeDescription();
         }
     }

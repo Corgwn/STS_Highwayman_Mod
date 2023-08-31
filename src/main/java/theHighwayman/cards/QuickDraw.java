@@ -25,7 +25,7 @@ public class QuickDraw extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(QuickDraw.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("QuickDraw_250.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -39,7 +39,9 @@ public class QuickDraw extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
+
 
     // /STAT DECLARATION/
 
@@ -47,6 +49,7 @@ public class QuickDraw extends AbstractDynamicCard {
     public QuickDraw() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
+        isInnate = true;
     }
 
     // Actions the card should do.
@@ -61,8 +64,7 @@ public class QuickDraw extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            isInnate = true;
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

@@ -23,7 +23,7 @@ public class Hemorrhage extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Hemorrhage.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Hemorrhage_250.png");
 
     // /TEXT DECLARATION/
 
@@ -35,8 +35,8 @@ public class Hemorrhage extends AbstractDynamicCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
-    private static final int BLEED = 18;
-    private static final int UPGRADE_PLUS_BLEED = 4;
+    private static final int BLEED = 12;
+    private static final int UPGRADE_PLUS_BLEED = 3;
 
     // /STAT DECLARATION/
 
