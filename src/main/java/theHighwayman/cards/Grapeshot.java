@@ -56,7 +56,7 @@ public class Grapeshot extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!purgeOnUse) {
+        if (!purgeOnUse || !p.hasPower(makeID("Vigorous"))) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
         }
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));

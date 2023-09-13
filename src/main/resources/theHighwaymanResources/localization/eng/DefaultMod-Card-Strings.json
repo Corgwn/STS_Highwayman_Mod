@@ -58,9 +58,9 @@
     "NAME": "Pistol Shot",
     "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage."
   },
-  "theHighwayman:Reload": {
-    "NAME": "Reload",
-    "DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL thehighwayman:Retreat 1 card."
+  "theHighwayman:RamRod": {
+    "NAME": "Ram Rod",
+    "DESCRIPTION": "thehighwayman:Retreat 1 card. NL thehighwayman:Reload: Gain !B! Block."
   },
   "theHighwayman:Feint": {
     "NAME": "Feint",
@@ -68,7 +68,7 @@
   },
   "theHighwayman:VigorousCard": {
     "NAME": "Vigorous",
-    "DESCRIPTION": "At the start of every turn, gain 1 thehighwayman:Ammo. NL thehighwayman:Ammo charges stack."
+    "DESCRIPTION": "You always have thehighwayman:Ammo"
   },
   "theHighwayman:TrackingShot": {
     "NAME": "Tracking Shot",
@@ -129,7 +129,7 @@
   },
   "theHighwayman:PointBlank": {
     "NAME": "Point Blank Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage. NL Every time when thehighwayman:Advanced, double this card's damage this combat."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage. NL Every time you thehighwayman:Advance this card, double this card's damage this combat."
   },
   "theHighwayman:Cartridge": {
     "NAME": "Cartridge",
@@ -137,7 +137,7 @@
   },
   "theHighwayman:TakeAim": {
     "NAME": "Take Aim",
-    "DESCRIPTION": "Draw !M! cards. NL Gain 1 thehighwayman:Ammo."
+    "DESCRIPTION": "Gain !M! Strength. NL thehighwayman:Reload: Gain 1 Strength"
   },
   "theHighwayman:SmokeShot": {
     "NAME": "Smoke Shot",
@@ -245,12 +245,12 @@
   },
   "theHighwayman:GetReady": {
     "NAME": "Get Ready",
-    "DESCRIPTION": "Unplayable. NL Whenever this card is thehighwayman:Retreated, gain [E] [E].",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is thehighwayman:Retreated, gain [E] [E] [E]."
+    "DESCRIPTION": "Unplayable. NL Whenever you thehighwayman:Retreat this card, gain [E] [E].",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever you thehighwayman:Retreat this card, gain [E] [E] [E]."
   },
   "theHighwayman:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Unplayable. NL Whenever this card is thehighwayman:Advanced, thehighwayman:Advance 1 card and deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Unplayable. NL Whenever you thehighwayman:Advance this card, thehighwayman:Advance 1 card and deal !D! damage to ALL enemies."
   },
   "theHighwayman:CrimsonCurse": {
     "NAME": "Crimson Curse",
@@ -267,5 +267,13 @@
   "theHighwayman:PoundOfFlesh": {
     "NAME": "Pound Of Flesh",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, apply !M! Weak. Otherwise, apply !M! Vulnerable."
+  },
+  "theHighwayman:Pivot": {
+    "NAME": "Duelist's Pivot",
+    "DESCRIPTION": "thehighwayman:Advance !M! cards. NL thehighwayman:Retreat 1 card."
+  },
+  "theHighwayman:DoubleCross": {
+    "NAME": "Double Cross",
+    "DESCRIPTION": "If the enemy intends to attack, gain !B! Block. Otherwise, apply !M! Vulnerable."
   }
 }

@@ -18,6 +18,7 @@
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
   },
   {
+    "PROPER_NAME": "Ammo",
     "NAMES": [
       "Ammo",
       "ammo"
@@ -25,6 +26,7 @@
     "DESCRIPTION": "The number of times you can Fire."
   },
   {
+    "PROPER_NAME": "Fire",
     "NAMES": [
       "Fire",
       "fire",
@@ -34,6 +36,7 @@
     "DESCRIPTION": "Uses 1 Ammo to play this card."
   },
   {
+    "PROPER_NAME": "Riposte",
     "NAMES": [
       "Riposte",
       "riposte"
@@ -41,6 +44,7 @@
     "DESCRIPTION": "When attacked, deal 7 damage to the attacker (modified like an attack)"
   },
   {
+    "PROPER_NAME": "Bleed",
     "NAMES": [
       "Bleed",
       "bleed"
@@ -48,6 +52,7 @@
     "DESCRIPTION": "At the beginning of its turn, target loses HP if no bleed was applied since its last turn. Otherwise, increases by 25%"
   },
   {
+    "PROPER_NAME": "Dodge",
     "NAMES": [
       "Dodge",
       "dodge"
@@ -55,6 +60,7 @@
     "DESCRIPTION": "If an unblocked attack deals X damage or less, prevent it and reduce this by 1"
   },
   {
+    "PROPER_NAME": "Advance",
     "NAMES": [
       "Advance",
       "advance",
@@ -63,11 +69,20 @@
     "DESCRIPTION": "Put the card from the bottom of your deck into your hand"
   },
   {
+    "PROPER_NAME": "Retreat",
     "NAMES": [
       "Retreat",
       "retreat",
       "Retreated"
     ],
     "DESCRIPTION": "Put a card from your discard onto the bottom of your draw pile"
+  },
+  {
+    "PROPER_NAME": "Reload",
+    "NAMES": [
+      "Reload",
+      "reload"
+    ],
+    "DESCRIPTION": "If you have no ammo, gain 1. Otherwise, gain the effect specified."
   }
 ]

@@ -10,6 +10,7 @@ import theHighwayman.powers.Ammo;
 import theHighwayman.powers.Vigorous;
 
 import static theHighwayman.DefaultMod.makeCardPath;
+import static theHighwayman.DefaultMod.makeID;
 
 public class VigorousCard extends AbstractDynamicCard {
 
@@ -51,7 +52,9 @@ public class VigorousCard extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Vigorous(p, p), -1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, 2)));
+        if (!p.hasPower(makeID("Ammo"))) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
+        }
     }
 
     //Upgraded stats.

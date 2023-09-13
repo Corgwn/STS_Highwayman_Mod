@@ -31,10 +31,7 @@ public abstract class AbstractShotCard extends AbstractDefaultCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!purgeOnUse) {
             boolean canUse = super.canUse(p, m);
-            if (canUse && p.hasPower(makeID("Ammo"))) {
-                return p.getPower(makeID("Ammo")).amount > 0;
-            }
-            return false;
+            return canUse && (p.hasPower(makeID("Ammo"))) || p.hasPower(makeID("Vigorous"));
         }
         return super.canUse(p, m);
     }

@@ -23,10 +23,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theHighwayman.DefaultMod;
 import theHighwayman.cards.*;
-import theHighwayman.relics.DefaultClickableRelic;
 import theHighwayman.relics.PaperCartridge;
-import theHighwayman.relics.PlaceholderRelic;
-import theHighwayman.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
 
@@ -166,7 +163,7 @@ public class theHighwayman extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(PistolShot.ID);
-        retVal.add(Reload.ID);
+        retVal.add(RamRod.ID);
 
         return retVal;
     }
@@ -233,7 +230,7 @@ public class theHighwayman extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Reload();
+        return new RamRod();
     }
 
     // The class name as it appears next to your player name in-game

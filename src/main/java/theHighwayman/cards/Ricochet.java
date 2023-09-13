@@ -54,7 +54,7 @@ public class Ricochet extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!purgeOnUse) {
+        if (!purgeOnUse || !p.hasPower(makeID("Vigorous"))) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
         }
         for (int i = 0; i < magicNumber; i++) {

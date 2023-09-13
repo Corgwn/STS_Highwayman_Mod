@@ -59,9 +59,10 @@ public class RipostePower extends AbstractPower implements CloneablePowerInterfa
 
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
-            AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, damageAmount / 2)));
-            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, makeID("Riposte"), 1));
-            return damageAmount / 2;
+            int block = info.output - damageAmount;
+            AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, info.output / 2)));
+            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            return Math.max(info.output / 2 - block, 0);
         }
         return damageAmount;
     }
