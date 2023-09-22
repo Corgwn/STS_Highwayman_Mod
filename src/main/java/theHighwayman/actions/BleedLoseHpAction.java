@@ -37,7 +37,7 @@ public class BleedLoseHpAction extends AbstractGameAction {
                 int damage = this.amount;
                 this.target.getPower(makeID("Bleed")).flash();
 
-                if (AbstractDungeon.player.hasPower(makeID("TriTip"))) {
+                if (AbstractDungeon.player.hasPower(makeID("TwistedTip"))) {
                     int reduceAmount = this.target.getPower(makeID("Bleed")).amount / 2;
                     AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
                 }

@@ -39,8 +39,8 @@
     "NAME": "Excellent Form",
     "DESCRIPTIONS": ["At the start of your turn, put #b", " card", " cards", " into your hand"]
   },
-  "theHighwayman:TriTip": {
-    "NAME": "Tri Tip Dagger",
+  "theHighwayman:TwistedTip": {
+    "NAME": "Twisted Tip",
     "DESCRIPTIONS": ["Bleed instead loses half of it's stacks when activating damage."]
   },
   "theHighwayman:UnparalleledFinesse": {
