@@ -85,7 +85,7 @@ public class DoubleShot extends AbstractPower implements CloneablePowerInterface
                 m = (AbstractMonster)action.target;
             }
 
-            AbstractCard tmp = card.makeSameInstanceOf();
+            AbstractShotCard tmp = (AbstractShotCard) card.makeSameInstanceOf();
             AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
             tmp.current_y = card.current_y;

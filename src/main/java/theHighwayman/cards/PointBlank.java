@@ -58,10 +58,13 @@ public class PointBlank extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!purgeOnUse || !p.hasPower(makeID("Vigorous"))) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        this.numberShots = p.getPower(makeID("Ammo")).amount;
+        if (!purgeOnUse) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        for (int i = 0; i < this.numberShots; i++) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        }
     }
 
     //Upgraded stats.
