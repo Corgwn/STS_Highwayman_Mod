@@ -2,6 +2,9 @@ package theHighwayman.cards;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,9 +16,7 @@ import theHighwayman.powers.Cycle;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
-@AutoAdd.Ignore
 public class CycleOfViolence extends AbstractDynamicCard {
-
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
      *
@@ -34,26 +35,31 @@ public class CycleOfViolence extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 0;
+    private static final int DAMAGE = 6;
+    private static final int UPGRADED_PlUS_DAMAGE = 2;
+
 
     // /STAT DECLARATION/
 
     public CycleOfViolence() {
-
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
+        damage = baseDamage = DAMAGE;
     }
     
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Cycle(p, p, 1)));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
+    }
+
+    public void tookDamage() {
+        this.addToBot(new DiscardToHandAction(this));
     }
 
     //Upgraded stats.
@@ -61,7 +67,7 @@ public class CycleOfViolence extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeDamage(UPGRADED_PlUS_DAMAGE);
             initializeDescription();
         }
     }

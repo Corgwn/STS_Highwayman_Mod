@@ -35,7 +35,14 @@
     "NAME": "Paper Cartridge",
     "FLAVOR": "Tastes like gunpowder...",
     "DESCRIPTIONS": [
-      "At the beginning of combat, add 1 Cartridge to your hand."
+      "At the start of each turn, if you have no Ammo, gain 1"
+    ]
+  },
+  "theHighwayman:AmmoBelt": {
+    "NAME": "Ammo Belt",
+    "FLAVOR": "Quick and dirty",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain 3 Paper Cartridges."
     ]
   }
 }

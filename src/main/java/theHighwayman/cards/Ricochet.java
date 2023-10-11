@@ -41,7 +41,7 @@ public class Ricochet extends AbstractShotCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 3;
     private static final int REPEAT = 3;
     private static final int UPGRADE_PLUS_REPEAT = 1;
 

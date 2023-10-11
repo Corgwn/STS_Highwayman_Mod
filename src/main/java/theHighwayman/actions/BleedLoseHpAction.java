@@ -52,7 +52,7 @@ public class BleedLoseHpAction extends AbstractGameAction {
                 }
 
                 //Bleed damage logic
-                if (this.target.currentHealth > 0) {
+                if (this.target.currentHealth > 0 && !this.consume) {
                     this.target.tint.color = Color.CHARTREUSE.cpy();
                     this.target.tint.changeColor(Color.WHITE.cpy());
                     this.target.damage(new DamageInfo(this.source, damage, DamageInfo.DamageType.HP_LOSS));
