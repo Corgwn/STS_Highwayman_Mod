@@ -44,29 +44,30 @@ public class BleedOut extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 3;
+    private static final int BLEED = 10;
+    private static final int UPGRADE_PLUS_BLEED = 4;
 
     // /STAT DECLARATION/
 
 
     public BleedOut() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = BLEED;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m.hasPower(makeID("Bleed"))) {
-            addToBot(new BleedLoseHpAction(m, p, m.getPower(makeID("Bleed")).amount, AbstractGameAction.AttackEffect.FIRE, false));
-        }
+        addToBot(new ApplyPowerAction(m, p, new Bleed(m, p, magicNumber)));
+        addToBot(new BleedLoseHpAction(m, p, m.getPower(makeID("Bleed")).amount, AbstractGameAction.AttackEffect.FIRE, false));
     }
     //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_BLEED);
             initializeDescription();
         }
     }

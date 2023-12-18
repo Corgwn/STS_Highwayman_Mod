@@ -59,11 +59,7 @@ public class UnparalleledFinesse extends AbstractPower implements CloneablePower
     }
 
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + DESCRIPTIONS[3] + DESCRIPTIONS[4] + DESCRIPTIONS[6];
-        } else {
-            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + DESCRIPTIONS[3] + DESCRIPTIONS[5] + DESCRIPTIONS[6];
-        }
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     public void atStartOfTurnPostDraw() {

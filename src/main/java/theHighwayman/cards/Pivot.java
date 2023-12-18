@@ -39,7 +39,7 @@ public class Pivot extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int ADVANCE = 2;
-    private static final int UPGRADED_PLUS_ADVANCE = 2;
+    private static final int UPGRADED_PLUS_ADVANCE = 1;
     private static final int RETREAT = 1;
 
     // /STAT DECLARATION/

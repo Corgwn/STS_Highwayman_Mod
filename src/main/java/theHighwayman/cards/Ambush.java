@@ -40,27 +40,27 @@ public class Ambush extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = -2;
-    private static final int VULNERABLE = 1;
-    private static final int UPGRADE_PLUS_VULNERABLE = 1;
+    private static final int COST = 1;
+    private static final int DAMAGE = 7;
+    private static final int UPGRADE_PLUS_DAMAGE = 3;
     // /STAT DECLARATION/
 
 
     public Ambush() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = VULNERABLE;
+        damage = baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new AdvanceFromDeckAction(1, false));
+
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, baseDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        //this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-        return false;
+    @Override
+    public void onChoseThisOption() {
+        AbstractDungeon.actionManager.addToBottom(new AdvanceFromDeckAction(1, false));
     }
 
     //Upgraded stats.
@@ -68,7 +68,7 @@ public class Ambush extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_VULNERABLE);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

@@ -37,21 +37,21 @@ public class Finesse extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
+    private static final int RETREAT = 2;
 
 
     // /STAT DECLARATION/
 
 
     public Finesse() {
-
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
+        magicNumber = baseMagicNumber = RETREAT;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new UnparalleledFinesse(p, p, 1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new UnparalleledFinesse(p, p, magicNumber)));
     }
 
     //Upgraded stats.

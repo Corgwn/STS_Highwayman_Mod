@@ -41,11 +41,11 @@
   },
   "theHighwayman:TwistedTip": {
     "NAME": "Twisted Tip",
-    "DESCRIPTIONS": ["Bleed instead loses half of it's stacks when activating damage."]
+    "DESCRIPTIONS": ["Enemies no longer lose Bleed."]
   },
   "theHighwayman:UnparalleledFinesse": {
     "NAME": "Unparalleled Finesse",
-    "DESCRIPTIONS": ["At the start of your turn, put #b", " card", " cards", " and put #b", " card", " cards", " onto the bottom of your deck."]
+    "DESCRIPTIONS": ["At the start of your turn, Retreat ", " cards."]
   },
   "theHighwayman:Repositioning": {
     "NAME": "Reposition",
