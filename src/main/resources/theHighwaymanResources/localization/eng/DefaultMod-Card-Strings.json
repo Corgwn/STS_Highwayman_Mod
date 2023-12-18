@@ -93,7 +93,7 @@
   },
   "theHighwayman:Hemorrhage": {
     "NAME": "Hemorrhage",
-    "DESCRIPTION": "Apply !M! thehighwayman:Bleed. NL Activate bleed scaling."
+    "DESCRIPTION": "Apply !M! thehighwayman:Bleed. NL Target gains 1 thehighwayman:Bleed for every 4 thehighwayman:Bleed they have."
   },
   "theHighwayman:WhiskeyShot": {
     "NAME": "Whisky Shot",
@@ -109,7 +109,7 @@
   },
   "theHighwayman:BleedOut": {
     "NAME": "Bleed Out",
-    "DESCRIPTION": "Activate thehighwayman:Bleed Damage on the target."
+    "DESCRIPTION": "Apply 10 (14) thehighwayman:Bleed. Deal damage equal to target thehighwayman:Bleed."
   },
   "theHighwayman:DuelistsRetreat": {
     "NAME": "Duelist's Retreat",
@@ -140,7 +140,7 @@
     "DESCRIPTION": "Gain !M! Strength. NL thehighwayman:Reload: Gain 1 Strength"
   },
   "theHighwayman:SmokeShot": {
-    "NAME": "Smoke Shot",
+    "NAME": "Smoking Shot",
     "DESCRIPTION": "thehighwayman:Fire. NL Gain !B! Block."
   },
   "theHighwayman:TakeAMoment": {
@@ -199,12 +199,12 @@
   },
   "theHighwayman:QuickDraw": {
     "NAME": "Quick Draw",
-    "DESCRIPTION": "Innate. NL Gain 1 thehighwayman:Ammo. NL Add 1 card that thehighwayman:Fires from your deck to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain 1 thehighwayman:Ammo. NL Add 1 card that thehighwayman:Fires from your deck to your hand. It costs 0 to play this turn. NL Exhaust."
+    "DESCRIPTION": "Innate. NL Add 1 card that thehighwayman:Fires from your deck to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Put a card that thehighwayman:Fires from your draw pile to your hand. It costs 0 to play this turn. NL Exhaust."
   },
   "theHighwayman:CardUpSleeve": {
     "NAME": "Card Up Your Sleeve",
-    "DESCRIPTION": "Put the card from the bottom of your deck into your hand. It costs 0 this turn."
+    "DESCRIPTION": "thehighwayman:Advance 1 card. It costs 0 this turn."
   },
   "theHighwayman:ClipArtery": {
     "NAME": "Clip Artery",
@@ -221,7 +221,7 @@
   },
   "theHighwayman:KillShot": {
     "NAME": "Kill Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage. NL If Fatal, make a copy of this on the bottom of your deck. NL Exhaust."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage. NL Exhaust."
   },
   "theHighwayman:CutDown": {
     "NAME": "Cut Down",
@@ -234,7 +234,7 @@
   },
   "theHighwayman:PistolWhip": {
     "NAME": "Pistol Whip",
-    "DESCRIPTION": "Deal !D! damage. NL If you played a thehighwayman:Fire card this turn, gain [E] and thehighwayman:Advance 1."
+    "DESCRIPTION": "Deal !D! damage. NL If you played a thehighwayman:Fire card this turn, gain [E] and thehighwayman:Advance 1 card."
   },
   "theHighwayman:StackDeck": {
     "NAME": "Stack the Deck",
@@ -242,7 +242,7 @@
   },
   "theHighwayman:Reposition": {
     "NAME": "Reposition",
-    "DESCRIPTION": "Whenever you thehighwayman:Retreat a card, draw a card."
+    "DESCRIPTION": "Whenever you thehighwayman:Retreat a card, gain !B! Block."
   },
   "theHighwayman:GetReady": {
     "NAME": "Get Ready",
@@ -251,11 +251,11 @@
   },
   "theHighwayman:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Unplayable. NL Whenever you thehighwayman:Advance this card, thehighwayman:Advance 1 card and deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Whenever this card is thehighwayman:Advanced, thehighwayman:Advance 1 card."
   },
   "theHighwayman:CrimsonCurse": {
     "NAME": "Crimson Curse",
-    "DESCRIPTION": "Deal !D! damage. Remove up to 9 Bleed from target and gain !M! Strength for every !theHighwayman:SecondMagic! Bleed removed."
+    "DESCRIPTION": "Deal !D! damage. NL Remove thehighwayman:Bleed from target and heal !M! HP for every !theHighwayman:SecondMagic! Bleed removed. NL Exhaust."
   },
   "theHighwayman:SwiftGuard": {
     "NAME": "Swift Guard",
