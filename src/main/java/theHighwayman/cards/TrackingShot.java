@@ -44,8 +44,8 @@ public class TrackingShot extends AbstractShotCard {
     private static final int COST = 1;
     private static final int DAMAGE = 2;
     private static final int VULNERABLE = 1;
-    private static final int REPEAT = 4;
-    private static final int UPGRADE_PLUS_REPEAT = 2;
+    private static final int REPEAT = 2;
+    private static final int UPGRADE_PLUS_REPEAT = 1;
 
     // /STAT DECLARATION/
 
@@ -56,14 +56,15 @@ public class TrackingShot extends AbstractShotCard {
         baseMagicNumber = magicNumber = VULNERABLE;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = REPEAT;
         this.exhaust = true;
-
         this.tags.add(CustomTags.SHOT);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.numberShots = p.getPower(makeID("Ammo")).amount;
+        if (p.hasPower(makeID("Ammo"))) {
+            this.numberShots = p.getPower(makeID("Ammo")).amount;
+        }
         if (!purgeOnUse) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
         }

@@ -2,10 +2,7 @@ package theHighwayman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -46,24 +43,30 @@ public class PointBlank extends AbstractShotCard {
 
     private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE_GAIN = 10;
+    private static final int UPGRADE_PLUS_DAMAGE_GAIN = 2;
     // /STAT DECLARATION/
 
 
     public PointBlank() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = DAMAGE_GAIN;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.numberShots = p.getPower(makeID("Ammo")).amount;
+        if (p.hasPower(makeID("Ammo"))) {
+            this.numberShots = p.getPower(makeID("Ammo")).amount;
+        }
         if (!purgeOnUse) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
         }
         for (int i = 0; i < this.numberShots; i++) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid, magicNumber));
         }
     }
 
@@ -73,6 +76,7 @@ public class PointBlank extends AbstractShotCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_DAMAGE_GAIN);
             initializeDescription();
         }
     }

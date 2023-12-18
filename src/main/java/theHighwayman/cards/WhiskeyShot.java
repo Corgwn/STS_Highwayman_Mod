@@ -58,7 +58,9 @@ public class WhiskeyShot extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.numberShots = p.getPower(makeID("Ammo")).amount;
+        if (p.hasPower(makeID("Ammo"))) {
+            this.numberShots = p.getPower(makeID("Ammo")).amount;
+        }
         if (!purgeOnUse) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
         }

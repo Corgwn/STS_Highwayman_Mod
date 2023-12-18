@@ -40,8 +40,8 @@ public class Grapeshot extends AbstractShotCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 21;
-    private static final int UPGRADE_PLUS_DMG = 7;
+    private static final int DAMAGE = 12;
+    private static final int UPGRADE_PLUS_DMG = 4;
     // /STAT DECLARATION/
 
 
@@ -56,7 +56,9 @@ public class Grapeshot extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.numberShots = p.getPower(makeID("Ammo")).amount;
+        if (p.hasPower(makeID("Ammo"))) {
+            this.numberShots = p.getPower(makeID("Ammo")).amount;
+        }
         if (!purgeOnUse) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
         }
