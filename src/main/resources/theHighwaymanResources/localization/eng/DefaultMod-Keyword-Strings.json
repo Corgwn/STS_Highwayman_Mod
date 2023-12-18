@@ -23,7 +23,7 @@
       "Ammo",
       "ammo"
     ],
-    "DESCRIPTION": "The number of times you can Fire."
+    "DESCRIPTION": "Your next card that Fires! is played X times."
   },
   {
     "PROPER_NAME": "Fire",
@@ -33,7 +33,7 @@
       "fires",
       "Fired"
     ],
-    "DESCRIPTION": "Uses 1 Ammo to play this card."
+    "DESCRIPTION": "You must have Ammo to play this card. Lose all Ammo when played."
   },
   {
     "PROPER_NAME": "Riposte",

@@ -52,6 +52,12 @@ public class Vigorous extends AbstractPower implements CloneablePowerInterface {
     //onApplyPower is "When the owner applies a power to something else (only used by Sadistic Nature)."
     //onReceivePowerPower from StSlib is "When any (including this) power is applied to the owner."
 
+
+    @Override
+    public void atStartOfTurn() {
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new Ammo(this.owner, this.owner, 1)));
+    }
+
     public void playApplyPowerSfx() {
         CardCrawlGame.sound.play("POWER_POISON", 0.05F);
     }

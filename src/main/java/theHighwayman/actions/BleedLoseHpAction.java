@@ -14,13 +14,15 @@ import static theHighwayman.DefaultMod.makeID;
 
 public class BleedLoseHpAction extends AbstractGameAction {
     private static final float DURATION = 0.33F;
+    private final boolean consume;
 
-    public BleedLoseHpAction(AbstractCreature target, AbstractCreature source, int amount, AbstractGameAction.AttackEffect effect) {
+    public BleedLoseHpAction(AbstractCreature target, AbstractCreature source, int amount, AbstractGameAction.AttackEffect effect, boolean consume) {
         this.setValues(target, source);
         this.amount = amount;
         this.actionType = ActionType.DAMAGE;
         this.attackEffect = effect;
         this.duration = 0.33F;
+        this.consume = consume;
     }
 
     public void update() {
@@ -37,16 +39,20 @@ public class BleedLoseHpAction extends AbstractGameAction {
                 int damage = this.amount;
                 this.target.getPower(makeID("Bleed")).flash();
 
-                if (AbstractDungeon.player.hasPower(makeID("TwistedTip"))) {
-                    int reduceAmount = this.target.getPower(makeID("Bleed")).amount / 2;
-                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
-                }
-                else {
-                    int reduceAmount = this.target.getPower(makeID("Bleed")).amount;
-                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
+                //Bleed reduction logic
+                if (this.consume) {
+                    if (AbstractDungeon.player.hasPower(makeID("TwistedTip"))) {
+                        int reduceAmount = this.target.getPower(makeID("Bleed")).amount / 2;
+                        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
+                    }
+                    else {
+                        int reduceAmount = this.target.getPower(makeID("Bleed")).amount;
+                        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
+                    }
                 }
 
-                if (this.target.currentHealth > 0) {
+                //Bleed damage logic
+                if (this.target.currentHealth > 0 && !this.consume) {
                     this.target.tint.color = Color.CHARTREUSE.cpy();
                     this.target.tint.changeColor(Color.WHITE.cpy());
                     this.target.damage(new DamageInfo(this.source, damage, DamageInfo.DamageType.HP_LOSS));

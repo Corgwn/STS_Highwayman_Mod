@@ -68,7 +68,7 @@
   },
   "theHighwayman:VigorousCard": {
     "NAME": "Vigorous",
-    "DESCRIPTION": "You always have thehighwayman:Ammo"
+    "DESCRIPTION": "At the start of your turn, gain 1 thehighwayman:Ammo."
   },
   "theHighwayman:TrackingShot": {
     "NAME": "Tracking Shot",
@@ -89,7 +89,7 @@
   },
   "theHighwayman:CycleOfViolence": {
     "NAME": "Cycle of Violence",
-    "DESCRIPTION": "Whenever you take unblocked attack damage, gain 1 thehighwayman:Riposte."
+    "DESCRIPTION": "Deal !D! damage. Whenever you take damage, return this from the discard pile to your hand."
   },
   "theHighwayman:Hemorrhage": {
     "NAME": "Hemorrhage",
@@ -113,7 +113,7 @@
   },
   "theHighwayman:DuelistsRetreat": {
     "NAME": "Duelist's Retreat",
-    "DESCRIPTION": "Gain !B! Block. NL Retreat 1 card from your hand."
+    "DESCRIPTION": "Gain !B! Block. NL Retreat 1 card."
   },
   "theHighwayman:Parry": {
     "NAME": "Parry",
@@ -129,7 +129,7 @@
   },
   "theHighwayman:PointBlank": {
     "NAME": "Point Blank Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage. NL Every time you thehighwayman:Advance this card, double this card's damage this combat."
+    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage. NL Increase this card's damage by !M! this combat."
   },
   "theHighwayman:Cartridge": {
     "NAME": "Cartridge",
@@ -143,8 +143,8 @@
     "NAME": "Smoke Shot",
     "DESCRIPTION": "thehighwayman:Fire. NL Gain !B! Block."
   },
-  "theHighwayman:Breather": {
-    "NAME": "Take a Breather",
+  "theHighwayman:TakeAMoment": {
+    "NAME": "Take A Moment",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! thehighwayman:Ammo."
   },
   "theHighwayman:QuickWork": {
@@ -165,7 +165,7 @@
   },
   "theHighwayman:Ricochet": {
     "NAME": "Ricocheting Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage to a random enemy !M! times."
+    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! damage to a random enemy !M! times."
   },
   "theHighwayman:ReinforcedOvercoat": {
     "NAME": "Reinforced Overcoat",
@@ -182,11 +182,11 @@
   },
   "theHighwayman:TwistedTip": {
     "NAME": "Twisted Tip",
-    "DESCRIPTION": "Bleed instead loses half of it's stacks when activating damage."
+    "DESCRIPTION": "Enemies no longer stop thehighwayman:Bleeding"
   },
   "theHighwayman:Finesse": {
     "NAME": "Unparalleled Finesse",
-    "DESCRIPTION": "At the start of your turn draw 1 card and put 1 card to the bottom of your deck."
+    "DESCRIPTION": "At the start of your turn, thehighwayman:Retreat !M! cards"
   },
   "theHighwayman:ShotInTheNeck": {
     "NAME": "Shot In The Neck",
@@ -199,7 +199,8 @@
   },
   "theHighwayman:QuickDraw": {
     "NAME": "Quick Draw",
-    "DESCRIPTION": "Innate. NL Gain 1 thehighwayman:Ammo. NL Add 1 card that thehighwayman:Fires from your deck to your hand. NL Exhaust."
+    "DESCRIPTION": "Innate. NL Gain 1 thehighwayman:Ammo. NL Add 1 card that thehighwayman:Fires from your deck to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain 1 thehighwayman:Ammo. NL Add 1 card that thehighwayman:Fires from your deck to your hand. It costs 0 to play this turn. NL Exhaust."
   },
   "theHighwayman:CardUpSleeve": {
     "NAME": "Card Up Your Sleeve",
@@ -224,7 +225,7 @@
   },
   "theHighwayman:CutDown": {
     "NAME": "Cut Down",
-    "DESCRIPTION": "Deal !D! damage. NL Put a card from your hand to the bottom of your deck."
+    "DESCRIPTION": "Deal !D! damage. NL thehighwayman:Retreat !M! card."
   },
   "theHighwayman:Friends": {
     "NAME": "Help From Friends",
@@ -233,7 +234,7 @@
   },
   "theHighwayman:PistolWhip": {
     "NAME": "Pistol Whip",
-    "DESCRIPTION": "Deal !D! damage. NL If you have thehighwayman:Fired this turn, gain [E] and thehighwayman:Advance a card."
+    "DESCRIPTION": "Deal !D! damage. NL If you played a thehighwayman:Fire card this turn, gain [E] and thehighwayman:Advance 1."
   },
   "theHighwayman:StackDeck": {
     "NAME": "Stack the Deck",
@@ -256,8 +257,8 @@
     "NAME": "Crimson Curse",
     "DESCRIPTION": "Deal !D! damage. Remove up to 9 Bleed from target and gain !M! Strength for every !theHighwayman:SecondMagic! Bleed removed."
   },
-  "theHighwayman:HighGuard": {
-    "NAME": "High Guard",
+  "theHighwayman:SwiftGuard": {
+    "NAME": "Swift Guard",
     "DESCRIPTION": "Gain !B! Block. NL thehighwayman:Advance !M! cards."
   },
   "theHighwayman:Riposte": {
@@ -275,5 +276,9 @@
   "theHighwayman:DoubleCross": {
     "NAME": "Double Cross",
     "DESCRIPTION": "If the enemy intends to attack, gain !B! Block. Otherwise, apply !M! Vulnerable."
+  },
+  "theHighwayman:LoadUp": {
+    "NAME": "Load Up",
+    "DESCRIPTION": "Gain !M! thehighwayman:Ammo."
   }
 }

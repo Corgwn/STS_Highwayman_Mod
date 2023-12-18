@@ -23,7 +23,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theHighwayman.DefaultMod;
 import theHighwayman.cards.*;
-import theHighwayman.relics.PaperCartridge;
+import theHighwayman.relics.MusketPouch;
 
 import java.util.ArrayList;
 
@@ -172,11 +172,11 @@ public class theHighwayman extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(PaperCartridge.ID);
+        retVal.add(MusketPouch.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
-        UnlockTracker.markRelicAsSeen(PaperCartridge.ID);
+        UnlockTracker.markRelicAsSeen(MusketPouch.ID);
 
         return retVal;
     }

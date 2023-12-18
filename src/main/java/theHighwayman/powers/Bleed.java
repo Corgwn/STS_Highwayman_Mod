@@ -21,7 +21,7 @@ import static theHighwayman.DefaultMod.makePowerPath;
 //At the start of your turn, if you have gained no additional bleed since last turn, lose #b health
 
 public class Bleed extends AbstractPower implements CloneablePowerInterface {
-    private boolean dealDamage;
+    private boolean consume;
     public AbstractCreature source;
 
     public static final String POWER_ID = makeID("Bleed");
@@ -44,7 +44,7 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
         if (this.amount >= 9999) {
             this.amount = 9999;
         }
-        this.dealDamage = false;
+        this.consume = false;
         this.source = source;
 
         this.description = DESCRIPTIONS[0] + Math.ceil(((double) this.amount) / 4) + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
@@ -73,23 +73,15 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        this.dealDamage = false;
+        this.consume = false;
     }
 
     @Override
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            if (this.dealDamage) {
-                this.addToBot(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.FIRE));
-
-
-            }
-            else {
-                this.flashWithoutSound();
-                this.addToBot(new BleedGrowthAction(this.owner, this.source));
-                this.dealDamage = true;
-            }
+            this.addToBot(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.FIRE, this.consume));
+            this.consume = true;
         }
     }
 

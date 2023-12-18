@@ -58,7 +58,7 @@ public class BleedOut extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m.hasPower(makeID("Bleed"))) {
-            addToBot(new BleedLoseHpAction(m, p, m.getPower(makeID("Bleed")).amount, AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new BleedLoseHpAction(m, p, m.getPower(makeID("Bleed")).amount, AbstractGameAction.AttackEffect.FIRE, false));
         }
     }
     //Upgraded stats.

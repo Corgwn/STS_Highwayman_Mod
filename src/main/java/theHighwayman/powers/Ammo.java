@@ -65,14 +65,6 @@ public class Ammo extends AbstractPower implements CloneablePowerInterface {
     }
 
     @Override
-    public void stackPower(int stackAmount) {
-        this.amount += stackAmount;
-        if (!this.owner.hasPower(makeID("Vigorous")) && this.amount > 1) {
-            this.amount = 1;
-        }
-    }
-
-    @Override
     public AbstractPower makeCopy() {
         return new Ammo(owner, source, amount);
     }

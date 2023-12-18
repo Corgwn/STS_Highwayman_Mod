@@ -39,8 +39,9 @@ public class OpenVein extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int BLEED = 4;
-    private static final int UPGRADE_PLUS_BLEED = 2;
-    private static final int DAMAGE = 3;
+    private static final int UPGRADE_PLUS_BLEED = 1;
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
 
 
     // /STAT DECLARATION/
@@ -67,6 +68,7 @@ public class OpenVein extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_BLEED);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

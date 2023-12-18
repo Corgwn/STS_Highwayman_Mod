@@ -1,6 +1,8 @@
 package theHighwayman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import theHighwayman.DefaultMod;
 import theHighwayman.actions.RevolverAction;
 import theHighwayman.characters.theHighwayman;
@@ -40,7 +43,7 @@ public class RevolverShot extends AbstractShotCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = -1;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 7;
 
     // /STAT DECLARATION/
 
@@ -53,10 +56,15 @@ public class RevolverShot extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!purgeOnUse || !p.hasPower(makeID("Vigorous"))) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), 1));
+        if (p.hasPower(makeID("Ammo"))) {
+            this.numberShots = p.getPower(makeID("Ammo")).amount;
         }
-        AbstractDungeon.actionManager.addToBottom(new RevolverAction(p, m, damage, damageTypeForTurn, false, this.energyOnUse, this.upgraded));
+        if (!purgeOnUse) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
+        }
+        for (int i = 0; i < this.numberShots; i++) {
+            AbstractDungeon.actionManager.addToBottom(new RevolverAction(p, m, damage, damageTypeForTurn, false, this.energyOnUse, this.upgraded));
+        }
     }
 
     // Upgraded stats.

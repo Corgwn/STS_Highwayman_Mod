@@ -14,6 +14,7 @@ import theHighwayman.powers.Ammo;
 import theHighwayman.powers.DoubleShot;
 
 import static theHighwayman.DefaultMod.makeCardPath;
+import static theHighwayman.DefaultMod.makeID;
 
 public class DoubleBarrel extends AbstractDynamicCard {
 
@@ -55,8 +56,9 @@ public class DoubleBarrel extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
-        addToBot(new ApplyPowerAction(p, p, new DoubleShot(p, p, 1)));
+        if (p.hasPower(makeID("Ammo"))) {
+            addToBot(new ApplyPowerAction(p, p, new Ammo(p, p, p.getPower(makeID("Ammo")).amount)));
+        }
     }
 
     //Upgraded stats.

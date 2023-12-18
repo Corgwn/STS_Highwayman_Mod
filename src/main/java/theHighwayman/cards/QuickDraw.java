@@ -55,8 +55,7 @@ public class QuickDraw extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
-        AbstractDungeon.actionManager.addToBottom(new QuickDrawAction(1));
+        AbstractDungeon.actionManager.addToBottom(new QuickDrawAction(1, this.upgraded));
     }
 
     //Upgraded stats.
@@ -64,7 +63,7 @@ public class QuickDraw extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -37,6 +37,7 @@ public class Cartridge extends AbstractDynamicCard {
 
     private static final int COST = 0;
     private static final int AMMO_GAIN = 1;
+    private static final int UPGRADED_PLUS_AMMO = 1;
 
 
     // /STAT DECLARATION/
@@ -60,6 +61,7 @@ public class Cartridge extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_AMMO);
             initializeDescription();
         }
     }
