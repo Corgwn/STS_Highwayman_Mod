@@ -48,6 +48,7 @@ public class Cartridge extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = AMMO_GAIN;
         selfRetain = true;
         exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     // Actions the card should do.

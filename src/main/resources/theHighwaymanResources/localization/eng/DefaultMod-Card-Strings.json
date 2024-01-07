@@ -280,5 +280,15 @@
   "theHighwayman:LoadUp": {
     "NAME": "Load Up",
     "DESCRIPTION": "Gain !M! thehighwayman:Ammo."
+  },
+  "theHighwayman:DuelistsSurge": {
+    "NAME": "Duelist's Surge",
+    "DESCRIPTION": "Every card you thehighwayman:Advance this turn costs 0 until played. thehighwayman:Advance !M! card.",
+    "UPGRADE_DESCRIPTION": "Every card you thehighwayman:Advance this turn costs 0 until played. thehighwayman:Advance !M! card."
+  },
+  "theHighwayman:LightenLoad": {
+    "NAME": "Lighten Load",
+    "DESCRIPTION": "Gain [E] [E]. Discard the bottom card of your draw pile and replace it with a Dazed.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. Discard the bottom card of your draw pile and replace it with a Dazed."
   }
 }

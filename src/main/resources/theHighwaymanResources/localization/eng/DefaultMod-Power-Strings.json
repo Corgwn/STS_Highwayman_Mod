@@ -50,5 +50,9 @@
   "theHighwayman:Repositioning": {
     "NAME": "Reposition",
     "DESCRIPTIONS": ["Whenever you Retreat, gain ", " block."]
+  },
+  "theHighwayman:Surge": {
+    "NAME": "Duelist's Surge",
+    "DESCRIPTIONS": ["Whenever you Advance a card this turn, it costs 0 until played."]
   }
 }
