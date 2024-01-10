@@ -1,6 +1,11 @@
 package theHighwayman.cards;
 
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -30,10 +35,35 @@ public abstract class AbstractShotCard extends AbstractDefaultCard {
         this.numberShots = 0;
     }
 
+    public void consumeAmmo(AbstractPlayer p, AbstractMonster m) {
+        if (p.hasPower(makeID("Ammo"))) {
+            this.numberShots = p.getPower(makeID("Ammo")).amount;
+        }
+        for (int i = 0; i < numberShots - 1; i++) {
+            AbstractCard tmp = this.makeSameInstanceOf();
+            AbstractDungeon.player.limbo.addToBottom(tmp);
+            tmp.current_x = this.current_x;
+            tmp.current_y = this.current_y;
+            tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+            tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+            if (m != null) {
+                tmp.calculateCardDamage(m);
+            }
+
+            tmp.purgeOnUse = true;
+            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, this.energyOnUse, true, true), true);
+        }
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
+    }
+
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!purgeOnUse) {
+            boolean ammo = p.hasPower(makeID("Ammo"));
+            if (!ammo) {
+                cantUseMessage = "I don't have any ammo to fire with.";
+            }
             boolean canUse = super.canUse(p, m);
-            return canUse && (p.hasPower(makeID("Ammo")));
+            return canUse && ammo;
         }
         return super.canUse(p, m);
     }

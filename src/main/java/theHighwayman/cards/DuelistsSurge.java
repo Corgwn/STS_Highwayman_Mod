@@ -37,7 +37,7 @@ public class DuelistsSurge extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
@@ -51,6 +51,7 @@ public class DuelistsSurge extends AbstractDynamicCard {
     public DuelistsSurge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = ADVANCE;
+        exhaust = true;
     }
 
     // Actions the card should do.

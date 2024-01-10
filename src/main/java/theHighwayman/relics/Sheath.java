@@ -10,7 +10,7 @@ import theHighwayman.util.TextureLoader;
 
 import static theHighwayman.DefaultMod.*;
 
-public class MusketPouch extends CustomRelic {
+public class Sheath extends CustomRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -19,20 +19,14 @@ public class MusketPouch extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("MusketPouch");
+    public static final String ID = DefaultMod.makeID("Sheath");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final int EFFECT = 1;
 
-    public MusketPouch() {
+    public Sheath() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
-    }
-
-    public void atTurnStart() {
-        if (!AbstractDungeon.player.hasPower(makeID("Ammo"))) {
-            flash();
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new Ammo(AbstractDungeon.player, AbstractDungeon.player, 1)));
-        }
     }
 
     // Description

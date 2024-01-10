@@ -29,7 +29,9 @@ public class LightenLoadDiscardAction extends AbstractGameAction {
             this.tickDuration();
             if (this.isDone) {
                 AbstractPlayer p = AbstractDungeon.player;
-                p.drawPile.moveToDiscardPile(p.drawPile.getBottomCard());
+                if (!p.drawPile.isEmpty()) {
+                    p.drawPile.moveToDiscardPile(p.drawPile.getBottomCard());
+                }
                 p.drawPile.addToBottom(new Dazed());
             }
         }

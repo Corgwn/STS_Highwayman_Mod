@@ -57,14 +57,11 @@ public class Ricochet extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.numberShots = p.getPower(makeID("Ammo")).amount;
         if (!purgeOnUse) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
+            consumeAmmo(p, m);
         }
-        for (int i = 0; i < this.numberShots; i++) {
-            for (int j = 0; j < magicNumber; j++) {
-                AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-            }
+        for (int j = 0; j < magicNumber; j++) {
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
     }
 

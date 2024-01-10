@@ -32,7 +32,9 @@ public class AdvanceFromDeckAction extends AbstractGameAction {
             this.tickDuration();
             if (this.isDone) {
                 for (int i = 0; i < this.amount; i++) {
-                    //if (p.drawPile.isEmpty()) { p.drawPile.shuffle(); }
+                    if (p.hand.size() == p.gameHandSize) {
+                        break;
+                    }
                     if (!p.drawPile.isEmpty()) {
                         AbstractCard card = p.drawPile.getBottomCard();
                         if (zeroCost) { card.setCostForTurn(0); }

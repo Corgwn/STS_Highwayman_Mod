@@ -47,6 +47,11 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
         this.consume = false;
         this.source = source;
 
+        if (AbstractDungeon.player.hasRelic(makeID("Sheath"))) {
+            AbstractDungeon.player.getRelic(makeID("Sheath")).flash();
+            this.amount += 1;
+        }
+
         this.description = DESCRIPTIONS[0] + Math.ceil(((double) this.amount) / 4) + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
 
         type = PowerType.DEBUFF;
