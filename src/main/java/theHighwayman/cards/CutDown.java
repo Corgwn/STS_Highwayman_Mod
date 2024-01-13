@@ -24,7 +24,7 @@ public class CutDown extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(CutDown.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("CutDown_250.png");
 
     // /TEXT DECLARATION/
 

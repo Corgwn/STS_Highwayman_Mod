@@ -24,7 +24,7 @@ public class StackDeck extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(StackDeck.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("StackTheDeck_250.png");
 
     // /TEXT DECLARATION/
 

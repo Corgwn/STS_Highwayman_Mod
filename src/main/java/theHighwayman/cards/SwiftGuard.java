@@ -22,7 +22,7 @@ public class SwiftGuard extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(SwiftGuard.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("SwiftGuard_250.png");
 
     // /TEXT DECLARATION/
 

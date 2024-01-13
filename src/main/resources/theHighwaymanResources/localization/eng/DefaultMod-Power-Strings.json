@@ -5,7 +5,7 @@
   },
   "theHighwayman:Ammo": {
           "NAME": "Ammo",
-          "DESCRIPTIONS": ["The number of times you can Fire."]
+          "DESCRIPTIONS": ["Your next card that Fires! is played X times."]
   },
   "theHighwayman:RipostePower": {
           "NAME": "Riposte",
@@ -13,7 +13,7 @@
   },
   "theHighwayman:Vigorous": {
           "NAME": "Vigorous",
-          "DESCRIPTIONS": ["You can stack charges of Ammo"]
+          "DESCRIPTIONS": ["At the start of your turn, gain 1 thehighwayman:Ammo."]
   },
   "theHighwayman:Cycle": {
           "NAME": "Cycle of Violence",
@@ -33,7 +33,7 @@
   },
   "theHighwayman:Tipsy": {
     "NAME": "Tipsy",
-    "DESCRIPTIONS": ["You cannot gain Ammo."]
+    "DESCRIPTIONS": ["You cannot gain thehighwayman:Ammo."]
   },
   "theHighwayman:ExcellentForm": {
     "NAME": "Excellent Form",
@@ -41,7 +41,7 @@
   },
   "theHighwayman:TwistedTip": {
     "NAME": "Twisted Tip",
-    "DESCRIPTIONS": ["Bleed instead loses half of it's stacks when activating damage."]
+    "DESCRIPTIONS": ["Enemies no longer stop Bleeding."]
   },
   "theHighwayman:UnparalleledFinesse": {
     "NAME": "Unparalleled Finesse",

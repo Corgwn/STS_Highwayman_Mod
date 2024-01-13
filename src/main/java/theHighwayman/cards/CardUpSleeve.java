@@ -24,7 +24,7 @@ public class CardUpSleeve extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(CardUpSleeve.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("CardUpYourSleeve_250.png");
 
     // /TEXT DECLARATION/
 

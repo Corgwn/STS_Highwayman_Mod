@@ -56,11 +56,11 @@
   },
   "theHighwayman:PistolShot": {
     "NAME": "Pistol Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage."
+    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! Damage."
   },
   "theHighwayman:RamRod": {
     "NAME": "Ram Rod",
-    "DESCRIPTION": "thehighwayman:Retreat 1 card. NL thehighwayman:Reload: Gain !B! Block."
+    "DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL thehighwayman:Retreat 1 card."
   },
   "theHighwayman:Feint": {
     "NAME": "Feint",
@@ -72,16 +72,16 @@
   },
   "theHighwayman:TrackingShot": {
     "NAME": "Tracking Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage. NL Apply !M! Vulnerable 3 times. NL Exhaust."
+    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! Damage. NL Apply !M! Vulnerable 3 times. NL Exhaust."
   },
   "theHighwayman:Grapeshot": {
     "NAME": "Grapeshot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage to ALL enemies."
+    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! Damage to ALL enemies."
   },
   "theHighwayman:DoubleBarrel": {
     "NAME": "Double Barrel",
-    "DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL The next card played that thehighwayman:Fires is played twice. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL The next card played that thehighwayman:Fires is played twice."
+    "DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL The next card played that thehighwayman:Fires! is played twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL The next card played that thehighwayman:Fires! is played twice."
   },
   "theHighwayman:DuelistsAdvance": {
     "NAME": "Duelist's Advance",
@@ -97,7 +97,7 @@
   },
   "theHighwayman:WhiskeyShot": {
     "NAME": "Whisky Shot",
-    "DESCRIPTION": "Tastes like thehighwayman:Fire. NL Gain !M! Strength. NL You cannot gain thehighwayman:Ammo"
+    "DESCRIPTION": "Tastes like thehighwayman:Fire! NL Gain !M! Strength. NL You cannot gain thehighwayman:Ammo."
   },
   "theHighwayman:PrecisionStrike": {
     "NAME": "Precision Strike",
@@ -109,7 +109,7 @@
   },
   "theHighwayman:BleedOut": {
     "NAME": "Bleed Out",
-    "DESCRIPTION": "Apply 10 (14) thehighwayman:Bleed. Deal damage equal to target thehighwayman:Bleed."
+    "DESCRIPTION": "Apply !M! thehighwayman:Bleed. Deal damage equal to target thehighwayman:Bleed."
   },
   "theHighwayman:DuelistsRetreat": {
     "NAME": "Duelist's Retreat",
@@ -129,7 +129,7 @@
   },
   "theHighwayman:PointBlank": {
     "NAME": "Point Blank Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! Damage. NL Increase this card's damage by !M! this combat."
+    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! Damage. NL Increase this card's damage by !M! this combat."
   },
   "theHighwayman:Cartridge": {
     "NAME": "Cartridge",
@@ -137,11 +137,11 @@
   },
   "theHighwayman:TakeAim": {
     "NAME": "Take Aim",
-    "DESCRIPTION": "Gain !M! Strength. NL thehighwayman:Reload: Gain 1 Strength"
+    "DESCRIPTION": "Gain !M! Strength. NL Gain !thehighwayman:SecondMagic! thehighwayman:Ammo."
   },
   "theHighwayman:SmokeShot": {
     "NAME": "Smoking Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Gain !B! Block."
+    "DESCRIPTION": "thehighwayman:Fire! NL Gain !B! Block."
   },
   "theHighwayman:TakeAMoment": {
     "NAME": "Take A Moment",
@@ -182,29 +182,29 @@
   },
   "theHighwayman:TwistedTip": {
     "NAME": "Twisted Tip",
-    "DESCRIPTION": "Enemies no longer stop thehighwayman:Bleeding"
+    "DESCRIPTION": "Enemies no longer stop thehighwayman:Bleeding."
   },
   "theHighwayman:Finesse": {
     "NAME": "Unparalleled Finesse",
-    "DESCRIPTION": "At the start of your turn, thehighwayman:Retreat !M! cards"
+    "DESCRIPTION": "At the start of your turn, thehighwayman:Retreat !M! cards."
   },
   "theHighwayman:ShotInTheNeck": {
     "NAME": "Shot In The Neck",
-    "DESCRIPTION": "thehighwayman:Fire. NL Apply !M! thehighwayman:Bleed."
+    "DESCRIPTION": "thehighwayman:Fire! NL Apply !M! thehighwayman:Bleed."
   },
   "theHighwayman:RevolverShot": {
     "NAME": "Revolver Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage X times.",
-    "UPGRADE_DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage X+1 times."
+    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! damage X times.",
+    "UPGRADE_DESCRIPTION": "thehighwayman:Fire! NL Deal !D! damage X+1 times."
   },
   "theHighwayman:QuickDraw": {
     "NAME": "Quick Draw",
-    "DESCRIPTION": "Innate. NL Add 1 card that thehighwayman:Fires from your deck to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Put a card that thehighwayman:Fires from your draw pile to your hand. It costs 0 to play this turn. NL Exhaust."
+    "DESCRIPTION": "Innate. NL Add 1 card that thehighwayman:Fires! from your deck to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Put a card that thehighwayman:Fires! from your draw pile to your hand. It costs 0 to play this turn. NL Exhaust."
   },
   "theHighwayman:CardUpSleeve": {
     "NAME": "Card Up Your Sleeve",
-    "DESCRIPTION": "thehighwayman:Advance 1 card. It costs 0 this turn."
+    "DESCRIPTION": "thehighwayman:Advance 1 card. NL It costs 0 this turn."
   },
   "theHighwayman:ClipArtery": {
     "NAME": "Clip Artery",
@@ -217,11 +217,11 @@
   },
   "theHighwayman:Robbery": {
     "NAME": "Highway Robbery",
-    "DESCRIPTION": "Enemy loses !M! Strength. NL Gain !M! Strength. NL Exhaust"
+    "DESCRIPTION": "Enemy loses !M! Strength. NL Gain !M! Strength. NL Exhaust."
   },
   "theHighwayman:KillShot": {
     "NAME": "Kill Shot",
-    "DESCRIPTION": "thehighwayman:Fire. NL Deal !D! damage. NL Exhaust."
+    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! damage. NL Exhaust."
   },
   "theHighwayman:CutDown": {
     "NAME": "Cut Down",
@@ -234,7 +234,7 @@
   },
   "theHighwayman:PistolWhip": {
     "NAME": "Pistol Whip",
-    "DESCRIPTION": "Deal !D! damage. NL If you played a thehighwayman:Fire card this turn, gain [E] and thehighwayman:Advance 1 card."
+    "DESCRIPTION": "Deal !D! damage. NL If you played a card that thehighwayman:Fires! this turn, gain [E] and thehighwayman:Advance 1 card."
   },
   "theHighwayman:StackDeck": {
     "NAME": "Stack the Deck",
@@ -271,7 +271,7 @@
   },
   "theHighwayman:Pivot": {
     "NAME": "Duelist's Pivot",
-    "DESCRIPTION": "thehighwayman:Advance !M! cards. NL thehighwayman:Retreat 1 card."
+    "DESCRIPTION": "thehighwayman:Advance !M! cards. NL thehighwayman:Retreat !thehighwayman:SecondMagic! card."
   },
   "theHighwayman:DoubleCross": {
     "NAME": "Double Cross",

@@ -32,15 +32,15 @@
     ]
   },
   "theHighwayman:PaperCartridge": {
-    "NAME": "Paper Cartridge",
-    "FLAVOR": "Tastes like gunpowder...",
+    "NAME": "Musket Pouch",
+    "FLAVOR": "Smells like gunpowder...",
     "DESCRIPTIONS": [
-      "At the start of each turn, if you have no Ammo, gain 1"
+      "At the start of each turn, if you have no thehighwayman:Ammo, gain 1 thehighwayman:Ammo."
     ]
   },
   "theHighwayman:AmmoBelt": {
     "NAME": "Ammo Belt",
-    "FLAVOR": "Quick and dirty",
+    "FLAVOR": "Quick and dirty.",
     "DESCRIPTIONS": [
       "At the start of combat, gain 3 Paper Cartridges."
     ]

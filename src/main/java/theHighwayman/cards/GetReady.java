@@ -28,7 +28,7 @@ public class GetReady extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID(GetReady.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("GetReady.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

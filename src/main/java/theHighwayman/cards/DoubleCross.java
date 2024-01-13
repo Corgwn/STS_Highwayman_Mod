@@ -31,7 +31,7 @@ public class DoubleCross extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID(DoubleCross.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("DoubleCross_250.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

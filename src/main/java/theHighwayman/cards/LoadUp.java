@@ -23,7 +23,7 @@ public class LoadUp extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(LoadUp.class.getSimpleName());
-    public static final String IMG = makeCardPath("Hemorrhage_250.png");
+    public static final String IMG = makeCardPath("LoadUp.png");
 
     // /TEXT DECLARATION/
 

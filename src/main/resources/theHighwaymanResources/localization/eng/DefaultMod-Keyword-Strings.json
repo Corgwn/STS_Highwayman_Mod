@@ -26,14 +26,16 @@
     "DESCRIPTION": "Your next card that Fires! is played X times."
   },
   {
-    "PROPER_NAME": "Fire",
+    "PROPER_NAME": "Fire!",
     "NAMES": [
-      "Fire",
+      "Fire!",
+      "Fired!",
+      "Fires!",
       "fire",
       "fires",
-      "Fired"
+      "fired"
     ],
-    "DESCRIPTION": "You must have Ammo to play this card. Lose all Ammo when played."
+    "DESCRIPTION": "You must have thehighwayman:Ammo to play this card. Lose all thehighwayman:Ammo when played."
   },
   {
     "PROPER_NAME": "Riposte",
@@ -41,15 +43,17 @@
       "Riposte",
       "riposte"
     ],
-    "DESCRIPTION": "When attacked, deal 7 damage to the attacker (modified like an attack)"
+    "DESCRIPTION": "When attacked, deal 7 damage to the attacker (modified like an attack)."
   },
   {
     "PROPER_NAME": "Bleed",
     "NAMES": [
       "Bleed",
-      "bleed"
+      "bleed",
+      "Bleeding",
+      "bleeding"
     ],
-    "DESCRIPTION": "At the beginning of its turn, target loses HP if no bleed was applied since its last turn. Otherwise, increases by 25%"
+    "DESCRIPTION": "If X has increased since target's last turn, target loses X HP at the start of its turn. Otherwise, target loses X stacks of Bleed."
   },
   {
     "PROPER_NAME": "Dodge",
@@ -66,7 +70,7 @@
       "advance",
       "Advanced"
     ],
-    "DESCRIPTION": "Put the card from the bottom of your deck into your hand"
+    "DESCRIPTION": "Put the card from the bottom of your deck into your hand."
   },
   {
     "PROPER_NAME": "Retreat",
@@ -75,7 +79,7 @@
       "retreat",
       "Retreated"
     ],
-    "DESCRIPTION": "Put a card from your discard onto the bottom of your draw pile"
+    "DESCRIPTION": "Put a card from your discard onto the bottom of your draw pile."
   },
   {
     "PROPER_NAME": "Reload",
