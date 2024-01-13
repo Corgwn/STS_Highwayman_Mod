@@ -41,9 +41,9 @@ public class Ricochet extends AbstractShotCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 3;
-    private static final int REPEAT = 3;
-    private static final int UPGRADE_PLUS_REPEAT = 1;
+    private static final int DAMAGE = 4;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
+    private static final int REPEAT = 2;
 
     // /STAT DECLARATION/
 
@@ -57,14 +57,11 @@ public class Ricochet extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.numberShots = p.getPower(makeID("Ammo")).amount;
         if (!purgeOnUse) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
+            consumeAmmo(p, m);
         }
-        for (int i = 0; i < this.numberShots; i++) {
-            for (int j = 0; j < magicNumber; j++) {
-                AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-            }
+        for (int j = 0; j < magicNumber; j++) {
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
     }
 
@@ -73,7 +70,7 @@ public class Ricochet extends AbstractShotCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_REPEAT);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

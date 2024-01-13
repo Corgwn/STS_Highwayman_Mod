@@ -32,12 +32,15 @@ public class AdvanceFromDeckAction extends AbstractGameAction {
             this.tickDuration();
             if (this.isDone) {
                 for (int i = 0; i < this.amount; i++) {
-                    //if (p.drawPile.isEmpty()) { p.drawPile.shuffle(); }
+                    if (p.hand.size() == p.gameHandSize) {
+                        break;
+                    }
                     if (!p.drawPile.isEmpty()) {
                         AbstractCard card = p.drawPile.getBottomCard();
                         if (zeroCost) { card.setCostForTurn(0); }
                         if (Objects.equals(card.cardID, makeID("PointBlank"))) { this.addToBot(new ModifyDamageAction(card.uuid, card.damage)); }
-                        if (Objects.equals(card.cardID, makeID("Ambush"))) { card.use(p, AbstractDungeon.getRandomMonster()); }
+                        if (Objects.equals(card.cardID, makeID("Ambush"))) { card.onChoseThisOption(); }
+                        if (p.hasPower(makeID("Surge"))) { card.freeToPlayOnce = true; }
                         p.drawPile.removeCard(card);
                         AbstractDungeon.player.hand.addToTop(card);
                         AbstractDungeon.player.hand.refreshHandLayout();

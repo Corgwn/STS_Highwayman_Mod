@@ -43,7 +43,7 @@ public class PointBlank extends AbstractShotCard {
 
     private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int DAMAGE_GAIN = 10;
+    private static final int DAMAGE_GAIN = 5;
     private static final int UPGRADE_PLUS_DAMAGE_GAIN = 2;
     // /STAT DECLARATION/
 
@@ -58,16 +58,11 @@ public class PointBlank extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(makeID("Ammo"))) {
-            this.numberShots = p.getPower(makeID("Ammo")).amount;
-        }
         if (!purgeOnUse) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
+            consumeAmmo(p, m);
         }
-        for (int i = 0; i < this.numberShots; i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid, magicNumber));
-        }
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid, magicNumber));
     }
 
     //Upgraded stats.

@@ -3,15 +3,11 @@ package theHighwayman.cards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import org.lwjgl.Sys;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Ammo;
-import theHighwayman.powers.DoubleShot;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 import static theHighwayman.DefaultMod.makeID;

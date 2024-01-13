@@ -31,9 +31,9 @@
       "Select a card to bottle for "
     ]
   },
-  "theHighwayman:PaperCartridge": {
+  "theHighwayman:MusketPouch": {
     "NAME": "Musket Pouch",
-    "FLAVOR": "Smells like gunpowder...",
+    "FLAVOR": "Tastes like gunpowder...",
     "DESCRIPTIONS": [
       "At the start of each turn, if you have no thehighwayman:Ammo, gain 1 thehighwayman:Ammo."
     ]
@@ -43,6 +43,20 @@
     "FLAVOR": "Quick and dirty.",
     "DESCRIPTIONS": [
       "At the start of combat, gain 3 Paper Cartridges."
+    ]
+  },
+  "theHighwayman:Sheath": {
+    "NAME": "Sharpening Sheath",
+    "FLAVOR": "Take care of your blades, and they'll take care of you",
+    "DESCRIPTIONS": [
+      "Whenever you add Bleed to an enemy, add 1 additional Bleed."
+    ]
+  },
+  "theHighwayman:Holster": {
+    "NAME": "Holster",
+    "FLAVOR": "A trusty home for a trusty gun",
+    "DESCRIPTIONS": [
+      "Always retain all cards that Fire."
     ]
   }
 }

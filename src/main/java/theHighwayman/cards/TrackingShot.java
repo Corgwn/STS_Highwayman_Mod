@@ -62,18 +62,12 @@ public class TrackingShot extends AbstractShotCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(makeID("Ammo"))) {
-            this.numberShots = p.getPower(makeID("Ammo")).amount;
-        }
         if (!purgeOnUse) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, makeID("Ammo"), this.numberShots));
+            consumeAmmo(p, m);
         }
-        this.numberShots = p.getPower(makeID("Ammo")).amount;
-        for (int i = 0; i < this.numberShots; i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            for (int j = 0; j < defaultSecondMagicNumber; j++) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
-            }
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        for (int j = 0; j < defaultSecondMagicNumber; j++) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
         }
     }
 

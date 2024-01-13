@@ -9,9 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
 import theHighwayman.actions.RetreatFromDiscardAction;
-import theHighwayman.actions.RetreatFromHandAction;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Retreat;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
@@ -59,9 +57,9 @@ public class DuelistsRetreat extends CustomCard {
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int BLOCK = 7;
+    private static final int BLOCK = 8;
     private static final int UPGRADE_PLUS_BLOCK = 3;
-    private static final int DRAW = 1;
+    private static final int RETREAT = 1;
 
     // Hey want a second damage/magic/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable
@@ -88,14 +86,14 @@ public class DuelistsRetreat extends CustomCard {
         // Just type this.base and let intelliJ auto complete for you, or, go read up AbstractCard
 
         baseBlock = block = BLOCK;
-        magicNumber = baseMagicNumber = DRAW;
+        magicNumber = baseMagicNumber = RETREAT;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
-        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, 1));
+        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, magicNumber));
     }
 
     // Upgraded stats.
