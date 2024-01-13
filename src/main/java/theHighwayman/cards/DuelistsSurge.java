@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
+import theHighwayman.actions.AdvanceFromDeckAction;
 import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Ammo;
 import theHighwayman.powers.Surge;
@@ -58,6 +59,7 @@ public class DuelistsSurge extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Surge(p, p, magicNumber)));
+        addToBot(new AdvanceFromDeckAction(magicNumber, false));
     }
 
     //Upgraded stats.

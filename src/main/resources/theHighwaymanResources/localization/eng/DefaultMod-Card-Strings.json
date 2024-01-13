@@ -72,7 +72,7 @@
   },
   "theHighwayman:TrackingShot": {
     "NAME": "Tracking Shot",
-    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! Damage. NL Apply !M! Vulnerable 3 times. NL Exhaust."
+    "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! Damage. NL Apply !M! Vulnerable !theHighwayman:SecondMagic! times. NL Exhaust."
   },
   "theHighwayman:Grapeshot": {
     "NAME": "Grapeshot",
@@ -242,7 +242,7 @@
   },
   "theHighwayman:Reposition": {
     "NAME": "Reposition",
-    "DESCRIPTION": "Whenever you thehighwayman:Retreat a card, gain !B! Block."
+    "DESCRIPTION": "Whenever you thehighwayman:Retreat a card, gain !M! Block."
   },
   "theHighwayman:GetReady": {
     "NAME": "Get Ready",

@@ -54,8 +54,8 @@ public class Pivot extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new AdvanceFromDeckAction(magicNumber, false));
-        AbstractDungeon.actionManager.addToTop(new RetreatFromDiscardAction(p, p, defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new AdvanceFromDeckAction(magicNumber, false));
+        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, defaultSecondMagicNumber));
     }
 
     //Upgraded stats.

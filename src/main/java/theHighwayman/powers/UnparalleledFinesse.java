@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import theHighwayman.actions.RetreatFromDiscardAction;
 import theHighwayman.actions.RetreatFromHandAction;
 import theHighwayman.util.TextureLoader;
 
@@ -62,9 +63,8 @@ public class UnparalleledFinesse extends AbstractPower implements CloneablePower
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
-    public void atStartOfTurnPostDraw() {
-        this.addToBot(new DrawCardAction(this.amount));
-        this.addToBot(new RetreatFromHandAction(owner, owner, amount));
+    public void atStartOfTurn() {
+        this.addToBot(new RetreatFromDiscardAction(owner, owner, amount));
     }
     @Override
     public AbstractPower makeCopy() {
