@@ -26,7 +26,7 @@ public class QuickWork extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(QuickWork.class.getSimpleName());
-    public static final String IMG = makeCardPath("QuickWork_250.png");
+    public static final String IMG = makeCardPath("QuickWork.png");
 
     // /TEXT DECLARATION/
 

@@ -25,7 +25,7 @@ public class CrimsonCurse extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(CrimsonCurse.class.getSimpleName());
-    public static final String IMG = makeCardPath("CrimsonCurse_250.png");
+    public static final String IMG = makeCardPath("CrimsonCurse.png");
 
     // /TEXT DECLARATION/
 
@@ -40,7 +40,8 @@ public class CrimsonCurse extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DAMAGE = 4;
-
+    private static final int HEAL = 1;
+    private static final int BLEED_PER_HEAL = 2;
 
     // /STAT DECLARATION/
 
@@ -48,6 +49,8 @@ public class CrimsonCurse extends AbstractDynamicCard {
     public CrimsonCurse() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = HEAL;
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = BLEED_PER_HEAL;
         exhaust = true;
     }
 
@@ -58,7 +61,7 @@ public class CrimsonCurse extends AbstractDynamicCard {
         if (m.hasPower(makeID("Bleed"))) {
             int bleedAmount = m.getPower(makeID("Bleed")).amount;
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(m, p, makeID("Bleed"), bleedAmount));
-            AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, Math.floorDiv(bleedAmount, 2)));
+            AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, Math.floorDiv(bleedAmount, defaultSecondMagicNumber)));
         }
     }
 

@@ -26,7 +26,7 @@ public class BleedOut extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID(BleedOut.class.getSimpleName());
-    public static final String IMG = makeCardPath("BleedOut_250.png");
+    public static final String IMG = makeCardPath("BleedOut.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

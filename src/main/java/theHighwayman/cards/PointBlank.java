@@ -27,7 +27,7 @@ public class PointBlank extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(PointBlank.class.getSimpleName());
-    public static final String IMG = makeCardPath("PointBlankShot_250.png");
+    public static final String IMG = makeCardPath("PointBlankShot.png");
 
     // /TEXT DECLARATION/
 

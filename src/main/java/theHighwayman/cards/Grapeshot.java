@@ -30,7 +30,7 @@ public class Grapeshot extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Grapeshot.class.getSimpleName());
-    public static final String IMG = makeCardPath("GrapeShot_250.png");
+    public static final String IMG = makeCardPath("GrapeShot.png");
 
     // /TEXT DECLARATION/
 

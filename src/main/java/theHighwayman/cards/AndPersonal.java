@@ -25,7 +25,7 @@ public class AndPersonal extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(AndPersonal.class.getSimpleName());
-    public static final String IMG = makeCardPath("AndPersonal_250.png");
+    public static final String IMG = makeCardPath("AndPersonal.png");
 
     // /TEXT DECLARATION/
 

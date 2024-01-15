@@ -24,7 +24,7 @@ public class TakeAim extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(TakeAim.class.getSimpleName());
-    public static final String IMG = makeCardPath("TakeAim_250.png");
+    public static final String IMG = makeCardPath("TakeAim.png");
 
     // /TEXT DECLARATION/
 
@@ -38,6 +38,7 @@ public class TakeAim extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int STRENGTH = 1;
     private static final int UPGRADE_PLUS_STRENGTH = 1;
+    private static final int AMMO = 1;
 
     // /STAT DECLARATION/
 
@@ -45,13 +46,14 @@ public class TakeAim extends AbstractDynamicCard {
     public TakeAim() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = STRENGTH;
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = AMMO;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, 1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Ammo(p, p, defaultSecondMagicNumber)));
     }
 
     // Upgraded stats.

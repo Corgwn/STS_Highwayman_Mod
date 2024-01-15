@@ -23,7 +23,7 @@ public class Finesse extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Finesse.class.getSimpleName());
-    public static final String IMG = makeCardPath("UnparelleledFinesse_250.png");
+    public static final String IMG = makeCardPath("UnparalleledFinesse.png");
 
     // /TEXT DECLARATION/
 

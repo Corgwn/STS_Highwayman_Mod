@@ -25,7 +25,7 @@ public class RamRod extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(RamRod.class.getSimpleName());
-    public static final String IMG = makeCardPath("RamRod_250.png");
+    public static final String IMG = makeCardPath("RamRod.png");
 
     // /TEXT DECLARATION/
 

@@ -29,7 +29,7 @@ public class Ricochet extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Ricochet.class.getSimpleName());
-    public static final String IMG = makeCardPath("RicochetingShot_250.png");
+    public static final String IMG = makeCardPath("RicochetingShot.png");
 
     // /TEXT DECLARATION/
 

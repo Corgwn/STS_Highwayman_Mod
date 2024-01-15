@@ -24,7 +24,7 @@ public class TwistedTip extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(TwistedTip.class.getSimpleName());
-    public static final String IMG = makeCardPath("TwistedTip_250.png");
+    public static final String IMG = makeCardPath("TwistedTip.png");
 
     // /TEXT DECLARATION/
 

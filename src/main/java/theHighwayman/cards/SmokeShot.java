@@ -26,7 +26,7 @@ public class SmokeShot extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(SmokeShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("SmokeShot_250.png");
+    public static final String IMG = makeCardPath("SmokeShot.png");
 
     // /TEXT DECLARATION/
 

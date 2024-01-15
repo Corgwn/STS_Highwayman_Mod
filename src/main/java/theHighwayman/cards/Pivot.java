@@ -25,7 +25,7 @@ public class Pivot extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Pivot.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("DuelistsPivot.png");
 
     // /TEXT DECLARATION/
 

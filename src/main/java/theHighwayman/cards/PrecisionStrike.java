@@ -25,7 +25,7 @@ public class PrecisionStrike extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(PrecisionStrike.class.getSimpleName());
-    public static final String IMG = makeCardPath("PrecisionStrike_250.png");
+    public static final String IMG = makeCardPath("PrecisionStrike.png");
 
     // /TEXT DECLARATION/
 

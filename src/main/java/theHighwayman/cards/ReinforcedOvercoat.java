@@ -23,7 +23,7 @@ public class ReinforcedOvercoat extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(ReinforcedOvercoat.class.getSimpleName());
-    public static final String IMG = makeCardPath("ReinforcedOvercoat_250.png");
+    public static final String IMG = makeCardPath("ReinforcedOvercoat.png");
 
     // /TEXT DECLARATION/
 

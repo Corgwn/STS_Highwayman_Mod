@@ -80,8 +80,8 @@
   },
   "theHighwayman:DoubleBarrel": {
     "NAME": "Double Barrel",
-    "DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL The next card played that thehighwayman:Fires! is played twice. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 thehighwayman:Ammo. NL The next card played that thehighwayman:Fires! is played twice."
+    "DESCRIPTION": "Double your thehighwayman:Ammo. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double your thehighwayman:Ammo."
   },
   "theHighwayman:DuelistsAdvance": {
     "NAME": "Duelist's Advance",
@@ -137,7 +137,7 @@
   },
   "theHighwayman:TakeAim": {
     "NAME": "Take Aim",
-    "DESCRIPTION": "Gain !M! Strength. NL Gain !thehighwayman:SecondMagic! thehighwayman:Ammo."
+    "DESCRIPTION": "Gain !M! Strength. NL Gain !theHighwayman:SecondMagic! thehighwayman:Ammo."
   },
   "theHighwayman:SmokeShot": {
     "NAME": "Smoking Shot",
@@ -168,7 +168,7 @@
     "DESCRIPTION": "thehighwayman:Fire! NL Deal !D! damage to a random enemy !M! times."
   },
   "theHighwayman:ReinforcedOvercoat": {
-    "NAME": "Reinforced Overcoat",
+    "NAME": "Reinforced Coat",
     "DESCRIPTION": "Gain !M! Plated Armor."
   },
   "theHighwayman:UncannyReflexes": {
@@ -203,7 +203,7 @@
     "UPGRADE_DESCRIPTION": "Innate. NL Put a card that thehighwayman:Fires! from your draw pile to your hand. It costs 0 to play this turn. NL Exhaust."
   },
   "theHighwayman:CardUpSleeve": {
-    "NAME": "Card Up Your Sleeve",
+    "NAME": "Up Your Sleeve",
     "DESCRIPTION": "thehighwayman:Advance 1 card. NL It costs 0 this turn."
   },
   "theHighwayman:ClipArtery": {
@@ -251,11 +251,11 @@
   },
   "theHighwayman:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Whenever this card is thehighwayman:Advanced, thehighwayman:Advance 1 card."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Whenever you thehighwayman:Advance this card, thehighwayman:Advance 1 card."
   },
   "theHighwayman:CrimsonCurse": {
     "NAME": "Crimson Curse",
-    "DESCRIPTION": "Deal !D! damage. NL Remove thehighwayman:Bleed from target and heal !M! HP for every !theHighwayman:SecondMagic! Bleed removed. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Remove thehighwayman:Bleed from target and heal !M! HP for every !theHighwayman:SecondMagic! Bleed removed. Exhaust."
   },
   "theHighwayman:SwiftGuard": {
     "NAME": "Swift Guard",
@@ -263,7 +263,7 @@
   },
   "theHighwayman:Riposte": {
     "NAME": "Riposte",
-    "DESCRIPTION": "The next !M! times you take attack damage, deal half to you and half to the enemy."
+    "DESCRIPTION": "The next !M! times you take attack damage, instead deal half to you and half to the enemy."
   },
   "theHighwayman:PoundOfFlesh": {
     "NAME": "Pound Of Flesh",
@@ -271,11 +271,11 @@
   },
   "theHighwayman:Pivot": {
     "NAME": "Duelist's Pivot",
-    "DESCRIPTION": "thehighwayman:Advance !M! cards. NL thehighwayman:Retreat !thehighwayman:SecondMagic! card."
+    "DESCRIPTION": "thehighwayman:Advance !M! cards. NL thehighwayman:Retreat !theHighwayman:SecondMagic! card."
   },
   "theHighwayman:DoubleCross": {
     "NAME": "Double Cross",
-    "DESCRIPTION": "If the enemy intends to attack, gain !B! Block. Otherwise, apply !M! Vulnerable."
+    "DESCRIPTION": "Gain !B! Block. NL Your next attack deals !M! additional damage."
   },
   "theHighwayman:LoadUp": {
     "NAME": "Load Up",

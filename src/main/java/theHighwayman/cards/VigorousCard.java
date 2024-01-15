@@ -23,7 +23,7 @@ public class VigorousCard extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(VigorousCard.class.getSimpleName());
-    public static final String IMG = makeCardPath("Vigorous_250.png");
+    public static final String IMG = makeCardPath("Vigorous.png");
 
     // /TEXT DECLARATION/
 
