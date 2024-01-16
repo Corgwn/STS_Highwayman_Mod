@@ -1,6 +1,5 @@
 package theHighwayman.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,7 +11,6 @@ import theHighwayman.characters.theHighwayman;
 import theHighwayman.powers.Bleed;
 
 import static theHighwayman.DefaultMod.makeCardPath;
-import static theHighwayman.DefaultMod.makeID;
 
 public class BleedOut extends AbstractDynamicCard {
 
@@ -57,7 +55,7 @@ public class BleedOut extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m, p, new Bleed(m, p, magicNumber)));
-        addToBot(new BleedLoseHpAction(m, p, m.getPower(makeID("Bleed")).amount, AbstractGameAction.AttackEffect.FIRE, false));
+        addToBot(new BleedLoseHpAction(m, p, false));
     }
     //Upgraded stats.
     @Override

@@ -3,16 +3,13 @@ package theHighwayman.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theHighwayman.DefaultMod;
 import theHighwayman.actions.BleedLoseHpAction;
-import theHighwayman.actions.BleedGrowthAction;
 import theHighwayman.util.TextureLoader;
 
 import static theHighwayman.DefaultMod.makeID;
@@ -85,7 +82,7 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            this.addToBot(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.FIRE, this.consume));
+            this.addToBot(new BleedLoseHpAction(this.owner, this.source, this.consume));
             this.consume = true;
         }
     }
