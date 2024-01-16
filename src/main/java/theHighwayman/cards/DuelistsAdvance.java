@@ -37,7 +37,7 @@ public class DuelistsAdvance extends CustomCard {
     public static final String ID = DefaultMod.makeID(DuelistsAdvance.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = makeCardPath("DuelistsAdvance_250.png");
+    public static final String IMG = makeCardPath("DuelistsAdvance.png");
     // Setting the image is as easy as can possibly be now. You just need to provide the image name
     // and make sure it's in the correct folder. That's all.
     // There's makeCardPath, makeRelicPath, power, orb, event, etc..

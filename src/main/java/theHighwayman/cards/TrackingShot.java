@@ -29,7 +29,7 @@ public class TrackingShot extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(TrackingShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("TrackingShot_250.png");
+    public static final String IMG = makeCardPath("TrackingShot.png");
 
     // /TEXT DECLARATION/
 

@@ -24,7 +24,7 @@ public class CutDown extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(CutDown.class.getSimpleName());
-    public static final String IMG = makeCardPath("CutDown_250.png");
+    public static final String IMG = makeCardPath("CutDown.png");
 
     // /TEXT DECLARATION/
 
@@ -39,6 +39,7 @@ public class CutDown extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int DAMAGE = 18;
     private static final int UPGRADE_PLUS_DAMAGE = 4;
+    private static final int RETREAT = 1;
 
 
     // /STAT DECLARATION/
@@ -47,13 +48,14 @@ public class CutDown extends AbstractDynamicCard {
     public CutDown() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = RETREAT;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage)));
-        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, 1));
+        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, magicNumber));
     }
 
     //Upgraded stats.

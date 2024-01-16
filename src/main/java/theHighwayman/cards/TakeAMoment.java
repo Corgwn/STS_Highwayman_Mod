@@ -23,7 +23,7 @@ public class TakeAMoment extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(TakeAMoment.class.getSimpleName());
-    public static final String IMG = makeCardPath("TakeAMoment_250.png");
+    public static final String IMG = makeCardPath("TakeAMoment.png");
 
     // /TEXT DECLARATION/
 

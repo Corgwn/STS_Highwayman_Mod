@@ -23,7 +23,7 @@ public class Hemorrhage extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Hemorrhage.class.getSimpleName());
-    public static final String IMG = makeCardPath("Hemorrhage_250.png");
+    public static final String IMG = makeCardPath("Hemorrhage.png");
 
     // /TEXT DECLARATION/
 

@@ -21,7 +21,7 @@ public class Defend extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Defend.class.getSimpleName());
-    public static final String IMG = makeCardPath("Defend_250.png");
+    public static final String IMG = makeCardPath("Defend.png");
 
     // /TEXT DECLARATION/
 

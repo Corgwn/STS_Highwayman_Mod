@@ -1,7 +1,5 @@
 package theHighwayman.cards;
 
-import basemod.AutoAdd;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
 import theHighwayman.characters.theHighwayman;
-import theHighwayman.powers.Cycle;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
@@ -26,7 +23,7 @@ public class CycleOfViolence extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(CycleOfViolence.class.getSimpleName());
-    public static final String IMG = makeCardPath("CycleofViolence_250.png");
+    public static final String IMG = makeCardPath("CycleofViolence.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

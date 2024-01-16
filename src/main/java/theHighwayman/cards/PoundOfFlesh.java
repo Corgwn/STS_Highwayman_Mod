@@ -30,7 +30,7 @@ public class PoundOfFlesh extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(PoundOfFlesh.class.getSimpleName());
-    public static final String IMG = makeCardPath("PoundofFlesh_250.png");
+    public static final String IMG = makeCardPath("PoundofFlesh.png");
 
     // /TEXT DECLARATION/
 

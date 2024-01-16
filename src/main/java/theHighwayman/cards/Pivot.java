@@ -25,7 +25,7 @@ public class Pivot extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Pivot.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("DuelistsPivot.png");
 
     // /TEXT DECLARATION/
 
@@ -54,8 +54,8 @@ public class Pivot extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new AdvanceFromDeckAction(magicNumber, false));
-        AbstractDungeon.actionManager.addToTop(new RetreatFromDiscardAction(p, p, defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new AdvanceFromDeckAction(magicNumber, false));
+        AbstractDungeon.actionManager.addToBottom(new RetreatFromDiscardAction(p, p, defaultSecondMagicNumber));
     }
 
     //Upgraded stats.

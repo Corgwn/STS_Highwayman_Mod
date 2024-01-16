@@ -33,7 +33,7 @@ public class KillShot extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(KillShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("KillShot_250.png");
+    public static final String IMG = makeCardPath("KillShot.png");
 
     // /TEXT DECLARATION/
 
@@ -47,7 +47,7 @@ public class KillShot extends AbstractShotCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 20;
+    private static final int DAMAGE = 15;
     private static final int UPGRADE_PLUS_DMG = 5;
 
     // /STAT DECLARATION/

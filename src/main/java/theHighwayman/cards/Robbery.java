@@ -32,7 +32,7 @@ public class Robbery extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID(Robbery.class.getSimpleName());
-    public static final String IMG = makeCardPath("HighwayRobbery_250.png");
+    public static final String IMG = makeCardPath("HighwayRobbery.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

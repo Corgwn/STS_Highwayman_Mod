@@ -25,7 +25,7 @@ public class Ambush extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID(Ambush.class.getSimpleName());
-    public static final String IMG = makeCardPath("Ambush_250.png");
+    public static final String IMG = makeCardPath("Ambush.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -37,7 +37,7 @@ public class Ambush extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
     private static final int COST = 1;

@@ -27,7 +27,7 @@ public class WickedSlice extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(WickedSlice.class.getSimpleName());
-    public static final String IMG = makeCardPath("WickedSlice_250.png");
+    public static final String IMG = makeCardPath("WickedSlice.png");
 
     // /TEXT DECLARATION/
 

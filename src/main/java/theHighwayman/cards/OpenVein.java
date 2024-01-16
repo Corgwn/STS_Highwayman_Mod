@@ -25,7 +25,7 @@ public class OpenVein extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(OpenVein.class.getSimpleName());
-    public static final String IMG = makeCardPath("OpenVein_250.png");
+    public static final String IMG = makeCardPath("OpenVein.png");
 
     // /TEXT DECLARATION/
 

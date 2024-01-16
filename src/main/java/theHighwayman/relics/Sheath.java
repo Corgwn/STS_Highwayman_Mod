@@ -26,7 +26,7 @@ public class Sheath extends CustomRelic {
     private static final int EFFECT = 1;
 
     public Sheath() {
-        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
     // Description
@@ -34,5 +34,4 @@ public class Sheath extends CustomRelic {
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }
-
 }

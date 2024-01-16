@@ -28,7 +28,7 @@ public class ShotInTheNeck extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(ShotInTheNeck.class.getSimpleName());
-    public static final String IMG = makeCardPath("ShotintheNeck_250.png");
+    public static final String IMG = makeCardPath("ShotintheNeck.png");
 
     // /TEXT DECLARATION/
 

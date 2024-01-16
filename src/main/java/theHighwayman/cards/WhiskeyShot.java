@@ -29,7 +29,7 @@ public class WhiskeyShot extends AbstractShotCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(WhiskeyShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("WhiskeyShot_250.png");
+    public static final String IMG = makeCardPath("WhiskeyShot.png");
 
     // /TEXT DECLARATION/
 

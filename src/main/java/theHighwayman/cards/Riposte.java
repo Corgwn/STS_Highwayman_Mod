@@ -22,7 +22,7 @@ public class Riposte extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Riposte.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("Riposte.png");
 
     // /TEXT DECLARATION/
 
