@@ -27,8 +27,8 @@ public class TwistedTipPower extends AbstractPower implements CloneablePowerInte
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("TwistedTip84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("TwistedTip32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("twisted_tip84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("twisted_tip32.png"));
 
     public TwistedTipPower(final AbstractCreature owner) {
         this.name = NAME;
