@@ -27,8 +27,8 @@ public class Repositioning extends AbstractPower implements CloneablePowerInterf
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("Reposition84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("Reposition32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("Repositioning84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("Repositioning32.png"));
 
     public Repositioning(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;

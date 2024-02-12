@@ -283,8 +283,8 @@
   },
   "theHighwayman:DuelistsSurge": {
     "NAME": "Duelist's Surge",
-    "DESCRIPTION": "Every card you thehighwayman:Advance this turn costs 0 until played. thehighwayman:Advance !M! card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Every card you thehighwayman:Advance this turn costs 0 until played. thehighwayman:Advance !M! card. NL Exhaust."
+    "DESCRIPTION": "Every card you thehighwayman:Advance this turn costs 0 until played. NL thehighwayman:Advance !M! card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Every card you thehighwayman:Advance this turn costs 0 until played. NL thehighwayman:Advance !M! cards. NL Exhaust."
   },
   "theHighwayman:LightenLoad": {
     "NAME": "Lighten Load",

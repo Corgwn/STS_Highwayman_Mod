@@ -23,7 +23,7 @@
       "Ammo",
       "ammo"
     ],
-    "DESCRIPTION": "Your next card that Fires! is played X times."
+    "DESCRIPTION": "Your next card that thehighwayman:Fires! is played X times."
   },
   {
     "PROPER_NAME": "Fire!",
@@ -68,7 +68,8 @@
     "NAMES": [
       "Advance",
       "advance",
-      "Advanced"
+      "Advanced",
+      "advanced"
     ],
     "DESCRIPTION": "Put the card from the bottom of your deck into your hand."
   },

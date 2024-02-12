@@ -21,8 +21,8 @@ public class AmmoBelt extends CustomRelic {
     // ID, images, text.
     public static final String ID = DefaultMod.makeID("AmmoBelt");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("CartridgeBox.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("CartridgeBox.png"));
 
     public AmmoBelt() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);

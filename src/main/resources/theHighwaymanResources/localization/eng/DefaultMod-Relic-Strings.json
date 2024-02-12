@@ -33,13 +33,13 @@
   },
   "theHighwayman:MusketPouch": {
     "NAME": "Musket Pouch",
-    "FLAVOR": "Tastes like gunpowder...",
+    "FLAVOR": "Smell like gunpowder. Taste like metal.",
     "DESCRIPTIONS": [
-      "At the start of each turn, if you have no thehighwayman:Ammo, gain 1 thehighwayman:Ammo."
+      "At the start of each turn, if you have no Ammo, gain 1 Ammo."
     ]
   },
   "theHighwayman:AmmoBelt": {
-    "NAME": "Ammo Belt",
+    "NAME": "Cartridge Box",
     "FLAVOR": "Quick and dirty.",
     "DESCRIPTIONS": [
       "At the start of combat, gain 3 Paper Cartridges."
@@ -47,7 +47,7 @@
   },
   "theHighwayman:Sheath": {
     "NAME": "Sharpening Sheath",
-    "FLAVOR": "Take care of your blades, and they'll take care of you",
+    "FLAVOR": "Take care of your blades, and they'll take care of you.",
     "DESCRIPTIONS": [
       "Whenever you add Bleed to an enemy, add 1 additional Bleed."
     ]

@@ -21,8 +21,8 @@ public class Sheath extends CustomRelic {
     // ID, images, text.
     public static final String ID = DefaultMod.makeID("Sheath");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("SharpeningSheath.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("SharpeningSheath.png"));
     private static final int EFFECT = 1;
 
     public Sheath() {

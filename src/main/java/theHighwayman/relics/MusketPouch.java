@@ -21,8 +21,8 @@ public class MusketPouch extends CustomRelic {
     // ID, images, text.
     public static final String ID = DefaultMod.makeID("MusketPouch");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("MusketPouch.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("MusketPouch.png"));
 
     public MusketPouch() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
