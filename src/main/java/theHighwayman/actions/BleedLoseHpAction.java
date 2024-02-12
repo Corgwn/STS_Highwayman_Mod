@@ -16,11 +16,10 @@ public class BleedLoseHpAction extends AbstractGameAction {
     private static final float DURATION = 0.33F;
     private final boolean consume;
 
-    public BleedLoseHpAction(AbstractCreature target, AbstractCreature source, int amount, AbstractGameAction.AttackEffect effect, boolean consume) {
+    public BleedLoseHpAction(AbstractCreature target, AbstractCreature source, boolean consume) {
         this.setValues(target, source);
-        this.amount = amount;
         this.actionType = ActionType.DAMAGE;
-        this.attackEffect = effect;
+        this.attackEffect = AbstractGameAction.AttackEffect.FIRE;
         this.duration = 0.33F;
         this.consume = consume;
     }
@@ -36,19 +35,19 @@ public class BleedLoseHpAction extends AbstractGameAction {
 
             this.tickDuration();
             if (this.isDone) {
-                int damage = this.amount;
+                if (!target.hasPower(makeID("Bleed"))) {
+                    return;
+                }
+                int damage = target.getPower(makeID("Bleed")).amount;
                 this.target.getPower(makeID("Bleed")).flash();
 
                 //Bleed reduction logic
                 if (this.consume) {
-                    if (AbstractDungeon.player.hasPower(makeID("TwistedTip"))) {
-                        int reduceAmount = 0;
-                        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
+                    int reduceAmount = 0;
+                    if (!AbstractDungeon.player.hasPower(makeID("TwistedTip"))) {
+                        reduceAmount = this.target.getPower(makeID("Bleed")).amount;
                     }
-                    else {
-                        int reduceAmount = this.target.getPower(makeID("Bleed")).amount;
-                        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
-                    }
+                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.source, makeID("Bleed"), reduceAmount));
                 }
 
                 //Bleed damage logic
