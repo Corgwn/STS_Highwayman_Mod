@@ -104,21 +104,21 @@ public class DefaultMod implements
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
   
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "theHighwaymanResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "theHighwaymanResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "theHighwaymanResources/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_DEFAULT_GRAY = "theHighwaymanResources/images/512/bg_attack_highwayman.png";
+    private static final String SKILL_DEFAULT_GRAY = "theHighwaymanResources/images/512/bg_skill_highwayman.png";
+    private static final String POWER_DEFAULT_GRAY = "theHighwaymanResources/images/512/bg_power_highwayman.png";
     
     private static final String ENERGY_ORB_DEFAULT_GRAY = "theHighwaymanResources/images/512/card_default_gray_orb.png";
     private static final String CARD_ENERGY_ORB = "theHighwaymanResources/images/512/card_small_orb.png";
     
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "theHighwaymanResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "theHighwaymanResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "theHighwaymanResources/images/1024/bg_power_default_gray.png";
+    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "theHighwaymanResources/images/1024/bg_attack_highwayman.png";
+    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "theHighwaymanResources/images/1024/bg_skill_highwayman.png";
+    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "theHighwaymanResources/images/1024/bg_power_highwayman.png";
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "theHighwaymanResources/images/1024/card_default_gray_orb.png";
     
     // Character assets
     private static final String THE_DEFAULT_BUTTON = "theHighwaymanResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "theHighwaymanResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    private static final String THE_DEFAULT_PORTRAIT = "theHighwaymanResources/images/charSelect/HighwaymanCharacterPortrait.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "theHighwaymanResources/images/char/defaultCharacter/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "theHighwaymanResources/images/char/defaultCharacter/shoulder2.png";
     public static final String THE_DEFAULT_CORPSE = "theHighwaymanResources/images/char/defaultCharacter/corpse.png";
