@@ -238,7 +238,7 @@
   },
   "theHighwayman:StackDeck": {
     "NAME": "Stack the Deck",
-    "DESCRIPTION": "thehighwayman:Retreat !M! cards from your discard pile."
+    "DESCRIPTION": "thehighwayman:Retreat !M! cards."
   },
   "theHighwayman:Reposition": {
     "NAME": "Reposition",

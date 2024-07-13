@@ -13,7 +13,7 @@
   },
   "theHighwayman:Vigorous": {
           "NAME": "Vigorous",
-          "DESCRIPTIONS": ["At the start of your turn, gain 1 thehighwayman:Ammo."]
+          "DESCRIPTIONS": ["At the start of your turn, gain 1 Ammo."]
   },
   "theHighwayman:Cycle": {
           "NAME": "Cycle of Violence",

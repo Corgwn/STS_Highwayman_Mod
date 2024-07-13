@@ -38,7 +38,7 @@ public class StackDeck extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int RETREAT_AMOUNT = 3;
-
+    private static final int RETREAT_UPGRADE = 1;
 
     // /STAT DECLARATION/
 
@@ -60,6 +60,7 @@ public class StackDeck extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(RETREAT_UPGRADE);
             initializeDescription();
         }
     }
