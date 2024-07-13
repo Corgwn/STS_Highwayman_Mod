@@ -39,7 +39,7 @@ public class Tipsy extends AbstractPower implements CloneablePowerInterface, OnR
 
         this.description = DESCRIPTIONS[0];
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         isTurnBased = false;
 
         // We load those textures here.

@@ -23,7 +23,7 @@
       "Ammo",
       "ammo"
     ],
-    "DESCRIPTION": "Your next card that thehighwayman:Fires! is played X times."
+    "DESCRIPTION": "Your next card that Fires! is played X times."
   },
   {
     "PROPER_NAME": "Fire!",
@@ -35,7 +35,7 @@
       "fires",
       "fired"
     ],
-    "DESCRIPTION": "You must have thehighwayman:Ammo to play this card. Lose all thehighwayman:Ammo when played."
+    "DESCRIPTION": "You must have Ammo to play this card. Lose all Ammo when played."
   },
   {
     "PROPER_NAME": "Riposte",
