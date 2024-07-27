@@ -1,11 +1,14 @@
 package theHighwayman.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -17,7 +20,7 @@ import static theHighwayman.DefaultMod.makePowerPath;
 
 //At the start of your turn, if you have gained no additional bleed since last turn, lose #b health
 
-public class Bleed extends AbstractPower implements CloneablePowerInterface {
+public class Bleed extends AbstractPower implements CloneablePowerInterface, HealthBarRenderPower {
     private boolean consume;
     public AbstractCreature source;
 
@@ -49,7 +52,7 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
             this.amount += 1;
         }
 
-        this.description = DESCRIPTIONS[0] + Math.ceil(((double) this.amount) / 4) + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 
         type = PowerType.DEBUFF;
         isTurnBased = false;
@@ -69,7 +72,7 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + (int) Math.ceil(((double) this.amount) / 4) + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
@@ -90,5 +93,18 @@ public class Bleed extends AbstractPower implements CloneablePowerInterface {
     @Override
     public AbstractPower makeCopy() {
         return new Bleed(owner, source, amount);
+    }
+
+    @Override
+    public int getHealthBarAmount() {
+        if (!this.consume) {
+            return this.amount;
+        }
+        else { return 0; }
+    }
+
+    @Override
+    public Color getColor() {
+        return CardHelper.getColor(20, 0, 137);
     }
 }

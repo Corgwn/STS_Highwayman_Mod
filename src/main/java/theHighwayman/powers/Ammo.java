@@ -45,7 +45,7 @@ public class Ammo extends AbstractPower implements CloneablePowerInterface {
         }
         this.source = source;
 
-        this.description = DESCRIPTIONS[0];
+        this.updateDescription();
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -59,6 +59,17 @@ public class Ammo extends AbstractPower implements CloneablePowerInterface {
     //onInitialApplication is "When THIS power is first applied for the very first time only."
     //onApplyPower is "When the owner applies a power to something else (only used by Sadistic Nature)."
     //onReceivePowerPower from StSlib is "When any (including this) power is applied to the owner."
+
+    public void updateDescription() {
+        String secondHalf = "";
+        if (this.amount == 1) {
+            secondHalf = DESCRIPTIONS[1];
+        }
+        else {
+            secondHalf = DESCRIPTIONS[2];
+        }
+        this.description = DESCRIPTIONS[0] + this.amount + secondHalf;
+    }
 
     public void playApplyPowerSfx() {
         CardCrawlGame.sound.play("POWER_POISON", 0.05F);

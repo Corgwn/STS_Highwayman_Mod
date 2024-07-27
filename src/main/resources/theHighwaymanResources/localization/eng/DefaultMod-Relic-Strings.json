@@ -42,7 +42,7 @@
     "NAME": "Cartridge Box",
     "FLAVOR": "Quick and dirty.",
     "DESCRIPTIONS": [
-      "At the start of combat, gain 3 Paper Cartridges."
+      "At the start of combat, gain 3 Paper Cartridges. Replaces Musket Pouch."
     ]
   },
   "theHighwayman:Sheath": {

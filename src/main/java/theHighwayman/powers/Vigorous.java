@@ -30,12 +30,13 @@ public class Vigorous extends AbstractPower implements CloneablePowerInterface {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("vigorous84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("vigorous32.png"));
 
-    public Vigorous(final AbstractCreature owner, final AbstractCreature source) {
+    public Vigorous(final AbstractCreature owner, final AbstractCreature source, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
+        this.amount = amount;
 
         this.description = DESCRIPTIONS[0];
 
@@ -55,7 +56,7 @@ public class Vigorous extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new Ammo(this.owner, this.owner, 1)));
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new Ammo(this.owner, this.owner, this.amount)));
     }
 
     public void playApplyPowerSfx() {
@@ -64,6 +65,6 @@ public class Vigorous extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public AbstractPower makeCopy() {
-        return new Vigorous(owner, source);
+        return new Vigorous(owner, source, this.amount);
     }
 }

@@ -16,11 +16,9 @@ public class QuickDrawAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
     private final AbstractPlayer p;
-    private final boolean upgraded;
 
-    public QuickDrawAction(int amount, boolean upgraded) {
+    public QuickDrawAction(int amount) {
         this.p = AbstractDungeon.player;
-        this.upgraded = upgraded;
         this.setValues(this.p, AbstractDungeon.player, amount);
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_MED;
@@ -42,9 +40,6 @@ public class QuickDrawAction extends AbstractGameAction {
                 this.isDone = true;
             } else if (tmp.size() == 1) {
                 card = tmp.getTopCard();
-                if (this.upgraded) {
-                    card.setCostForTurn(0);
-                }
                 if (this.p.hand.size() == 10) {
                     this.p.drawPile.moveToDiscardPile(card);
                     this.p.createHandIsFullDialog();
@@ -58,9 +53,6 @@ public class QuickDrawAction extends AbstractGameAction {
                     card.current_y = CardGroup.DRAW_PILE_Y;
                     this.p.drawPile.removeCard(card);
                     AbstractDungeon.player.hand.addToTop(card);
-                    if (this.upgraded) {
-                        card.setCostForTurn(0);
-                    }
                     AbstractDungeon.player.hand.refreshHandLayout();
                     AbstractDungeon.player.hand.applyPowers();
                 }
@@ -68,9 +60,6 @@ public class QuickDrawAction extends AbstractGameAction {
             } else if (tmp.size() <= this.amount) {
                 for(int i = 0; i < tmp.size(); ++i) {
                     card = tmp.getNCardFromTop(i);
-                    if (this.upgraded) {
-                        card.setCostForTurn(0);
-                    }
                     if (this.p.hand.size() == 10) {
                         this.p.drawPile.moveToDiscardPile(card);
                         this.p.createHandIsFullDialog();
@@ -102,9 +91,6 @@ public class QuickDrawAction extends AbstractGameAction {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 for (AbstractCard abstractCard : AbstractDungeon.gridSelectScreen.selectedCards) {
                     card = abstractCard;
-                    if (this.upgraded) {
-                        card.setCostForTurn(0);
-                    }
                     card.unhover();
                     if (this.p.hand.size() == 10) {
                         this.p.drawPile.moveToDiscardPile(card);

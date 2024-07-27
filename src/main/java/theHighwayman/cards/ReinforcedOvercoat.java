@@ -36,7 +36,7 @@ public class ReinforcedOvercoat extends AbstractDynamicCard {
 
     private static final int COST = 2;
     private static final int ARMOR = 5;
-    private static final int UPGRADE_PLUS_ARMOR = 3;
+    private static final int UPGRADE_PLUS_ARMOR = 2;
 
     // /STAT DECLARATION/
 

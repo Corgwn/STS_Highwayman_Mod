@@ -51,7 +51,7 @@ public class VigorousCard extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Vigorous(p, p), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Vigorous(p, p, 1), 1));
     }
 
     //Upgraded stats.

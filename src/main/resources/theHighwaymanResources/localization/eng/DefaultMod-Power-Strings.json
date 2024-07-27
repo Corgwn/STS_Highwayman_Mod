@@ -1,15 +1,15 @@
 {
   "theHighwayman:Bleed": {
           "NAME": "Bleed",
-          "DESCRIPTIONS": ["At the start of its turn, if Bleed has been gained since the end of last turn, gains ", " Bleed. If not, loses ", " HP and Bleed."]
+          "DESCRIPTIONS": ["At turn start, if Bleed was applied since last turn target loses ", " hp. Otherwise, lose all Bleed."]
   },
   "theHighwayman:Ammo": {
           "NAME": "Ammo",
-          "DESCRIPTIONS": ["Your next card that Fires! is played X times."]
+          "DESCRIPTIONS": ["Your next card that Fires! is played ", " time.", " times."]
   },
   "theHighwayman:RipostePower": {
           "NAME": "Riposte",
-          "DESCRIPTIONS": ["The next ", " time", " times", " you take attack damage, deal half to you and half to the enemy."]
+          "DESCRIPTIONS": ["The next ", " time", " times", " you take attack damage, instead deal half to you and half to the attacker."]
   },
   "theHighwayman:Vigorous": {
           "NAME": "Vigorous",
@@ -37,9 +37,9 @@
   },
   "theHighwayman:ExcellentForm": {
     "NAME": "Excellent Form",
-    "DESCRIPTIONS": ["At the start of your turn, put #b", " card", " cards", " into your hand"]
+    "DESCRIPTIONS": ["At the start of your turn, put ", " card from your draw pile into your hand.", " cards from your draw pile into your hand."]
   },
-  "theHighwayman:TwistedTip": {
+  "theHighwayman:TwistedTipPower": {
     "NAME": "Twisted Tip",
     "DESCRIPTIONS": ["Enemies no longer stop Bleeding."]
   },
@@ -54,5 +54,9 @@
   "theHighwayman:Surge": {
     "NAME": "Duelist's Surge",
     "DESCRIPTIONS": ["Whenever you Advance a card this turn, it costs 0 until played."]
+  },
+  "theHighwayman:FutureBleed": {
+    "NAME": "Bleed Next Turn",
+    "DESCRIPTIONS": ["At the start of next turn, apply ", " Bleed."]
   }
 }

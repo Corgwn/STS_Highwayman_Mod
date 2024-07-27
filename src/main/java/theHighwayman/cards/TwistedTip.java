@@ -31,7 +31,7 @@ public class TwistedTip extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
@@ -40,7 +40,6 @@ public class TwistedTip extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 1;
 
     // /STAT DECLARATION/
-
 
     public TwistedTip() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

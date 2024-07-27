@@ -34,13 +34,12 @@ public class QuickDraw extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theHighwayman.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 0;
 
 
     // /STAT DECLARATION/
@@ -55,7 +54,7 @@ public class QuickDraw extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new QuickDrawAction(1, this.upgraded));
+        AbstractDungeon.actionManager.addToBottom(new QuickDrawAction(1));
     }
 
     //Upgraded stats.
@@ -63,6 +62,7 @@ public class QuickDraw extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.exhaust = false;
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

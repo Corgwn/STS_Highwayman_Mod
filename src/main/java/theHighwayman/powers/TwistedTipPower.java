@@ -18,7 +18,7 @@ import static theHighwayman.DefaultMod.makePowerPath;
 
 //At the start of your turn, if you have gained no additional bleed since last turn, lose #b health
 
-public class TwistedTipPower extends AbstractPower implements CloneablePowerInterface, OnReceivePowerPower {
+public class TwistedTipPower extends AbstractPower implements CloneablePowerInterface {
 
     public AbstractCreature source;
 
@@ -58,13 +58,5 @@ public class TwistedTipPower extends AbstractPower implements CloneablePowerInte
     @Override
     public AbstractPower makeCopy() {
         return new Tipsy(owner, amount);
-    }
-
-    @Override
-    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.ID.equals(makeID("Ammo"))) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, source, makeID("Ammo"), power.amount));
-        }
-        return true;
     }
 }

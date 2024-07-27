@@ -35,7 +35,7 @@
       "fires",
       "fired"
     ],
-    "DESCRIPTION": "You must have Ammo to play this card. Lose all Ammo when played."
+    "DESCRIPTION": "You must have Ammo to play this card. Consume all ammo to play this card that many times."
   },
   {
     "PROPER_NAME": "Riposte",
@@ -53,7 +53,7 @@
       "Bleeding",
       "bleeding"
     ],
-    "DESCRIPTION": "If X has increased since target's last turn, target loses X HP at the start of its turn. Otherwise, target loses X stacks of Bleed."
+    "DESCRIPTION": "At turn start, if Bleed was applied since last turn, target loses X hp. Otherwise, target loses all Bleed."
   },
   {
     "PROPER_NAME": "Dodge",
@@ -71,7 +71,7 @@
       "Advanced",
       "advanced"
     ],
-    "DESCRIPTION": "Put the card from the bottom of your deck into your hand."
+    "DESCRIPTION": "Put the card from the bottom of your draw pile into your hand."
   },
   {
     "PROPER_NAME": "Retreat",

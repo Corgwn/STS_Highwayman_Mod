@@ -44,7 +44,6 @@ public class PrecisionStrikeAction extends AbstractGameAction {
                     this.addToTop(new WaitAction(0.1F));
                 }
             }
-
         }
     }
 }

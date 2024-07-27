@@ -57,7 +57,7 @@ public class Riposte extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADED_PLUS_RIPOSTE);
+            upgradeMagicNumber(UPGRADED_PLUS_RIPOSTE);
             initializeDescription();
         }
     }

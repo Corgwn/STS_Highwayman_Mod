@@ -113,7 +113,7 @@
   },
   "theHighwayman:DuelistsRetreat": {
     "NAME": "Duelist's Retreat",
-    "DESCRIPTION": "Gain !B! Block. NL Retreat 1 card."
+    "DESCRIPTION": "Gain !B! Block. NL thehighwayman:Retreat 1 card."
   },
   "theHighwayman:Parry": {
     "NAME": "Parry",
@@ -153,7 +153,7 @@
   },
   "theHighwayman:SliceUp": {
     "NAME": "Slice Up",
-    "DESCRIPTION": "Deal !D! damage. NL Put the card from the bottom of your deck into your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Put the card from the bottom of your draw pile into your hand."
   },
   "theHighwayman:UpClose": {
     "NAME": "Up Close",
@@ -177,8 +177,8 @@
   },
   "theHighwayman:ExcellentFormCard": {
     "NAME": "Excellent Form",
-    "DESCRIPTION": "Ethereal. NL At the start of your turn, put 1 card from your deck into your hand.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, put 1 card from your deck into your hand."
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, put 1 card from your draw pile into your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, put 1 card from your draw pile into your hand."
   },
   "theHighwayman:TwistedTip": {
     "NAME": "Twisted Tip",
@@ -199,8 +199,8 @@
   },
   "theHighwayman:QuickDraw": {
     "NAME": "Quick Draw",
-    "DESCRIPTION": "Innate. NL Add 1 card that thehighwayman:Fires! from your deck to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Put a card that thehighwayman:Fires! from your draw pile to your hand. It costs 0 to play this turn. NL Exhaust."
+    "DESCRIPTION": "Innate. NL Add 1 card that thehighwayman:Fires! from your draw pile to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Add 1 card that thehighwayman:Fires! from your draw pile to your hand."
   },
   "theHighwayman:CardUpSleeve": {
     "NAME": "Up Your Sleeve",
@@ -290,5 +290,17 @@
     "NAME": "Lighten Load",
     "DESCRIPTION": "Gain [E] [E]. Discard the bottom card of your draw pile and replace it with a Dazed.",
     "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. Discard the bottom card of your draw pile and replace it with a Dazed."
+  },
+  "theHighwayman:LuckyBreak": {
+    "NAME": "Lucky Break",
+    "DESCRIPTION": "Gain !B! Block. NL Discard the top card of your draw pile."
+  },
+  "theHighwayman:Excision": {
+    "NAME": "Excision",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! thehighwayman:Bleed. NL Apply !theHighwayman:SecondMagic! thehighwayman:Bleed next turn."
+  },
+  "theHighwayman:GildedBlade": {
+    "NAME": "GildedBlade",
+    "DESCRIPTION": "Deal !D! damage. NL Pay 12 gold to permanently increase this card's damage by !M!."
   }
 }
