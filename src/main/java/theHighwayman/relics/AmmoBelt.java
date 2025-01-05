@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.RingOfTheSerpent;
 import theHighwayman.DefaultMod;
 import theHighwayman.powers.Ammo;
 import theHighwayman.util.TextureLoader;
@@ -17,7 +16,6 @@ public class AmmoBelt extends CustomRelic {
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
      *
-     * Gain 1 energy.
      */
 
     // ID, images, text.
@@ -37,6 +35,20 @@ public class AmmoBelt extends CustomRelic {
         AbstractDungeon.player.hand.addToHand(new theHighwayman.cards.Cartridge());
         AbstractDungeon.player.hand.addToHand(new theHighwayman.cards.Cartridge());
         AbstractDungeon.player.hand.addToHand(new theHighwayman.cards.Cartridge());
+    }
+
+    public boolean obtain() {
+      if (AbstractDungeon.player.hasRelic(makeID("MusketPouch"))) {
+        for (int i = 0; i < AbstractDungeon.player.relics.size(); ++i) {
+	  if (AbstractDungeon.player.relics.get(i).relicId.equals("MusketPouch")) {
+	    AbstractDungeon.player.relics.get(i).onUnequip();
+	    instantObtain(AbstractDungeon.player, i, true);
+	    break;
+	  }
+	}
+      } else {
+        super.obtain();
+      }
     }
 
     public boolean canSpawn() {

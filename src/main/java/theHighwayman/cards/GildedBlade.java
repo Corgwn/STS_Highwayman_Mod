@@ -1,13 +1,17 @@
 package theHighwayman.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHighwayman.DefaultMod;
-import theHighwayman.actions.RetreatFromDiscardAction;
 import theHighwayman.characters.theHighwayman;
+
+import java.util.Iterator;
 
 import static theHighwayman.DefaultMod.makeCardPath;
 
@@ -53,10 +57,21 @@ public class GildedBlade extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage)));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         if (AbstractDungeon.player.gold >= 12) {
+            Iterator<AbstractCard> var1 = AbstractDungeon.player.masterDeck.group.iterator();
+
+            AbstractCard c;
+            while(var1.hasNext()) {
+                c = (AbstractCard)var1.next();
+                if (c.uuid.equals(this.uuid)) {
+                    c.baseDamage += magicNumber;
+                    c.isDamageModified = false;
+                }
+            }
+
+            this.baseDamage += magicNumber;
             AbstractDungeon.player.loseGold(12);
-            this.upgradeDamage(magicNumber);
         }
     }
 
